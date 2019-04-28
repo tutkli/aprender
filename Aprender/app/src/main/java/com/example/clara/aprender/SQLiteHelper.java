@@ -11,11 +11,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         super(context, "aprender.db", null, 1);
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS USUARIO (id VARCHAR, autor VARCHAR, isbn VARCHAR PRIMARY KEY, situacion VARCHAR, ubicacion VARCHAR, sintesis VARCHAR, portada BLOB)");
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS NIVEL(ubicacion VARCHAR PRIMARY KEY)");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS USUARIO (id NUMBER, nombre VARCHAR)");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS NIVEL(id NUMBER PRIMARY KEY)");
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS SOLUCION(ubicacion VARCHAR PRIMARY KEY)");
 
         ContentValues contentValues = new ContentValues();
