@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/Aprender/app/src/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/Aprender/app/src/androidTest/androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Aprender/app/src/main/main.iml" filepath="$PROJECT_DIR$/Aprender/app/src/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Aprender/app/src/test/test.iml" filepath="$PROJECT_DIR$/Aprender/app/src/test/test.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/Aprender.iml" filepath="$PROJECT_DIR$/Aprender.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
->>>>>>> 08c3710a30ddf64308e1da8b2653a3d0c0985ccf
+      <module fileurl="file://$PROJECT_DIR$/aprender.iml" filepath="$PROJECT_DIR$/aprender.iml" />
     </modules>
   </component>
 </project>

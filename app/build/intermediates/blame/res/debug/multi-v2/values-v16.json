@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Android_projects\\Aprender\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Alex\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\242ea747339aba4465282b70d7113e40\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\873eca2ad75fcb4113d22f04ae7d2862\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Alex\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\8dca7640ee0dd2e50ab9557e5250a041\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\75ec37f4a68e2c28e7b3fc1bd5933e32\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
