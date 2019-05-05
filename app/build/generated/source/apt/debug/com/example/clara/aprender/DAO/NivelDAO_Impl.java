@@ -28,7 +28,7 @@ public class NivelDAO_Impl implements NivelDAO {
     this.__insertionAdapterOfNivel = new EntityInsertionAdapter<Nivel>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `nivel`(`Titulo`,`Espacios`,`resultado`,`Solucion`,`IdNivel`) VALUES (?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `nivel`(`titulo`,`espacios`,`resultado`,`solucion`,`idNivel`) VALUES (?,?,?,?,?)";
       }
 
       @Override
@@ -51,7 +51,7 @@ public class NivelDAO_Impl implements NivelDAO {
     this.__deletionAdapterOfNivel = new EntityDeletionOrUpdateAdapter<Nivel>(__db) {
       @Override
       public String createQuery() {
-        return "DELETE FROM `nivel` WHERE `IdNivel` = ?";
+        return "DELETE FROM `nivel` WHERE `idNivel` = ?";
       }
 
       @Override
@@ -62,7 +62,7 @@ public class NivelDAO_Impl implements NivelDAO {
     this.__updateAdapterOfNivel = new EntityDeletionOrUpdateAdapter<Nivel>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `nivel` SET `Titulo` = ?,`Espacios` = ?,`resultado` = ?,`Solucion` = ?,`IdNivel` = ? WHERE `IdNivel` = ?";
+        return "UPDATE OR ABORT `nivel` SET `titulo` = ?,`espacios` = ?,`resultado` = ?,`solucion` = ?,`idNivel` = ? WHERE `idNivel` = ?";
       }
 
       @Override
@@ -124,11 +124,11 @@ public class NivelDAO_Impl implements NivelDAO {
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final Cursor _cursor = __db.query(_statement);
     try {
-      final int _cursorIndexOfTitulo = _cursor.getColumnIndexOrThrow("Titulo");
-      final int _cursorIndexOfEspacios = _cursor.getColumnIndexOrThrow("Espacios");
+      final int _cursorIndexOfTitulo = _cursor.getColumnIndexOrThrow("titulo");
+      final int _cursorIndexOfEspacios = _cursor.getColumnIndexOrThrow("espacios");
       final int _cursorIndexOfResultado = _cursor.getColumnIndexOrThrow("resultado");
-      final int _cursorIndexOfSolucion = _cursor.getColumnIndexOrThrow("Solucion");
-      final int _cursorIndexOfIdNivel = _cursor.getColumnIndexOrThrow("IdNivel");
+      final int _cursorIndexOfSolucion = _cursor.getColumnIndexOrThrow("solucion");
+      final int _cursorIndexOfIdNivel = _cursor.getColumnIndexOrThrow("idNivel");
       final List<Nivel> _result = new ArrayList<Nivel>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final Nivel _item;
@@ -165,11 +165,11 @@ public class NivelDAO_Impl implements NivelDAO {
     _statement.bindLong(_argIndex, idnivel);
     final Cursor _cursor = __db.query(_statement);
     try {
-      final int _cursorIndexOfTitulo = _cursor.getColumnIndexOrThrow("Titulo");
-      final int _cursorIndexOfEspacios = _cursor.getColumnIndexOrThrow("Espacios");
+      final int _cursorIndexOfTitulo = _cursor.getColumnIndexOrThrow("titulo");
+      final int _cursorIndexOfEspacios = _cursor.getColumnIndexOrThrow("espacios");
       final int _cursorIndexOfResultado = _cursor.getColumnIndexOrThrow("resultado");
-      final int _cursorIndexOfSolucion = _cursor.getColumnIndexOrThrow("Solucion");
-      final int _cursorIndexOfIdNivel = _cursor.getColumnIndexOrThrow("IdNivel");
+      final int _cursorIndexOfSolucion = _cursor.getColumnIndexOrThrow("solucion");
+      final int _cursorIndexOfIdNivel = _cursor.getColumnIndexOrThrow("idNivel");
       final Nivel _result;
       if(_cursor.moveToFirst()) {
         _result = new Nivel();

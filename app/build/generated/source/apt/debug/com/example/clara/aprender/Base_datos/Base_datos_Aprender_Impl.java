@@ -38,11 +38,11 @@ public class Base_datos_Aprender_Impl extends Base_datos_Aprender {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `nivel` (`Titulo` TEXT, `Espacios` INTEGER NOT NULL, `resultado` TEXT, `Solucion` INTEGER NOT NULL, `IdNivel` INTEGER NOT NULL, PRIMARY KEY(`IdNivel`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `nivel` (`titulo` TEXT, `espacios` INTEGER NOT NULL, `resultado` TEXT, `solucion` INTEGER NOT NULL, `idNivel` INTEGER NOT NULL, PRIMARY KEY(`idNivel`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `solucion` (`Solucion` TEXT, `IdUsuario` INTEGER NOT NULL, `IdNivel` INTEGER NOT NULL, `IdSolucion` INTEGER NOT NULL, PRIMARY KEY(`IdSolucion`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `usuario` (`Nombre` TEXT, `IdUsuario` INTEGER NOT NULL, PRIMARY KEY(`IdUsuario`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"6010c55145b840f5cc346db92bb0c815\")");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"9db97372abe8eebb91c01da67f44b715\")");
       }
 
       @Override
@@ -75,11 +75,11 @@ public class Base_datos_Aprender_Impl extends Base_datos_Aprender {
       @Override
       protected void validateMigration(SupportSQLiteDatabase _db) {
         final HashMap<String, TableInfo.Column> _columnsNivel = new HashMap<String, TableInfo.Column>(5);
-        _columnsNivel.put("Titulo", new TableInfo.Column("Titulo", "TEXT", false, 0));
-        _columnsNivel.put("Espacios", new TableInfo.Column("Espacios", "INTEGER", true, 0));
+        _columnsNivel.put("titulo", new TableInfo.Column("titulo", "TEXT", false, 0));
+        _columnsNivel.put("espacios", new TableInfo.Column("espacios", "INTEGER", true, 0));
         _columnsNivel.put("resultado", new TableInfo.Column("resultado", "TEXT", false, 0));
-        _columnsNivel.put("Solucion", new TableInfo.Column("Solucion", "INTEGER", true, 0));
-        _columnsNivel.put("IdNivel", new TableInfo.Column("IdNivel", "INTEGER", true, 1));
+        _columnsNivel.put("solucion", new TableInfo.Column("solucion", "INTEGER", true, 0));
+        _columnsNivel.put("idNivel", new TableInfo.Column("idNivel", "INTEGER", true, 1));
         final HashSet<TableInfo.ForeignKey> _foreignKeysNivel = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesNivel = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoNivel = new TableInfo("nivel", _columnsNivel, _foreignKeysNivel, _indicesNivel);
@@ -116,7 +116,7 @@ public class Base_datos_Aprender_Impl extends Base_datos_Aprender {
                   + " Found:\n" + _existingUsuario);
         }
       }
-    }, "6010c55145b840f5cc346db92bb0c815", "421f705412a96ed81e74fa396b319846");
+    }, "9db97372abe8eebb91c01da67f44b715", "e841867526aa1598262dc842af72a225");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

@@ -6,28 +6,61 @@ import android.support.annotation.NonNull;
 
 @Entity(tableName = "nivel")
 public class Nivel {
-    private String Titulo;
-    private int Espacios;
+    private String titulo;
+    private int espacios;
     private String resultado;
-    private int Solucion;
+    private int solucion;
     @PrimaryKey
-    private int IdNivel;
+    private int idNivel;
 
+    public Nivel(){
+    }
 
-    public int getIdNivel() {return IdNivel;}
-    public void setIdNivel(int idNivel) {this.IdNivel = idNivel;}
+    public Nivel(String titulo, int espacios, String resultado, int solucion, int idNivel) {
+        this.titulo = titulo;
+        this.espacios = espacios;
+        this.resultado = resultado;
+        this.solucion = solucion;
+        this.idNivel = idNivel;
+    }
 
-    public String getTitulo() {return Titulo;}
-    public void setTitulo(String titulo) {this.Titulo = titulo;}
+    public String getTitulo() {
+        return titulo;
+    }
 
-    public int getEspacios() {return Espacios;}
-    public void setEspacios(int espacios) {this.Espacios = espacios;}
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-    public String getResultado() {return resultado;}
-    public void setResultado(String resultado) {this.resultado = resultado;}
+    public int getEspacios() {
+        return espacios;
+    }
 
-    public int getSolucion() {return Solucion;}
-    public void setSolucion(int solucion) {Solucion = solucion;}
+    public void setEspacios(int espacios) {
+        this.espacios = espacios;
+    }
 
+    public String getResultado() {
+        return resultado;
+    }
 
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+    public int getSolucion() {
+        return solucion;
+    }
+
+    public void setSolucion(int solucion) {
+        this.solucion = solucion;
+    }
+
+    public int getIdNivel() {
+        return idNivel;
+    }
+
+    public void setIdNivel(int idNivel) {
+        this.idNivel = idNivel;
+    }
 }
