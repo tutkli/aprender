@@ -19,10 +19,16 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.example.clara.aprender.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.example.clara.aprender.MenuNivel"
             android:label="@string/title_activity_menu_nivel"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.clara.aprender.MainActivity" >
+        <activity
+            android:name="com.example.clara.aprender.SplashScreen"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

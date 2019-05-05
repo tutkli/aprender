@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun May 05 22:23:10 CEST 2019
+#Mon May 06 01:34:47 CEST 2019
 4.path=classes.dex
 8.set=DEX
 6.path=classes.dex
@@ -11,12 +11,14 @@
 3.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
 4.set=DEX
 5.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
-7.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
-9.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\17
+7.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+11.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19
+9.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\18
 1.baseType=DIRECTORY
+11.set=DEX
 0.set=DEX
 6.baseType=DIRECTORY
-7.set=DEX
+7.set=ASSET
 3.set=DEX
 2.baseType=DIRECTORY
 10.baseType=DIRECTORY
@@ -26,19 +28,21 @@
 10.set=DEX
 5.path=classes.dex
 0.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\21
-7.path=classes.dex
+7.path=splash_bg.gif
+11.path=classes.dex
 9.path=classes.dex
 6.set=DEX
 2.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
+11.baseType=DIRECTORY
 4.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14
 3.baseType=DIRECTORY
 6.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\16
-10.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19
-8.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\18
+10.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\17
+8.base=C\:\\Users\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
 2.set=DEX
 8.baseType=DIRECTORY
 9.set=DEX
-count=11
+count=12
 4.baseType=DIRECTORY
 5.set=DEX
 9.baseType=DIRECTORY
