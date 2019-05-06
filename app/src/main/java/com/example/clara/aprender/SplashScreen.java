@@ -15,6 +15,7 @@ import java.io.InputStream;
 
 public class SplashScreen extends AppCompatActivity {
 
+    private GifImageView gifImageView;
     private ProgressBar progressBar;
 
     @Override
@@ -22,16 +23,27 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        gifImageView = (GifImageView) findViewById(R.id.gifImageView);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(progressBar.VISIBLE);
+
+        //Set GIFImageView resource
+        try {
+            InputStream inputStream = getAssets().open("splash_bg.gif");
+            byte[] bytes = IOUtils.toByteArray(inputStream);
+            gifImageView.setBytes(bytes);
+            gifImageView.startAnimation();
+        } catch (IOException ex) {
+
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SplashScreen.this.startActivity(new Intent(SplashScreen.this,MainActivity.class));
+                SplashScreen.this.startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 SplashScreen.this.finish();
             }
-        },3000);
-    }
+        }, 3000);
 
+    }
 }
