@@ -19,7 +19,7 @@
             android:id="@+id/titulo"
             android:text="APRENDER( )"
             android:textSize="34sp"
-            android:textColor="#C62828"
+            android:textColor="#FFF"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

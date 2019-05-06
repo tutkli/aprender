@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Aprender</string>
     <string name="title_activity_menu_nivel">MenuNivel</string>
-    <string name="title_activity_splash_screen">Aprender()</string>
+    <string name="title_activity_splash_screen">Aprender( )</string>
 </resources>
