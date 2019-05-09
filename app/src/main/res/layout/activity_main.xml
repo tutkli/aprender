@@ -51,7 +51,10 @@
             android:layout_marginRight="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#FFb300">
+            app:cardBackgroundColor="#FFb300"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -85,7 +88,10 @@
             android:layout_marginRight="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#4CAF50">
+            app:cardBackgroundColor="#4CAF50"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -119,7 +125,10 @@
             android:layout_marginRight="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#4A148C">
+            app:cardBackgroundColor="#4A148C"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -129,7 +138,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="NO SÉ QUE PONER"
+                    android:text="CRÉDITOS"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
@@ -153,7 +162,10 @@
             android:layout_marginRight="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#C62828">
+            app:cardBackgroundColor="#C62828"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
