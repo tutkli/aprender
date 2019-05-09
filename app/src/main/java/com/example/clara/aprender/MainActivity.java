@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, MenuNivel.class);
+                //   Toast.makeText(MainActivity.this, "CLICK EN JUGAR", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, MenuNivelActivity.class);
                 startActivity(i);
             }
         });
@@ -48,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
         cardView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "CLICK EN NO SÉ", Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(MainActivity.this, "CLICK EN CRÉDITOS", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, CreditosActivity.class);
+                startActivity(i);
             }
         });
         cardView4 = (CardView)findViewById(R.id.cardView4);

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreditosActivity"
+    android:weightSum="10"
+    android:background="@drawable/bg">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <TextView
+            android:id="@+id/titulo_creditos"
+            android:text="CRÉDITOS( )"
+            android:textSize="34sp"
+            android:textColor="#FFF"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+
+        <TextView
+            android:id="@+id/texto_creditos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="24sp"
+            android:textColor="#FFF"
+            android:layout_margin="25dp"
+            android:gravity="center|center"
+            android:text="Esta aplicación ha sido creada por \n\n Aleksander M \n Clara Castillo \n Raúl Cruz \n\n Como proyecto final de Grado Superior de Desarrollo de Aplicaciones Multiplataforma \n\n ¡Gracias por usarla!"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <Button
+            android:id="@+id/volver_creditos"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:onClick="volver"
+            android:text="Volver" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

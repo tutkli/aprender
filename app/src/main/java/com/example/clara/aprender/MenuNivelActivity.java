@@ -11,7 +11,7 @@ import com.example.clara.aprender.Modelos.Nivel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuNivel extends AppCompatActivity {
+public class MenuNivelActivity extends AppCompatActivity {
 
 
     List<Nivel> lstLevel;

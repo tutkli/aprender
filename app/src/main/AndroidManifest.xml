@@ -10,13 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".CreditosActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".MenuNivel"
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MenuNivelActivity"
             android:label="@string/title_activity_menu_nivel"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".SplashScreen"
             android:label="@string/title_activity_splash_screen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
