@@ -12,16 +12,18 @@ public class Nivel {
     private int solucion;
     @PrimaryKey
     private int idNivel;
+    private int imagen;
 
     public Nivel(){
     }
 
-    public Nivel(String titulo, int espacios, String resultado, int solucion, int idNivel) {
+    public Nivel(String titulo, int espacios, String resultado, int solucion, int idNivel, int imagen) {
         this.titulo = titulo;
         this.espacios = espacios;
         this.resultado = resultado;
         this.solucion = solucion;
         this.idNivel = idNivel;
+        this.imagen = imagen;
     }
 
     public String getTitulo() {
@@ -62,5 +64,13 @@ public class Nivel {
 
     public void setIdNivel(int idNivel) {
         this.idNivel = idNivel;
+    }
+
+    public int getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(int imagen) {
+        this.imagen = imagen;
     }
 }

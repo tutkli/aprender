@@ -26,14 +26,18 @@
 
     </RelativeLayout>
 
-    <GridView
-        android:id="@+id/gridView"
+    <LinearLayout
         android:layout_weight="6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:columnWidth="120dp"
-        android:gravity="center"
-        android:numColumns="auto_fit"
-        android:padding="16dp" />
+        android:padding="8dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
