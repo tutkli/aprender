@@ -36,13 +36,12 @@
             android:id="@+id/texto_creditos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textColor="#FFF"
             android:layout_margin="25dp"
             android:gravity="center|center"
             android:text="Esta aplicación ha sido creada por \n\n Aleksander M \n Clara Castillo \n Raúl Cruz \n\n Como proyecto final de Grado Superior de Desarrollo de Aplicaciones Multiplataforma \n\n ¡Gracias por usarla!"
             />
-
 
     </RelativeLayout>
 
