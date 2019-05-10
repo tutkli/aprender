@@ -1,8 +1,11 @@
 package com.example.clara.aprender;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.Toast;
@@ -19,6 +22,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
+    }
+
+    //MOSTRAR MENSAJE DE CONFIRMACION PARA CERRAR LA APLICACION SI SE PULSA EL BOTON ATRAS DEL MOVIL EN EL MENU PRINCIPAL
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DialogStyle))
+                .setTitle("Cerrar Aplicación")
+                .setMessage("¿Seguro que quieres cerrar la aplicación?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        MainActivity.super.onBackPressed();
+                    }
+                }).create().show();
     }
 
     //INICIALIZACIÓN DE ITEMS

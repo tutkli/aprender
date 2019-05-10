@@ -13,4 +13,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/amarillo</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:background">@color/dialogColor</item>
+        <item name="android:radius">8dp</item>
+    </style>
+
 </resources>
