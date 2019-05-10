@@ -4,12 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class CreditosActivity extends AppCompatActivity {
+public class ConfiguracionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_creditos);
+        setContentView(R.layout.activity_configuracion);
     }
 
     public void volver(View v){
@@ -20,4 +20,5 @@ public class CreditosActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
     }
+
 }
