@@ -1,185 +1,185 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
-MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4027756c1c99d2b6ed47b94a677e5d2f\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\873eca2ad75fcb4113d22f04ae7d2862\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\d279b0ed51b1469c1642ddc64ea29f0f\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\deac98b6638118d579d9d4c183a97fcd\AndroidManifest.xml:2:1-11:12
-MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\8912cbc7a6c2ef473becc8f9c8f148d4\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\bb764bc64c0264aa903567b40b90a4e6\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\55e2f1d6a6a54cb8c5e8576451488e2f\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\1f818eb53315359f0612c1a174b3edd9\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\6ac57c65a3687498acdff9b3cf0d9f74\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\a3ab6108fa13797a82ca24605c3594b2\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\739ee4aa23318097beedc40ce3c6c589\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\b67324b730a0707941b4bdb309a0be8c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\03f70e8e174137bfed6d8736fc707159\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\f1b1afeb1d68e733a47b59bdebfa9c82\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\2b3729bc8ce7177cc6980dd379b65544\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\69af6ff950475d3544e950fe23ba0867\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\778aa8dfece024e5adf3f43fe2ae89db\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\7efd6eb1b46f5b00447db1f179cebf50\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\ea4c7e4f8294771b33a9c92e86df2317\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\b9f2486288b68d2f8554e65607a1d456\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\75ec37f4a68e2c28e7b3fc1bd5933e32\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\dd7ce56965ab2cbda2eaa6d7327df0e4\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\4a55f5b15756ba18d9e361ea588b2789\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\38dccaabbf40b59bc400adbb8d4fd9c4\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence:db:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\3188f8078222d65587bac41574dfc341\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\6b305b413a6df76c9d164027434af185\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\05f2543449abf13b025b926045e163a7\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\81a44dbfa662ad1d5cabb17fbbff65b4\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\57f866b810220a18660c4d4850e2563f\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\7ae3b7ead3f89a32eda325c62f1a6627\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\67ce3cf59d83836d542ea332edca025e\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\decb54a0ac1d19e249f80627bfbb5189\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\539a686827bd9440fb53aa51f1bcea20\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\0a58b394a27baedc9665bc358b2988ab\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\057716112ce988c48f3eff29e1793c9b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\0ddcfad86a615b996515c754b75bb322\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\922bf250e402c144df844457f3e09044\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\6145777ac306e732f8f633628a6e1cf4\AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\e927813f938a608e0b15f47fe5f160f3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\db5cd6c2eb4bd0598523f99889c6044d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\f639bf5f6c8bb6f77214d3eab123837f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\720f428b65c6e6177f14c0b36953d108\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\2b8f1ec957b7a727bc6e554f08b6f5e9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\4aef19a946d292ca727c7d1130ebc1cd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\5c26867cbd1a674836cb841e87c474e6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\1b33cd1ffb0185f1474fdc4b47f7e8d6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a1463dc5d12a63c30d031bf3aca5aae6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\86de4ab146ba9803976476530899573f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\322e0117678d72678750cadf0a8945c0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f5fc2771f2d95b0883d76d1953f4ea47\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\45734dbd6f6be24112602e6b9aa5ab80\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\8720389018e53b350926ad88e5685b02\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\29eb94ec2e4f06ba9981549c4ebbfacd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\1aa40a2c1097b75f09e4cfc5418679d6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4165bb153c74839c797d18be9a40bad5\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\e4143a48c64980b72fb9f9fd7d59e495\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\ec318cd2215540cc72bd75db88bfe2d8\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\80cc1a573bedaadd3d582554b4f4b6f4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\25eb8c95ef64fc0398d36cfba73cf5f6\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\4c3bb71c0d434d8c967f32c247a7abe7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\546ab1e476c6866f0ca2d239fd675e2e\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\1efda6a22113adee2f76ef61b94e6e37\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3865fc020310a419155fa2db2686d357\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\c940dfcffa101d1f62558dd05c3d7d18\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\352d3cdb160c896988d66d1cbac78e90\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\5bdb3e65db52f11bce8556e33dfe53e2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\02d5ff31d5da928f1e93860da5757a9c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\9890ab3841fea90e883e71557acebeb2\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
 	package
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:3:5-41
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:3:5-41
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:5:5-23:19
-MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4027756c1c99d2b6ed47b94a677e5d2f\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4027756c1c99d2b6ed47b94a677e5d2f\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\deac98b6638118d579d9d4c183a97fcd\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\deac98b6638118d579d9d4c183a97fcd\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\75ec37f4a68e2c28e7b3fc1bd5933e32\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\75ec37f4a68e2c28e7b3fc1bd5933e32\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\dd7ce56965ab2cbda2eaa6d7327df0e4\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\dd7ce56965ab2cbda2eaa6d7327df0e4\AndroidManifest.xml:22:5-23:19
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:5:5-23:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\057716112ce988c48f3eff29e1793c9b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\057716112ce988c48f3eff29e1793c9b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\6145777ac306e732f8f633628a6e1cf4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\6145777ac306e732f8f633628a6e1cf4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4165bb153c74839c797d18be9a40bad5\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4165bb153c74839c797d18be9a40bad5\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\e4143a48c64980b72fb9f9fd7d59e495\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\e4143a48c64980b72fb9f9fd7d59e495\AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\75ec37f4a68e2c28e7b3fc1bd5933e32\AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4165bb153c74839c797d18be9a40bad5\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:9:9-54
 	android:icon
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:7:9-43
 	android:allowBackup
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.example.clara.aprender.MenuNivel
-ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:12:9-15:68
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:12:9-15:68
 	android:label
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:14:13-62
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:14:13-62
 	android:theme
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:15:13-56
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:15:13-56
 	android:name
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:13:13-38
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:13:13-38
 activity#com.example.clara.aprender.MainActivity
-ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:16:9-22:20
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:16:9-22:20
 	android:name
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:16:19-47
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:16:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:17:13-21:29
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:20:27-74
 uses-sdk
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4027756c1c99d2b6ed47b94a677e5d2f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\4027756c1c99d2b6ed47b94a677e5d2f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\873eca2ad75fcb4113d22f04ae7d2862\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\873eca2ad75fcb4113d22f04ae7d2862\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\d279b0ed51b1469c1642ddc64ea29f0f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\d279b0ed51b1469c1642ddc64ea29f0f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\deac98b6638118d579d9d4c183a97fcd\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\deac98b6638118d579d9d4c183a97fcd\AndroidManifest.xml:5:5-7:41
-MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\8912cbc7a6c2ef473becc8f9c8f148d4\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\8912cbc7a6c2ef473becc8f9c8f148d4\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\bb764bc64c0264aa903567b40b90a4e6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\bb764bc64c0264aa903567b40b90a4e6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\55e2f1d6a6a54cb8c5e8576451488e2f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\55e2f1d6a6a54cb8c5e8576451488e2f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\1f818eb53315359f0612c1a174b3edd9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\1f818eb53315359f0612c1a174b3edd9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\6ac57c65a3687498acdff9b3cf0d9f74\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\6ac57c65a3687498acdff9b3cf0d9f74\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\a3ab6108fa13797a82ca24605c3594b2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\a3ab6108fa13797a82ca24605c3594b2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\739ee4aa23318097beedc40ce3c6c589\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\739ee4aa23318097beedc40ce3c6c589\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\b67324b730a0707941b4bdb309a0be8c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\b67324b730a0707941b4bdb309a0be8c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\03f70e8e174137bfed6d8736fc707159\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\03f70e8e174137bfed6d8736fc707159\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\f1b1afeb1d68e733a47b59bdebfa9c82\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\f1b1afeb1d68e733a47b59bdebfa9c82\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\2b3729bc8ce7177cc6980dd379b65544\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\2b3729bc8ce7177cc6980dd379b65544\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\69af6ff950475d3544e950fe23ba0867\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\69af6ff950475d3544e950fe23ba0867\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\778aa8dfece024e5adf3f43fe2ae89db\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\778aa8dfece024e5adf3f43fe2ae89db\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\7efd6eb1b46f5b00447db1f179cebf50\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\7efd6eb1b46f5b00447db1f179cebf50\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\ea4c7e4f8294771b33a9c92e86df2317\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\ea4c7e4f8294771b33a9c92e86df2317\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\b9f2486288b68d2f8554e65607a1d456\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\b9f2486288b68d2f8554e65607a1d456\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\75ec37f4a68e2c28e7b3fc1bd5933e32\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\75ec37f4a68e2c28e7b3fc1bd5933e32\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\dd7ce56965ab2cbda2eaa6d7327df0e4\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\dd7ce56965ab2cbda2eaa6d7327df0e4\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\4a55f5b15756ba18d9e361ea588b2789\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\4a55f5b15756ba18d9e361ea588b2789\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\38dccaabbf40b59bc400adbb8d4fd9c4\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\38dccaabbf40b59bc400adbb8d4fd9c4\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\3188f8078222d65587bac41574dfc341\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence:db:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\3188f8078222d65587bac41574dfc341\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\6b305b413a6df76c9d164027434af185\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\6b305b413a6df76c9d164027434af185\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\05f2543449abf13b025b926045e163a7\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\05f2543449abf13b025b926045e163a7\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\81a44dbfa662ad1d5cabb17fbbff65b4\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\81a44dbfa662ad1d5cabb17fbbff65b4\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\57f866b810220a18660c4d4850e2563f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\57f866b810220a18660c4d4850e2563f\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\7ae3b7ead3f89a32eda325c62f1a6627\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\7ae3b7ead3f89a32eda325c62f1a6627\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\67ce3cf59d83836d542ea332edca025e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\67ce3cf59d83836d542ea332edca025e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\decb54a0ac1d19e249f80627bfbb5189\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\decb54a0ac1d19e249f80627bfbb5189\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\539a686827bd9440fb53aa51f1bcea20\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\539a686827bd9440fb53aa51f1bcea20\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\0a58b394a27baedc9665bc358b2988ab\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\0a58b394a27baedc9665bc358b2988ab\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\057716112ce988c48f3eff29e1793c9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\057716112ce988c48f3eff29e1793c9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\0ddcfad86a615b996515c754b75bb322\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\0ddcfad86a615b996515c754b75bb322\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\922bf250e402c144df844457f3e09044\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\922bf250e402c144df844457f3e09044\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\6145777ac306e732f8f633628a6e1cf4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\6145777ac306e732f8f633628a6e1cf4\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\e927813f938a608e0b15f47fe5f160f3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\e927813f938a608e0b15f47fe5f160f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\db5cd6c2eb4bd0598523f99889c6044d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\db5cd6c2eb4bd0598523f99889c6044d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\f639bf5f6c8bb6f77214d3eab123837f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\f639bf5f6c8bb6f77214d3eab123837f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\720f428b65c6e6177f14c0b36953d108\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\720f428b65c6e6177f14c0b36953d108\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\2b8f1ec957b7a727bc6e554f08b6f5e9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\2b8f1ec957b7a727bc6e554f08b6f5e9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\4aef19a946d292ca727c7d1130ebc1cd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\4aef19a946d292ca727c7d1130ebc1cd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\5c26867cbd1a674836cb841e87c474e6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\5c26867cbd1a674836cb841e87c474e6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\1b33cd1ffb0185f1474fdc4b47f7e8d6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\1b33cd1ffb0185f1474fdc4b47f7e8d6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a1463dc5d12a63c30d031bf3aca5aae6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a1463dc5d12a63c30d031bf3aca5aae6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\86de4ab146ba9803976476530899573f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\86de4ab146ba9803976476530899573f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\322e0117678d72678750cadf0a8945c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\322e0117678d72678750cadf0a8945c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f5fc2771f2d95b0883d76d1953f4ea47\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\f5fc2771f2d95b0883d76d1953f4ea47\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\45734dbd6f6be24112602e6b9aa5ab80\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\45734dbd6f6be24112602e6b9aa5ab80\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\8720389018e53b350926ad88e5685b02\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\8720389018e53b350926ad88e5685b02\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\29eb94ec2e4f06ba9981549c4ebbfacd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\29eb94ec2e4f06ba9981549c4ebbfacd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\1aa40a2c1097b75f09e4cfc5418679d6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\1aa40a2c1097b75f09e4cfc5418679d6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4165bb153c74839c797d18be9a40bad5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4165bb153c74839c797d18be9a40bad5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\e4143a48c64980b72fb9f9fd7d59e495\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\e4143a48c64980b72fb9f9fd7d59e495\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\ec318cd2215540cc72bd75db88bfe2d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\ec318cd2215540cc72bd75db88bfe2d8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\80cc1a573bedaadd3d582554b4f4b6f4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-framework-1.1.1.aar\80cc1a573bedaadd3d582554b4f4b6f4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\25eb8c95ef64fc0398d36cfba73cf5f6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\db-1.1.1.aar\25eb8c95ef64fc0398d36cfba73cf5f6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\4c3bb71c0d434d8c967f32c247a7abe7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\4c3bb71c0d434d8c967f32c247a7abe7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\546ab1e476c6866f0ca2d239fd675e2e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\546ab1e476c6866f0ca2d239fd675e2e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\1efda6a22113adee2f76ef61b94e6e37\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\1efda6a22113adee2f76ef61b94e6e37\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3865fc020310a419155fa2db2686d357\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3865fc020310a419155fa2db2686d357\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\c940dfcffa101d1f62558dd05c3d7d18\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\c940dfcffa101d1f62558dd05c3d7d18\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\352d3cdb160c896988d66d1cbac78e90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\352d3cdb160c896988d66d1cbac78e90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\5bdb3e65db52f11bce8556e33dfe53e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\5bdb3e65db52f11bce8556e33dfe53e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\02d5ff31d5da928f1e93860da5757a9c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\02d5ff31d5da928f1e93860da5757a9c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\9890ab3841fea90e883e71557acebeb2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\9890ab3841fea90e883e71557acebeb2\AndroidManifest.xml:20:5-44
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
