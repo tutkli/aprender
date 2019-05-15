@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import com.felipecsl.gifimageview.library.GifImageView;
@@ -21,7 +22,6 @@ import static android.view.View.VISIBLE;
 
 public class SplashScreen extends AppCompatActivity {
 
-    GifImageView gifImageView;
     ProgressBar progressBar;
 
     @Override
@@ -29,10 +29,9 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        gifImageView = (GifImageView) findViewById(R.id.gifImageView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        progressBar.setVisibility(VISIBLE);
 
+        /*
         try {
             InputStream inputStream = getAssets().open("splash_bg.gif");
             byte[] bytes = IOUtils.toByteArray(inputStream);
@@ -42,7 +41,39 @@ public class SplashScreen extends AppCompatActivity {
             Log.d("SplashScreen: ", "ERROR");
         }
 
+        */
+
         new Cargar(this).execute();
+    }
+
+    //PONER LA VISTA EN FULL SCREEN
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            hideSystemUI();
+        }
+    }
+
+    private void hideSystemUI() {
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    }
+
+
+    private void showSystemUI() {
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 
     public static class Cargar extends AsyncTask<Void, Void, Boolean> {

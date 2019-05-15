@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/lvl_bg"
+    android:background="@drawable/bg"
     android:weightSum="8"
     tools:context=".MenuNivelActivity">
-
 
     <RelativeLayout
         android:layout_weight="2"

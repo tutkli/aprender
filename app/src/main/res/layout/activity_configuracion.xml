@@ -28,7 +28,7 @@
     </RelativeLayout>
 
     <GridLayout
-        android:layout_weight="6"
+        android:layout_weight="5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:columnCount="2"
@@ -174,7 +174,7 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
@@ -183,7 +183,8 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:onClick="volver"
             android:text="Volver" />
 
