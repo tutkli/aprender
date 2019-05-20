@@ -9,7 +9,6 @@
     android:weightSum="10"
     android:background="@drawable/bg">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -43,7 +42,6 @@
             android:text="Some Puntuacion..."
             />
 
-
     </RelativeLayout>
 
     <LinearLayout
@@ -57,12 +55,11 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:onClick="volver"
             android:text="Volver" />
 
     </LinearLayout>
-
 
 </LinearLayout>

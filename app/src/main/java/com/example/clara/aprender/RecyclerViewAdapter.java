@@ -18,7 +18,7 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private Context mContext ;
-    private List<Nivel> mData ; //NO SE SI TENEIS QUE CAMBIAR EL IMPORT DE NIVEL
+    private List<Nivel> mData ;
 
 
     public RecyclerViewAdapter(Context mContext, List<Nivel> mData) {
