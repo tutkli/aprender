@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).create().show();
     }
-    
+
     private void init() {
         mainGrid = (GridLayout)findViewById(R.id.mainGrid);
 
@@ -109,4 +109,5 @@ public class MainActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
 
     }
+    //HOLAAAA
 }
