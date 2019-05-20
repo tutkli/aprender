@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).create().show();
     }
-
-    //INICIALIZACIÓN DE ITEMS
+    
     private void init() {
         mainGrid = (GridLayout)findViewById(R.id.mainGrid);
 
