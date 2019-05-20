@@ -3,23 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:background="@drawable/bg"
-    android:weightSum="7"
+    android:weightSum="10"
     tools:context=".MainActivity">
 
-    <!-- TITULO -->
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5">
+
+        <ImageView
+            android:id="@+id/btn_config"
+            android:contentDescription="Imagen Configuracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_settings_black_24dp"
+            android:layout_margin="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
         <TextView
             android:id="@+id/titulo"
             android:text="APRENDER( )"
             android:textSize="34sp"
-            android:textColor="#C62828"
+            android:textColor="#FFF"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,19 +37,20 @@
 
     </RelativeLayout>
 
-    <!-- BOTONES -->
     <GridLayout
         android:id="@+id/mainGrid"
-        android:layout_weight="4"
+        android:layout_weight="5"
         android:columnCount="1"
-        android:rowCount="4"
+        android:rowCount="3"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="20dp">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingTop="70dp"
+        android:paddingBottom="70dp"
+        android:paddingRight="70dp"
+        >
 
-        <!-- FILA 1 -->
         <android.support.v7.widget.CardView
             android:id="@+id/cardView1"
             android:layout_width="0dp"
@@ -49,9 +60,12 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
+            app:cardElevation="4dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#FFb300">
+            app:cardBackgroundColor="#FFb300"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -73,7 +87,6 @@
 
         </android.support.v7.widget.CardView>
 
-        <!-- FILA 2 -->
         <android.support.v7.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="0dp"
@@ -83,9 +96,12 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
+            app:cardElevation="4dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#4CAF50">
+            app:cardBackgroundColor="#4CAF50"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -107,41 +123,6 @@
 
         </android.support.v7.widget.CardView>
 
-        <!-- FILA 3 -->
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardView3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#4A148C">
-
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="NO SÉ QUE PONER"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <!-- FILA 4 -->
         <android.support.v7.widget.CardView
             android:id="@+id/cardView4"
             android:layout_width="0dp"
@@ -151,9 +132,12 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
+            app:cardElevation="4dp"
             app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="#C62828">
+            app:cardBackgroundColor="#4A148C"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -163,7 +147,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="CONFIGURACIÓN"
+                    android:text="CRÉDITOS"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"

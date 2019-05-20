@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/lvl_bg"
+    android:background="@drawable/bg"
     android:weightSum="8"
-    tools:context=".MenuNivel">
-
+    tools:context=".MenuNivelActivity">
 
     <RelativeLayout
         android:layout_weight="2"
@@ -24,16 +23,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+        <Button
+            android:id="@+id/button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:onClick="volver"
+            android:text="Volver" />
+
     </RelativeLayout>
 
-    <GridView
-        android:id="@+id/gridView"
+    <LinearLayout
         android:layout_weight="6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:columnWidth="120dp"
-        android:gravity="center"
-        android:numColumns="auto_fit"
-        android:padding="16dp" />
+        android:padding="8dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
 
 </LinearLayout>
