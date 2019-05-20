@@ -16,8 +16,6 @@ public class MenuNivelActivity extends AppCompatActivity {
 
 
     List<Nivel> lstLevel;
-    RecyclerViewAdapter adapter = null;
-    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,27 +29,16 @@ public class MenuNivelActivity extends AppCompatActivity {
     private void init(){
 
         lstLevel = new ArrayList<>();
-        //creacion de 6 niveles
-        for(int i=0;i<6;i++) {
-            lstLevel.add(new Nivel("Nivel "+i, 10, "0", 34, i, R.drawable.star));
+        //creacion de 10 niveles
+        for(int i=0;i<10;i++) {
+            lstLevel.add(new Nivel("Nivel "+(i+1), 10, "0", 34, i, R.drawable.star));
         }
 
         RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
         RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(this,lstLevel);
         myrv.setLayoutManager(new GridLayoutManager(this,5));
         myrv.setAdapter(myAdapter);
-    }
 
-    //PONER LA VISTA EN FULL SCREEN
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            hideSystemUI();
-        }
-    }
-
-    private void hideSystemUI() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -61,14 +48,5 @@ public class MenuNivelActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
-    }
-
-
-    private void showSystemUI() {
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 }

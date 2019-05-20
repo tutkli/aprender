@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.ContextThemeWrapper;
 import android.view.View;
-import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,60 +44,46 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         mainGrid = (GridLayout)findViewById(R.id.mainGrid);
 
+        //JUGAR
         cardView1 = (CardView)findViewById(R.id.cardView1);
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //   Toast.makeText(MainActivity.this, "CLICK EN JUGAR", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, MenuNivelActivity.class);
                 startActivity(i);
             }
         });
 
-        //EN CADA LISTENER SE PONE EL INTENT A DONDE VAYA
+        //PUNTUACION
         cardView2 = (CardView)findViewById(R.id.cardView2);
         cardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(MainActivity.this, "CLICK EN PUNTUACIÓN", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, PuntuacionActivity.class);
                 startActivity(i);
             }
         });
 
+        //CONFIGURACIÓN
         btn_config = (ImageView) findViewById(R.id.btn_config);
         btn_config.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(MainActivity.this, "CLICK EN CONFIGURACIÓN", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, ConfiguracionActivity.class);
                 startActivity(i);
             }
         });
 
+        //CREDITOS
         cardView4 = (CardView)findViewById(R.id.cardView4);
         cardView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //   Toast.makeText(MainActivity.this, "CLICK EN CRÉDITOS", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, CreditosActivity.class);
                 startActivity(i);
             }
         });
-    }
 
-
-
-    //PONER LA VISTA EN FULL SCREEN
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            hideSystemUI();
-        }
-    }
-
-    private void hideSystemUI() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -110,13 +94,4 @@ public class MainActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
-
-    private void showSystemUI() {
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-    }
-
 }

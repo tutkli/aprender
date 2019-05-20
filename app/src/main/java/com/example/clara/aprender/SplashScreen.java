@@ -22,16 +22,14 @@ import static android.view.View.VISIBLE;
 
 public class SplashScreen extends AppCompatActivity {
 
-    ProgressBar progressBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        init();
 
-        /*
+        /* CARGAR UN GIF
         try {
             InputStream inputStream = getAssets().open("splash_bg.gif");
             byte[] bytes = IOUtils.toByteArray(inputStream);
@@ -46,16 +44,7 @@ public class SplashScreen extends AppCompatActivity {
         new Cargar(this).execute();
     }
 
-    //PONER LA VISTA EN FULL SCREEN
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            hideSystemUI();
-        }
-    }
-
-    private void hideSystemUI() {
+    public void init() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -65,15 +54,6 @@ public class SplashScreen extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
-    }
-
-
-    private void showSystemUI() {
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 
     public static class Cargar extends AsyncTask<Void, Void, Boolean> {
