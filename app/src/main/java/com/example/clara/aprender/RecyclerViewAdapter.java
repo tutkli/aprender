@@ -38,7 +38,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
-        holder.lvl_img.setImageResource(mData.get(holder.getAdapterPosition()).getImagen());
+        // Cambiar de vuelta a esto -> holder.lvl_img.setImageResource(mData.get(holder.getAdapterPosition()).getImagen()); <- o no utilizar una base de datos y utilizar archivos del movil de la carpeta drawable.
+
+        holder.lvl_img.setImageResource(R.drawable.star);
 
         //prueba de que hace click, borrar luego
         holder.cardView.setOnClickListener(new View.OnClickListener() {

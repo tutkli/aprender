@@ -1,5 +1,6 @@
 package com.example.clara.aprender;
 
+import android.arch.persistence.room.Room;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,9 @@ import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.content.Intent;
+
+import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
+import com.example.clara.aprender.Modelos.Nivel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,6 +96,18 @@ public class MainActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
+
+
+        //Insertar datos, al final con el main thread. Ya que si la base es pequeña no imprta.
+        Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
+
+        //Insertamos un nivel para comprobar
+        Nivel nivel = new Nivel(1, "Nivel 1", 5, "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(2, "Nivel 2", 7, "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(3, "Nivel 3", 9, "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        BDAprender.getNivelDAO().insert(nivel);
     }
 
     @Override

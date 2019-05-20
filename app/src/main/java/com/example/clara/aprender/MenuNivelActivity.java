@@ -1,5 +1,6 @@
 package com.example.clara.aprender;
 
+import android.arch.persistence.room.Room;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -7,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
 import com.example.clara.aprender.Modelos.Nivel;
 
 import java.util.ArrayList;
@@ -32,11 +34,8 @@ public class MenuNivelActivity extends AppCompatActivity {
     //INICIALIZACION DE ITEMS
     private void init(){
 
-        lstLevel = new ArrayList<>();
-        //creacion de 10 niveles
-        for(int i=0;i<10;i++) {
-            lstLevel.add(new Nivel("Nivel "+(i+1), 10, "0", 34, i, R.drawable.star));
-        }
+        Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
+        lstLevel = BDAprender.getNivelDAO().getNiveles();
 
         RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
         RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(this,lstLevel);
