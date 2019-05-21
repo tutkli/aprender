@@ -116,6 +116,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\anim\\abc_slide_out_top.xml"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_splash.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-hdpi\\splash.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
@@ -186,6 +190,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_nivel_item.xml.flat",
         "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\layout\\nivel_item.xml"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_star.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xxhdpi\\star.png"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
@@ -380,6 +388,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-watch-v20\\abc_dialog_material_background.xml"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_star.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xxxhdpi\\star.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
@@ -452,6 +464,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_app_icon.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xhdpi\\app_icon.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
@@ -486,6 +502,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_app_icon.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xxxhdpi\\app_icon.png"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -596,6 +616,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_splash.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xxhdpi\\splash.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
@@ -612,12 +636,20 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable\\tooltip_frame_light.xml"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_app_icon.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-hdpi\\app_icon.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-mdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_settings_black_24dp.xml.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable\\ic_settings_black_24dp.xml"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -666,6 +698,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_switch_track.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_creditos.xml.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\layout\\activity_creditos.xml"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_bottom_nav_colored_item_tint.xml.flat",
@@ -768,6 +804,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_app_icon.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-mdpi\\app_icon.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4165bb153c74839c797d18be9a40bad5\\res\\layout\\notification_template_part_chronometer.xml"
     },
@@ -820,6 +860,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable\\tooltip_frame_dark.xml"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_splash.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-mdpi\\splash.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable\\abc_btn_radio_material.xml"
     },
@@ -868,6 +912,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_splash_bg.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-mdpi\\splash_bg.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_light.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
@@ -898,6 +946,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_icon_color_selector.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\057716112ce988c48f3eff29e1793c9b\\res\\color\\mtrl_tabs_icon_color_selector.xml"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_splash.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xhdpi\\splash.png"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -936,6 +988,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_star.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-hdpi\\star.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_unelevated_state_list_anim.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\057716112ce988c48f3eff29e1793c9b\\res\\animator\\mtrl_btn_unelevated_state_list_anim.xml"
     },
@@ -948,12 +1004,12 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4165bb153c74839c797d18be9a40bad5\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
-        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_dialog_material_background.xml.flat",
-        "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-v21\\abc_dialog_material_background.xml"
-    },
-    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_dialog_material_background.xml.flat",
+        "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-v21\\abc_dialog_material_background.xml"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_header.xml.flat",
@@ -1016,6 +1072,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_app_icon.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xxhdpi\\app_icon.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
     },
@@ -1024,8 +1084,16 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_splash_bg.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xxxhdpi\\splash_bg.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_puntuacion.xml.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\layout\\activity_puntuacion.xml"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -1134,6 +1202,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_star.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-mdpi\\star.png"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_item_layout.xml.flat",
@@ -1448,6 +1520,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_splash_bg.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xhdpi\\splash_bg.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
@@ -1480,6 +1556,10 @@
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash_screen.xml.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\layout\\activity_splash_screen.xml"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -1498,6 +1578,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-xxhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_splash.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xxxhdpi\\splash.png"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
@@ -1530,6 +1614,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4165bb153c74839c797d18be9a40bad5\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_splash_bg.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xxhdpi\\splash_bg.png"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_ripple_color.xml.flat",
@@ -1602,6 +1690,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_configuracion.xml.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\layout\\activity_configuracion.xml"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
@@ -1904,6 +1996,10 @@
         "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-hdpi\\lvl_item.png"
     },
     {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_splash_bg.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-hdpi\\splash_bg.png"
+    },
+    {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
@@ -1914,6 +2010,10 @@
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Clara\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\0ddcfad86a615b996515c754b75bb322\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_star.png.flat",
+        "source": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\src\\main\\res\\drawable-xhdpi\\star.png"
     },
     {
         "merged": "D:\\Clara\\Documents\\GitHub\\aprender\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
