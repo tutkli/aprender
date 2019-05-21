@@ -12,6 +12,16 @@ public class Solucion {
     @PrimaryKey
     private int IdSolucion;
 
+    public Solucion(){
+    }
+
+    public Solucion(int IdNivel, int IdUsuario, int IdSolucion, String Solucion){
+        this.IdNivel = IdNivel;
+        this.IdUsuario = IdUsuario;
+        this.IdSolucion = IdSolucion;
+        this.Solucion = Solucion;
+    }
+
 
     public int getIdUsuario() {return IdUsuario;}
     public void setIdUsuario(int idUsuario) {this.IdUsuario = idUsuario;}

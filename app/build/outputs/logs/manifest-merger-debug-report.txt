@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\057716112ce988c48f3eff29e1793c9b\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\0ddcfad86a615b996515c754b75bb322\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\6145777ac306e732f8f633628a6e1cf4\AndroidManifest.xml:2:1-11:12
@@ -39,25 +39,25 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Clara\.gradle\cac
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\5bdb3e65db52f11bce8556e33dfe53e2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\02d5ff31d5da928f1e93860da5757a9c\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\9890ab3841fea90e883e71557acebeb2\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:5:5-38:19
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:5:5-39:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\057716112ce988c48f3eff29e1793c9b\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\057716112ce988c48f3eff29e1793c9b\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Clara\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\6145777ac306e732f8f633628a6e1cf4\AndroidManifest.xml:9:5-20
@@ -82,56 +82,60 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Clara\.gra
 		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:11:9-52
+activity#com.example.clara.aprender.Juego
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:12:9-52
+	android:name
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:12:19-40
 activity#com.example.clara.aprender.PuntuacionActivity
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:12:9-14:52
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:13:9-15:53
 	android:screenOrientation
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:14:13-50
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:15:13-50
 	android:name
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:13:13-47
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:14:13-47
 activity#com.example.clara.aprender.CreditosActivity
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:15:9-17:52
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:16:9-18:53
 	android:screenOrientation
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:17:13-50
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:18:13-50
 	android:name
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:16:13-45
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:17:13-45
 activity#com.example.clara.aprender.ConfiguracionActivity
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:18:9-20:52
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:19:9-21:53
 	android:screenOrientation
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:21:13-50
+	android:name
 		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:20:13-50
-	android:name
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:19:13-50
 activity#com.example.clara.aprender.MainActivity
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:21:9-23:52
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:22:9-24:53
 	android:screenOrientation
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:23:13-50
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:24:13-50
 	android:name
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:22:13-41
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:23:13-41
 activity#com.example.clara.aprender.MenuNivelActivity
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:24:9-27:52
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:25:9-28:53
 	android:screenOrientation
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:27:13-50
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:28:13-50
 	android:label
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:26:13-62
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:27:13-62
 	android:name
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:25:13-46
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:26:13-46
 activity#com.example.clara.aprender.SplashScreen
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:28:9-37:20
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:29:9-38:20
 	android:screenOrientation
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:31:13-50
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:32:13-50
 	android:label
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:30:13-65
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:31:13-65
 	android:name
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:29:13-41
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:30:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:32:13-36:29
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:33:13-37:29
 action#android.intent.action.MAIN
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:35:17-77
+ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:35:27-74
+		ADDED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml:36:27-74
 uses-sdk
 INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Clara\Documents\GitHub\aprender\app\src\main\AndroidManifest.xml

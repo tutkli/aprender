@@ -3,6 +3,7 @@ package com.example.clara.aprender.DAO;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 import com.example.clara.aprender.Modelos.Nivel;
@@ -11,7 +12,11 @@ import java.util.List;
 //Varargs
 @Dao
 public interface NivelDAO {
-    @Insert
+
+    // Que era ... ? recordar y añadir al archivo word
+
+    // OnConflictStrategy consiste en no insertar si ocurre algo
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Nivel... Niveles);
 
     @Update
