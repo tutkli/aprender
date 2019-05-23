@@ -45,11 +45,11 @@ public class Login extends AppCompatActivity {
     public void registrarse(View view){
 
         AlertDialog.Builder dialog   = new AlertDialog.Builder(Login.this);
-        dialog.setTitle("Estas seguro?");
-        dialog.setMessage("Si acepta su cuenta sera completamente borrada y perdera todos los datos");
+        dialog.setTitle("nombre de usuario");
+        dialog.setMessage("Introduzca el nombre de usuario");
         etdialog = new EditText(this);
         dialog.setView(etdialog);
-        dialog.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+        dialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String usuario = etdialog.getText().toString();
