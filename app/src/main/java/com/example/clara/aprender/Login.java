@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref = database.getReference("server/saving-data/fireblog");
     DatabaseReference myRef = database.getReference("usuarios");
-    private EditText emailc,passc;
+    private EditText emailc,passc,etdialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +47,12 @@ public class Login extends AppCompatActivity {
         AlertDialog.Builder dialog   = new AlertDialog.Builder(Login.this);
         dialog.setTitle("Estas seguro?");
         dialog.setMessage("Si acepta su cuenta sera completamente borrada y perdera todos los datos");
-        final EditText input = new EditText(this);
+        etdialog = new EditText(this);
+        dialog.setView(etdialog);
         dialog.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String usuario = input.getText().toString();
+                String usuario = etdialog.getText().toString();
                 if(!emailc.getText().toString().isEmpty()){
                  reg(usuario);
                 }else{
