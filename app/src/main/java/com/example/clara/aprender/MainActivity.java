@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, MenuNivelActivity.class);
+                Intent i = new Intent(MainActivity.this, Login.class);
                 startActivity(i);
             }
         });
