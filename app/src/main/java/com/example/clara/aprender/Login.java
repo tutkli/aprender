@@ -1,7 +1,9 @@
 package com.example.clara.aprender;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,7 +23,7 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref = database.getReference("server/saving-data/fireblog");
-
+    DatabaseReference myRef = database.getReference("usuarios");
     private EditText emailc,passc;
 
     @Override
@@ -41,34 +43,73 @@ public class Login extends AppCompatActivity {
         updateUI(currentUser);
     }
     public void registrarse(View view){
-        String email=emailc.getText().toString();
-        String password=passc.getText().toString();
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("SplashActivity:", "createUserWithEmail:success");
 
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            user.sendEmailVerification();
-                            Toast.makeText(Login.this, "verificacion de email enviada",
-                                    Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("SplashActivity:", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(Login.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
-
-                        // ...
-                    }
-                });
+        AlertDialog.Builder dialog   = new AlertDialog.Builder(Login.this);
+        dialog.setTitle("Estas seguro?");
+        dialog.setMessage("Si acepta su cuenta sera completamente borrada y perdera todos los datos");
+        final EditText input = new EditText(this);
+        dialog.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String usuario = input.getText().toString();
+                if(!emailc.getText().toString().isEmpty()){
+                 reg(usuario);
+                }else{
+                    Toast.makeText(Login.this, "escriba el nombre de usuario", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        dialog.setNegativeButton("cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = dialog.create();
+        alertDialog.show();
     }
+    public void insertar(String uid,String  usuario) {
+        String email = emailc.getText().toString();
+        DatabaseReference emailRef = myRef.child(uid + "/email");
+        emailRef.setValue(email);
+        DatabaseReference userRef = myRef.child(uid + "/nombre");
+        userRef.setValue(usuario);
+        DatabaseReference lvlmaxRef = myRef.child(uid + "/lvlmax");
+        lvlmaxRef.setValue("0");
+        for (int cont = 1; cont < 11; cont++) {
+            DatabaseReference puntuacionesRef = myRef.child(uid + "/puntuaciones/lvl" + cont);
+            puntuacionesRef.setValue("0");
+        }
+    }
+public void reg(final String usuario){
+    String email=emailc.getText().toString();
+    String password=passc.getText().toString();
+    mAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d("SplashActivity:", "createUserWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        String uid = user.getUid();
+                        insertar(uid,usuario);
+                        user.sendEmailVerification();
+                        Toast.makeText(Login.this, "verificacion de email enviada",
+                                Toast.LENGTH_SHORT).show();
 
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("SplashActivity:", "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(Login.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                        updateUI(null);
+                    }
+
+                    // ...
+                }
+            });
+}
     public void login(View view){
         String email=emailc.getText().toString();
         String password=passc.getText().toString();

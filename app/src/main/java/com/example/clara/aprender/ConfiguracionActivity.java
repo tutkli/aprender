@@ -82,29 +82,29 @@ public class ConfiguracionActivity extends AppCompatActivity {
         dialog.setTitle("Estas seguro?");
         dialog.setMessage("Si acepta su cuenta sera completamente borrada y perdera todos los datos");
         dialog.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                FirebaseUser currentUser = mAuth.getCurrentUser();
-                currentUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(ConfiguracionActivity.this,"cuenta eliminada",Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(ConfiguracionActivity.this,Login.class));
-                        }else{
-                            Toast.makeText(ConfiguracionActivity.this,"error al eliminar el usuario",Toast.LENGTH_LONG).show();
-                        }
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            currentUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(ConfiguracionActivity.this,"cuenta eliminada",Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(ConfiguracionActivity.this,Login.class));
+                    }else{
+                        Toast.makeText(ConfiguracionActivity.this,"error al eliminar el usuario",Toast.LENGTH_LONG).show();
                     }
-                });
-            }
-        });
+                }
+            });
+        }
+    });
         dialog.setNegativeButton("cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int which) {
-                dialogInterface.dismiss();
-            }
-        });
-        AlertDialog alertDialog = dialog.create();
+        @Override
+        public void onClick(DialogInterface dialogInterface, int which) {
+            dialogInterface.dismiss();
+        }
+    });
+    AlertDialog alertDialog = dialog.create();
         alertDialog.show();
-    }
+}
 }
