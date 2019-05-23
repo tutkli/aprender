@@ -59,11 +59,9 @@ public class Nivel {
         this.resuelto = resuelto;
     }
 
-
     public String getInput() {
         return input;
     }
-
     public void setInput(String input) {
         this.input = input;
     }
@@ -71,7 +69,6 @@ public class Nivel {
     public String getOutput() {
         return output;
     }
-
     public void setOutput(String output) {
         this.output = output;
     }
