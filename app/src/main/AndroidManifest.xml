@@ -10,8 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".Login"
-            android:screenOrientation="landscape" />
+            android:name=".Login" />
         <activity android:name=".Juego" />
         <activity
             android:name=".PuntuacionActivity"

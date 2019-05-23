@@ -23,14 +23,16 @@ public class Login extends AppCompatActivity {
     DatabaseReference ref = database.getReference("server/saving-data/fireblog");
 
     private EditText emailc,passc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
         emailc=(EditText) findViewById(R.id.editText3);
         passc=(EditText) findViewById(R.id.editText2);
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -109,6 +111,7 @@ public class Login extends AppCompatActivity {
         }
 
     }
+
     public void recuperarcon(View view) {
         String email = emailc.getText().toString();
         FirebaseAuth auth = FirebaseAuth.getInstance();

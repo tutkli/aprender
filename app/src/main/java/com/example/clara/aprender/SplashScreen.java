@@ -83,7 +83,7 @@ public class SplashScreen extends AppCompatActivity {
         protected void onPostExecute(Boolean bool) {
             super.onPostExecute(bool);
             Activity activity = weakReference.get();
-            Intent i = new Intent(activity, MainActivity.class);
+            Intent i = new Intent(activity, Login.class);
             activity.startActivity(i);
             activity.finish();
         }
