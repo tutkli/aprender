@@ -131,7 +131,6 @@ public void reg(final String usuario){
                             updateUI(null);
                         }
 
-                        // ...
                     }
                 });
     }

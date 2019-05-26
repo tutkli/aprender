@@ -3,22 +3,12 @@ package com.example.clara.aprender;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 
-import com.felipecsl.gifimageview.library.GifImageView;
-
-import org.apache.commons.io.IOUtils;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.ref.WeakReference;
-
-import static android.view.View.VISIBLE;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -83,7 +73,7 @@ public class SplashScreen extends AppCompatActivity {
         protected void onPostExecute(Boolean bool) {
             super.onPostExecute(bool);
             Activity activity = weakReference.get();
-            Intent i = new Intent(activity, Login.class);
+            Intent i = new Intent(activity, MainActivity.class);
             activity.startActivity(i);
             activity.finish();
         }

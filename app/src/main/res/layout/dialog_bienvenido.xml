@@ -1,0 +1,55 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Bienvenido a Aprender( )"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:padding="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Es necesario iniciar sesión para jugar"
+        android:textSize="18sp"
+        android:padding="5dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INICIAR SESIÓN"
+            android:textColor="@color/amarillo"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            style="@style/Widget.AppCompat.ButtonBar.AlertDialog" />
+
+        <Button
+            android:id="@+id/btn_signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRARSE"
+            android:textColor="@color/amarillo"
+            android:layout_marginEnd="10dp"
+            android:textStyle="bold"
+            style="@style/Widget.AppCompat.ButtonBar.AlertDialog"/>
+
+    </LinearLayout>
+
+</LinearLayout>

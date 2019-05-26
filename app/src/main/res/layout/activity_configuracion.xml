@@ -146,7 +146,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="borraruser"
+                android:onClick="borrarUser"
                 android:text="Borrar usuario" />
         </LinearLayout>
 
@@ -168,7 +168,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="cerrarsesion"
+                android:onClick="cerrarSesion"
                 android:text="Cerrar Sesión" />
         </LinearLayout>
 

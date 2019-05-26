@@ -39,7 +39,7 @@
             android:textColor="#FFF"
             android:layout_margin="15dp"
             android:gravity="center|center"
-            android:text="Esta aplicación ha sido creada por \n\n Aleksander M \n Clara Castillo \n Raúl Cruz \n\n Como proyecto final de Grado Superior de Desarrollo de Aplicaciones Multiplataforma \n\n ¡Gracias por usarla!"
+            android:text="@string/creditos"
             />
 
     </ScrollView>
