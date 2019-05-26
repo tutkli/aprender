@@ -35,6 +35,10 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     public void init() {
+        setFlags();
+    }
+
+    public void setFlags() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -78,4 +82,5 @@ public class SplashScreen extends AppCompatActivity {
             activity.finish();
         }
     }
+
 }

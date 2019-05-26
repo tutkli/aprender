@@ -28,11 +28,6 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
         init();
     }
-
-    public void volver(View v){
-        finish();
-    }
-
     @Override
     public void onBackPressed() {
         finish();
@@ -42,15 +37,11 @@ public class ConfiguracionActivity extends AppCompatActivity {
     public void onResume(){
         super.onResume();
 
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        setFlags();
+    }
 
-                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    public void volver(View v){
+        finish();
     }
 
     public void cerrarSesion(View v){
@@ -79,6 +70,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         mCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setFlags();
                 dialog.dismiss();
 
             }
@@ -106,15 +98,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
     }
 
     public void init() {
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-
-                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+        setFlags();
 
         Switch aSwitch = (Switch) findViewById(R.id.switch1);
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -126,6 +110,18 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void setFlags() {
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 
 }

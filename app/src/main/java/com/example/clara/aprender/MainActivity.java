@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         mCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setFlags();
                 dialog.dismiss();
-
             }
         });
 
@@ -92,15 +92,7 @@ public class MainActivity extends AppCompatActivity {
     public void onResume(){
         super.onResume();
 
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-
-                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+        setFlags();
     }
 
     private void updateUI(FirebaseUser CurrentUser) {
@@ -339,16 +331,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-
-                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
-
+        setFlags();
 
         //Insertar datos, al final con el main thread. Ya que si la base es pequeña no imprta.
         Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
@@ -361,4 +344,17 @@ public class MainActivity extends AppCompatActivity {
         nivel = new Nivel(3, "Nivel 3", 9, "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
         BDAprender.getNivelDAO().insert(nivel);
     }
+
+    public void setFlags() {
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    }
+
 }

@@ -1,7 +1,6 @@
-package com.example.clara.aprender;
+package com.example.clara.aprender.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.clara.aprender.Modelos.Nivel;
+import com.example.clara.aprender.R;
 
 import java.util.List;
 
