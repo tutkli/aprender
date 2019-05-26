@@ -144,12 +144,25 @@ public class MainActivity extends AppCompatActivity {
         View mView = layoutInflater.inflate(R.layout.dialog_login, null);
         final EditText mEmail = (EditText) mView.findViewById(R.id.login_email);
         final EditText mPassword = (EditText) mView.findViewById(R.id.login_password);
+        TextView mRecuperar = (TextView) mView.findViewById(R.id.login_recuperar_password);
         Button mCancelar = (Button) mView.findViewById(R.id.login_cancelar);
         Button mAceptar = (Button) mView.findViewById(R.id.login_aceptar);
 
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
         dialog.setCanceledOnTouchOutside(false);
+
+        mRecuperar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = mEmail.getText().toString();
+                if(email.trim().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Introduce un email de recuperación", Toast.LENGTH_SHORT).show();
+                }else {
+                    recuperarPassword(email);
+                }
+            }
+        });
 
         mCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -235,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
                 final String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
 
-                if(!username.trim().isEmpty() && !email.trim().isEmpty() && !password.trim().isEmpty()) {
+                if(!username.trim().isEmpty() && !email.trim().isEmpty() && checkPassword(password.trim())) {
                     mAuth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -266,11 +279,22 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                             });
+                }else {
+                    Toast.makeText(MainActivity.this, "Introduce todos los datos.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
         dialog.show();
+    }
+
+    public boolean checkPassword(String password) {
+        if(password.length() < 6){
+            Toast.makeText(MainActivity.this, "La contraseña debe tener 6 o más caracteres", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
     }
 
     public void insertarUser(String uid,String  usuario, String email) {
@@ -284,6 +308,20 @@ public class MainActivity extends AppCompatActivity {
             DatabaseReference puntuacionesRef = myRef.child(uid + "/puntuaciones/lvl" + cont);
             puntuacionesRef.setValue("0");
         }
+    }
+
+    public void recuperarPassword(String email) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        auth.sendPasswordResetEmail(email)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(MainActivity.this, "Se ha enviado un correo a su email.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
     }
 
     private void init() {

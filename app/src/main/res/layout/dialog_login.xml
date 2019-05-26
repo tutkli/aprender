@@ -17,67 +17,80 @@
         android:textColor="@android:color/white"
         android:padding="5dp"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
-            android:textSize="18sp"/>
+            android:padding="15dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/login_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:inputType="textEmailAddress"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="18sp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Contraseña"
-            android:textSize="18sp"/>
+            <EditText
+                android:id="@+id/login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:inputType="textEmailAddress"/>
 
-        <EditText
-            android:id="@+id/login_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contraseña"
+                android:textSize="18sp"/>
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
 
+            <TextView
+                android:id="@+id/login_recuperar_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Has olvidado tu contraseña?"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_red_dark"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="right"
-        android:layout_marginTop="5dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp">
 
-        <Button
-            android:id="@+id/login_cancelar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CANCELAR"
-            android:textColor="@color/amarillo"
-            android:layout_marginEnd="10dp"
-            android:textStyle="bold"
-            style="@style/Widget.AppCompat.ButtonBar.AlertDialog" />
+                <Button
+                    android:id="@+id/login_cancelar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CANCELAR"
+                    android:textColor="@color/amarillo"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"
+                    style="@style/Widget.AppCompat.ButtonBar.AlertDialog" />
 
-        <Button
-            android:id="@+id/login_aceptar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CONTINUAR"
-            android:textColor="@color/amarillo"
-            android:layout_marginEnd="10dp"
-            android:textStyle="bold"
-            style="@style/Widget.AppCompat.ButtonBar.AlertDialog"/>
+                <Button
+                    android:id="@+id/login_aceptar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONTINUAR"
+                    android:textColor="@color/amarillo"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"
+                    style="@style/Widget.AppCompat.ButtonBar.AlertDialog"/>
 
-    </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
