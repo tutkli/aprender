@@ -45,7 +45,6 @@ public class BoardFragment extends Fragment {
 
     private static int sCreatedItems = 0;
     private BoardView mBoardView;
-    private int mColumns;
 
     public static BoardFragment newInstance() {
         return new BoardFragment();
@@ -152,42 +151,16 @@ public class BoardFragment extends Fragment {
         final ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.column_item, R.id.item_layout, true);
         final View header = View.inflate(getActivity(), R.layout.column_header, null);
         ((TextView) header.findViewById(R.id.text)).setText("Elementos");
-        header.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                long id = sCreatedItems++;
-                Pair item = new Pair<>(id, "Test " + id);
-                mBoardView.addItem(mBoardView.getColumnOfHeader(v), 0, item, true);
-                ((TextView) header.findViewById(R.id.item_count)).setText(String.valueOf(mItemArray.size()));
-            }
-        });
         mBoardView.addColumn(listAdapter, header, header, false);
-        mColumns++;
     }
 
     private void addlistaJuego() {
         final ArrayList<Pair<Long, String>> mItemArray = new ArrayList<>();
-
-        final int column = mColumns;
         final ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.column_item, R.id.item_layout, true);
         final View header = View.inflate(getActivity(), R.layout.column_header, null);
         ((TextView) header.findViewById(R.id.text)).setText("Instrucciones");
         ((TextView) header.findViewById(R.id.item_count)).setText("");
-        header.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                long id = sCreatedItems++;
-                Pair item = new Pair<>(id, "Test " + id);
-                mBoardView.addItem(mBoardView.getColumnOfHeader(v), 0, item, true);
-                mBoardView.moveItem(4, 0, 0, true);
-                //mBoardView.removeItem(column, 0);
-                //mBoardView.moveItem(0, 0, 1, 3, false);
-                //mBoardView.replaceItem(0, 0, item1, true);
-                ((TextView) header.findViewById(R.id.item_count)).setText(String.valueOf(mItemArray.size()));
-            }
-        });
         mBoardView.addColumn(listAdapter, header, header, false);
-        mColumns++;
     }
 
     private static class MyColumnDragItem extends DragItem {

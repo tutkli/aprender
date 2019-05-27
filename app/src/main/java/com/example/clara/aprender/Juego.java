@@ -42,25 +42,6 @@ public class Juego extends AppCompatActivity {
         transaction.replace(R.id.container, fragment, "fragment").commit();
     }
 
-    private void Sonido(){
-
-    }
-
-    private void Ayuda(){
-
-    }
-    private void Atras(){
-
-    }
-    private void Jugar(){
-
-    }
-    private void Parar(){
-
-    }
-    private void Adelante(){
-
-    }
     //Como se hacen los botones?
     /*
     IBSonido.setOnClickListener(new View.OnClickListener() {
@@ -71,4 +52,31 @@ public class Juego extends AppCompatActivity {
         }
     });
     */
+    //Cada uno de estos corresponde a los botones.
+    //Poner un cambio de sonido a muteado en la imagen, y poner cierto sonido cuando pulsamos play, aunque sea como test
+    private void Sonido(){
+
+    }
+    // Poner un Android Tour? para explicar los diferentes items en la lista
+    private void Ayuda(){
+
+    }
+    //Mover hacia atrás en la lista de elementos
+    private void Atras(){
+
+    }
+    //Ir cada 0.5 segundos una instruccion hacia adelante
+    //Tiene que coger los elementos de la columna 2, y lo tiene que comparar con una solucion?
+    private void Jugar(){
+
+    }
+    //Cuando esta ejecutandose, el boton de play se cambia a parar, donde podemos parar el juego, el index de instrucciones se reinicia y se cambia el boton a play
+    private void Parar(){
+
+    }
+    //Mover hacia adelante en la lista de elementos
+    private void Adelante(){
+
+    }
+
 }
