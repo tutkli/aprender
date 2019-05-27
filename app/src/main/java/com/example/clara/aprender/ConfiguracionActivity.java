@@ -1,5 +1,6 @@
 package com.example.clara.aprender;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -25,7 +26,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
-
+        mAuth = FirebaseAuth.getInstance();
         init();
     }
     @Override
@@ -48,53 +49,39 @@ public class ConfiguracionActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
 
         Toast.makeText(ConfiguracionActivity.this,"Se ha cerrado sesión correctamente",Toast.LENGTH_LONG).show();
-
         startActivity(new Intent(ConfiguracionActivity.this, MainActivity.class));
         finish();
     }
 
-    public void borrarUser(View v){
-        final AlertDialog.Builder mBuilder = new AlertDialog.Builder(ConfiguracionActivity.this);
-        View mView = getLayoutInflater().inflate(R.layout.dialog_action, null);
-        TextView mTitulo = (TextView) mView.findViewById(R.id.action_title);
-        TextView mMsg = (TextView) mView.findViewById(R.id.action_msg);
-        Button mCancelar = (Button) mView.findViewById(R.id.btn_action_cancelar);
-        Button mAceptar = (Button) mView.findViewById(R.id.btn_action_aceptar);
-
-        mTitulo.setText("Borrar Usuario");
-        mMsg.setText("Si acepta su cuenta será completamente eliminada y perderá todos los datos");
-
-        mBuilder.setView(mView);
-        final AlertDialog dialog = mBuilder.create();
-
-        mCancelar.setOnClickListener(new View.OnClickListener() {
+    public void borrarUser(View view){
+        AlertDialog.Builder dialog   = new AlertDialog.Builder(ConfiguracionActivity.this);
+        dialog.setTitle("Estas seguro?");
+        dialog.setMessage("Si acepta su cuenta sera completamente borrada y perdera todos los datos");
+        dialog.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                setFlags();
-                dialog.dismiss();
-
-            }
-        });
-
-        mAceptar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            public void onClick(DialogInterface dialog, int which) {
                 FirebaseUser currentUser = mAuth.getCurrentUser();
                 currentUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(ConfiguracionActivity.this,"Su cuenta ha sido eliminada",Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(ConfiguracionActivity.this, MainActivity.class));
+                            Toast.makeText(ConfiguracionActivity.this,"cuenta eliminada",Toast.LENGTH_LONG).show();
+                           startActivity(new Intent(ConfiguracionActivity.this,MainActivity.class));
                         }else{
-                            Toast.makeText(ConfiguracionActivity.this,"Error al eliminar cuenta",Toast.LENGTH_LONG).show();
+                            Toast.makeText(ConfiguracionActivity.this,"error al eliminar el usuario",Toast.LENGTH_LONG).show();
                         }
                     }
                 });
             }
         });
-
-        dialog.show();
+        dialog.setNegativeButton("cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = dialog.create();
+        alertDialog.show();
     }
 
     public void init() {
