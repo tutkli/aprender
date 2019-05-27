@@ -6,12 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 
+import com.example.clara.aprender.Adapters.RecyclerViewAdapter;
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
 import com.example.clara.aprender.Modelos.Nivel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MenuNivelActivity extends AppCompatActivity {
@@ -25,6 +24,13 @@ public class MenuNivelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_nivel);
 
         init();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        setFlags();
     }
 
     public void volver(View v){
@@ -42,21 +48,10 @@ public class MenuNivelActivity extends AppCompatActivity {
         myrv.setLayoutManager(new GridLayoutManager(this,5));
         myrv.setAdapter(myAdapter);
 
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-
-                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
+        setFlags();
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-
+    public void setFlags() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY

@@ -3,22 +3,12 @@ package com.example.clara.aprender;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 
-import com.felipecsl.gifimageview.library.GifImageView;
-
-import org.apache.commons.io.IOUtils;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.ref.WeakReference;
-
-import static android.view.View.VISIBLE;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -45,6 +35,10 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     public void init() {
+        setFlags();
+    }
+
+    public void setFlags() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -88,4 +82,5 @@ public class SplashScreen extends AppCompatActivity {
             activity.finish();
         }
     }
+
 }
