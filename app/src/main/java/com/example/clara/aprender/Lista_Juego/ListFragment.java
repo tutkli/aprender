@@ -111,7 +111,7 @@ public class ListFragment extends Fragment {
             public void onItemSwipeEnded(ListSwipeItem item, ListSwipeItem.SwipeDirection swipedDirection) {
                 mRefreshLayout.setEnabled(true);
 
-                // Swipe to delete on left
+                // Esto sirve para eliminar si se va a la izquierda con un swipe
                 if (swipedDirection == ListSwipeItem.SwipeDirection.LEFT) {
                     Pair<Long, String> adapterItem = (Pair<Long, String>) item.getTag();
                     int pos = mDragListView.getAdapter().getPositionForItem(adapterItem);
@@ -137,24 +137,6 @@ public class ListFragment extends Fragment {
         mDragListView.setCanDragHorizontally(false);
         mDragListView.setCustomDragItem(new MyDragItem(getContext(), R.layout.list_item));
     }
-
-    private void setupGridVerticalRecyclerView() {
-        mDragListView.setLayoutManager(new GridLayoutManager(getContext(), 4));
-        ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.grid_item, R.id.item_layout, true);
-        mDragListView.setAdapter(listAdapter, true);
-        mDragListView.setCanDragHorizontally(true);
-        mDragListView.setCustomDragItem(null);
-
-    }
-
-    private void setupGridHorizontalRecyclerView() {
-        mDragListView.setLayoutManager(new GridLayoutManager(getContext(), 4, LinearLayoutManager.HORIZONTAL, false));
-        ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.grid_item, R.id.item_layout, true);
-        mDragListView.setAdapter(listAdapter, true);
-        mDragListView.setCanDragHorizontally(true);
-        mDragListView.setCustomDragItem(null);
-    }
-
     private static class MyDragItem extends DragItem {
 
         MyDragItem(Context context, int layoutId) {
