@@ -1,14 +1,17 @@
 package com.example.clara.aprender.Adapters;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.clara.aprender.Juego;
 import com.example.clara.aprender.Modelos.Nivel;
 import com.example.clara.aprender.R;
 
@@ -50,32 +53,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             }
         });
 
-        /*
+
         //SE INICIALIZAN LOS ITEMS DE CADA NIVEL Y SE ENVIA LA INFORMACION AL INTENT DE NIVEL
         //CON UN LISTENER EN CADA CARDVIEW DEL MENU DE NIVELES
-        holder.titulo_nivel.setText(mData.get(position).getTitulo());
-        holder.espacios.setImageResource(mData.get(position).getEspacios());
-        holder.resultado.setImageResource(mData.get(position).getResultado());
-        holder.solucion.setImageResource(mData.get(position).getSolucion());
-        holder.id.setImageResource(mData.get(position).getIdNivel());
+        //holder.titulo_nivel.setText(mData.get(position).getTitulo());
+        //holder.espacios.setImageResource(mData.get(position).getEspacios());
+        //holder.resultado.setImageResource(mData.get(position).getResultado());
+        //holder.solucion.setImageResource(mData.get(position).getSolucion());
+        //holder.id.setImageResource(mData.get(position).getIdNivel());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(mContext,NivelActivity.class);
-
-                // PASAR DATOS
-                intent.putExtra("titulo",mData.get(position).getTitulo());
-                intent.putExtra("espacios",mData.get(position).getEspacios());
-                intent.putExtra("resultado",mData.get(position).getResultado());
-                intent.putExtra("solucion",mData.get(position).getSolucion());
+                Intent intent = new Intent(mContext,Juego.class);
                 intent.putExtra("id",mData.get(position).getIdNivel());
-
                 mContext.startActivity(intent);
-
             }
         });
-        */
+
     }
 
     @Override

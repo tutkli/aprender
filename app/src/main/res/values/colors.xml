@@ -5,4 +5,6 @@
     <color name="colorAccent">#334172</color>
     <color name="dialogColor">#24213C</color>
     <color name="amarillo">#FFb300</color>
+    <color name="list_item_background">#AACCCCCC</color>
+    <color name="app_color">#8EAE3C</color>
 </resources>
