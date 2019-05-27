@@ -26,7 +26,7 @@ public class Juego extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
 
-        int id_nivel = Integer.parseInt(getIntent().getStringExtra("id"));
+        int id_nivel = getIntent().getExtras().getInt("id");
         Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
         Nivel nivel_actual = BDAprender.getNivelDAO().getNivelPorID(id_nivel);
         //Hay que añadir limitadores de elementos etc.
