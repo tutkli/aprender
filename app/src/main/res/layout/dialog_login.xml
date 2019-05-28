@@ -86,6 +86,7 @@
                     android:layout_marginEnd="10dp"
                     android:textStyle="bold"
                     style="@style/Widget.AppCompat.ButtonBar.AlertDialog"/>
+
                 <com.google.android.gms.common.SignInButton
                     android:id="@+id/sign_in_button"
                     android:layout_width="match_parent"
