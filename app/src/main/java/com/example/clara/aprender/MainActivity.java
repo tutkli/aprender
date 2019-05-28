@@ -1,13 +1,16 @@
 package com.example.clara.aprender;
 
+import android.app.Dialog;
 import android.arch.persistence.room.Room;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +23,12 @@ import android.widget.Toast;
 
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
 import com.example.clara.aprender.Modelos.Nivel;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.internal.SignInButtonImpl;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -38,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
     GridLayout mainGrid;
     CardView cardView1, cardView2, cardView4;
     ImageView btn_config;
-
+    GoogleSignInOptions gso;
+    GoogleSignInClient mGoogleSignInClient;
+    static final int RC_SIGN_IN = 200;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -287,7 +298,63 @@ public class MainActivity extends AppCompatActivity {
 
         dialog.show();
     }
+    private void googleLogin() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
 
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+
+            // Signed in successfully, show authenticated UI.
+            updateUIG(account);
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.w("GoogleLogin", "signInResult:failed code=" + e.getStatusCode());
+            updateUI(null);
+        }
+    }
+    private void updateUIG(GoogleSignInAccount account) {
+        if(account == null) {
+            final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+            LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            View mView = layoutInflater.inflate(R.layout.dialog_login, null);
+            SignInButton signInButton = (SignInButton) mView.findViewById(R.id.sign_in_button);
+
+            mBuilder.setView(mView);
+            final AlertDialog dialog = mBuilder.create();
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.setOnKeyListener(new Dialog.OnKeyListener() {
+
+                @Override
+                public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+
+                    if(keyCode == KeyEvent.KEYCODE_BACK){
+                        Toast.makeText(MainActivity.this, "Inicia sesión para continuar", Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                    return false;
+
+
+                }
+            });
+
+            signInButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    googleLogin();
+                    dialog.dismiss();
+
+                }
+            });
+            dialog.show();
+        }else {
+            Toast.makeText(MainActivity.this, "Usuario registrado.", Toast.LENGTH_SHORT).show();
+        }
+    }
     public boolean checkPassword(String password) {
         if(password.length() < 6){
             Toast.makeText(MainActivity.this, "La contraseña debe tener 6 o más caracteres", Toast.LENGTH_SHORT).show();
