@@ -1,10 +1,14 @@
 package com.example.clara.aprender;
 
 import androidx.room.Room;
+
+import android.app.Dialog;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import android.util.Log;
