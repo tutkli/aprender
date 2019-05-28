@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +21,16 @@ import android.widget.Toast;
 
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
 import com.example.clara.aprender.Modelos.Nivel;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.internal.SignInButtonImpl;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
     GridLayout mainGrid;
     CardView cardView1, cardView2, cardView4;
     ImageView btn_config;
+    GoogleSignInOptions gso;
+    GoogleSignInClient mGoogleSignInClient;
+    TextView currentUser;
+
+    static final int RC_SIGN_IN = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
+
+        updateUI(firebaseUser, googleUser);
     }
 
     @Override
@@ -95,45 +111,60 @@ public class MainActivity extends AppCompatActivity {
         setFlags();
     }
 
-    private void updateUI(FirebaseUser CurrentUser) {
+    private void updateUI(FirebaseUser firebaseUser, GoogleSignInAccount googleUser) {
         /*-------- Check if user is already logged in or not--------*/
-        if (CurrentUser != null) {
+        if (firebaseUser != null) {
             /*------------ If user's email is verified then access login -----------*/
-            if(!CurrentUser.isEmailVerified()){
+            if(!firebaseUser.isEmailVerified()) {
                 Toast.makeText(MainActivity.this, "Verifica tu email antes de continuar.", Toast.LENGTH_SHORT).show();
                 login();
             }
         }else{
-            final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
-            LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            if(googleUser != null){
+                Toast.makeText(MainActivity.this, "INICIO DE SESION DE GOOGLE", Toast.LENGTH_SHORT).show();
+            }else{
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            View mView = layoutInflater.inflate(R.layout.dialog_bienvenido, null);
-            Button mLogin = (Button) mView.findViewById(R.id.btn_login);
-            Button mSignUp = (Button) mView.findViewById(R.id.btn_signUp);
+                View mView = layoutInflater.inflate(R.layout.dialog_bienvenido, null);
+                Button mLogin = (Button) mView.findViewById(R.id.btn_login);
+                Button mSignUp = (Button) mView.findViewById(R.id.btn_signUp);
 
-            mBuilder.setView(mView);
-            final AlertDialog dialog = mBuilder.create();
-            dialog.setCanceledOnTouchOutside(false);
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.setOnKeyListener(new Dialog.OnKeyListener() {
 
-            mLogin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    login();
-                    dialog.dismiss();
+                    @Override
+                    public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                        if(keyCode == KeyEvent.KEYCODE_BACK){
+                            Toast.makeText(MainActivity.this, "Inicia sesión para continuar", Toast.LENGTH_SHORT).show();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
 
-                }
-            });
+                mLogin.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        login();
+                        dialog.dismiss();
 
-            mSignUp.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    signUp();
-                    dialog.dismiss();
+                    }
+                });
 
-                }
-            });
+                mSignUp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        signUp();
+                        dialog.dismiss();
 
-            dialog.show();
+                    }
+                });
+
+                dialog.show();
+            }
         }
     }
 
@@ -147,10 +178,22 @@ public class MainActivity extends AppCompatActivity {
         TextView mRecuperar = (TextView) mView.findViewById(R.id.login_recuperar_password);
         Button mCancelar = (Button) mView.findViewById(R.id.login_cancelar);
         Button mAceptar = (Button) mView.findViewById(R.id.login_aceptar);
+        SignInButton mGoogle = (SignInButton) mView.findViewById(R.id.sign_in_button);
 
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
         dialog.setCanceledOnTouchOutside(false);
+        dialog.setOnKeyListener(new Dialog.OnKeyListener() {
+
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                if(keyCode == KeyEvent.KEYCODE_BACK){
+                    Toast.makeText(MainActivity.this, "Inicia sesión para continuar", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         mRecuperar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,9 +234,9 @@ public class MainActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    Log.d("Login:", "signInWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);
+                                    Log.d("FirebaseLogin:", "signInWithEmail:success");
+                                    FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                                    updateUI(firebaseUser, null);
                                     Toast.makeText(MainActivity.this, "Se ha iniciado sesión correctamente.", Toast.LENGTH_SHORT).show();
 
                                     dialog.dismiss();
@@ -201,13 +244,21 @@ public class MainActivity extends AppCompatActivity {
                                     // If sign in fails, display a message to the user.
                                     Log.w("Login:", "signInWithEmail:failure", task.getException());
                                     Toast.makeText(MainActivity.this, "Fallo en la autentificación.", Toast.LENGTH_SHORT).show();
-                                    updateUI(null);
+                                    updateUI(null, null);
 
                                     dialog.dismiss();
                                 }
                             }
                         });
                 }
+            }
+        });
+
+        mGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                googleLogin();
+                dialog.dismiss();
             }
         });
 
@@ -272,7 +323,7 @@ public class MainActivity extends AppCompatActivity {
                                         // If sign in fails, display a message to the user.
                                         Log.w("SignUp:", "createUserWithEmail:failure", task.getException());
                                         Toast.makeText(MainActivity.this, "Fallo en la autentificación.", Toast.LENGTH_SHORT).show();
-                                        updateUI(null);
+                                        updateUI(null, null);
 
                                         dialog.dismiss();
                                     }
@@ -286,6 +337,43 @@ public class MainActivity extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+    private void googleLogin() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
+    }
+
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount googleUser = completedTask.getResult(ApiException.class);
+
+            //AQUI COGE EL EMAIL, Y EL USER Y LLAMA AL METODO DE GUARDAR, Y FALLA
+            String personName = googleUser.getDisplayName();
+            String personEmail = googleUser.getEmail();
+
+            insertarUser(personEmail, personName, personEmail);
+
+            // Signed in successfully, show authenticated UI.
+            updateUI(null, googleUser);
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.w("GoogleLogin", "signInResult:failed code=" + e.getStatusCode());
+            updateUI(null, null);
+        }
     }
 
     public boolean checkPassword(String password) {
@@ -368,6 +456,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
+        if(googleUser != null){
+            currentUser = (TextView)findViewById(R.id.current_user);
+            String personName = googleUser.getDisplayName();
+            currentUser.setText(personName);
+        }
 
         setFlags();
 
