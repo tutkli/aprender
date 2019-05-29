@@ -31,15 +31,16 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.common.internal.SignInButtonImpl;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient mGoogleSignInClient;
     TextView currentUser;
-
+    GoogleSignInAccount googleUser;
     static final int RC_SIGN_IN = 200;
 
     @Override
@@ -172,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     public void login(){
         final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
         LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -232,28 +234,28 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Introduce email y contraseña", Toast.LENGTH_SHORT).show();
                 }else {
 
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d("FirebaseLogin:", "signInWithEmail:success");
-                                    FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                                    updateUI(firebaseUser, null);
-                                    Toast.makeText(MainActivity.this, "Se ha iniciado sesión correctamente.", Toast.LENGTH_SHORT).show();
+                    mAuth.signInWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d("FirebaseLogin:", "signInWithEmail:success");
+                                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                                        updateUI(firebaseUser, null);
+                                        Toast.makeText(MainActivity.this, "Se ha iniciado sesión correctamente.", Toast.LENGTH_SHORT).show();
 
-                                    dialog.dismiss();
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w("Login:", "signInWithEmail:failure", task.getException());
-                                    Toast.makeText(MainActivity.this, "Fallo en la autentificación.", Toast.LENGTH_SHORT).show();
-                                    updateUI(null, null);
+                                        dialog.dismiss();
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w("Login:", "signInWithEmail:failure", task.getException());
+                                        Toast.makeText(MainActivity.this, "Fallo en la autentificación.", Toast.LENGTH_SHORT).show();
+                                        updateUI(null, null);
 
-                                    dialog.dismiss();
+                                        dialog.dismiss();
+                                    }
                                 }
-                            }
-                        });
+                            });
                 }
             }
         });
@@ -361,23 +363,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount googleUser = completedTask.getResult(ApiException.class);
+        if (completedTask!=null){
+            try {
+                googleUser = completedTask.getResult(ApiException.class);
 
-            //AQUI COGE EL EMAIL, Y EL USER Y LLAMA AL METODO DE GUARDAR, Y FALLA
-            String personName = googleUser.getDisplayName();
-            String personEmail = googleUser.getEmail();
+                //AQUI COGE EL EMAIL, Y EL USER Y LLAMA AL METODO DE GUARDAR, Y FALLA
+                String personName = googleUser.getDisplayName();
+                String personEmail = googleUser.getEmail();
+                String personId = googleUser.getId();
 
-            insertarUser(personEmail, personName, personEmail);
+                insertarUser(personId, personName, personEmail);
 
-            // Signed in successfully, show authenticated UI.
-            updateUI(null, googleUser);
-        } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w("GoogleLogin", "signInResult:failed code=" + e.getStatusCode());
-            updateUI(null, null);
+                // Signed in successfully, show authenticated UI.
+                updateUI(null, googleUser);
+            } catch (ApiException e) {
+                // The ApiException status code indicates the detailed failure reason.
+                // Please refer to the GoogleSignInStatusCodes class reference for more information.
+                Log.w("GoogleLogin", "signInResult:failed code=" + e.getStatusCode());
+                updateUI(null, null);
+            }
+        }else{
+            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+            updateUI(firebaseUser, null);
         }
+
+        currentUsername();
     }
 
     public boolean checkPassword(String password) {
@@ -414,6 +424,35 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public void currentUsername() {
+        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
+        if(googleUser != null){
+            currentUser = (TextView)findViewById(R.id.current_user);
+            String personName = googleUser.getDisplayName();
+            currentUser.setText(personName);
+        }
+
+        if(mAuth.getCurrentUser()!=null){
+            FirebaseUser currentusuario = mAuth.getCurrentUser();
+            currentUser = (TextView)findViewById(R.id.current_user);
+            myRef.child( currentusuario.getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.exists()){
+                        String personName = dataSnapshot.child("nombre").getValue().toString();
+                        currentUser.setText(personName);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
     }
 
     private void init() {
@@ -466,13 +505,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
-        if(googleUser != null){
-            currentUser = (TextView)findViewById(R.id.current_user);
-            String personName = googleUser.getDisplayName();
-            currentUser.setText(personName);
-        }
 
         setFlags();
 

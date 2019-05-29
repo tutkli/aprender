@@ -1,11 +1,12 @@
 package com.example.clara.aprender;
 
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -13,20 +14,29 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ConfiguracionActivity extends AppCompatActivity {
-
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private FirebaseAuth mAuth;
+    DatabaseReference myRef = database.getReference("usuarios");
+    GoogleSignInOptions gso;
+    GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
-        mAuth = FirebaseAuth.getInstance();
+
         init();
     }
     @Override
@@ -46,45 +56,103 @@ public class ConfiguracionActivity extends AppCompatActivity {
     }
 
     public void cerrarSesion(View v){
-        FirebaseAuth.getInstance().signOut();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        Toast.makeText(ConfiguracionActivity.this,"Se ha cerrado sesión correctamente",Toast.LENGTH_LONG).show();
+        if(currentUser!=null) {
+            FirebaseAuth.getInstance().signOut();
+        }else{
+            mGoogleSignInClient.signOut();
+        }
+
+        Toast.makeText(ConfiguracionActivity.this, "Se ha cerrado sesión correctamente", Toast.LENGTH_LONG).show();
         startActivity(new Intent(ConfiguracionActivity.this, MainActivity.class));
         finish();
+
     }
 
     public void borrarUser(View view){
-        AlertDialog.Builder dialog   = new AlertDialog.Builder(ConfiguracionActivity.this);
-        dialog.setTitle("Estas seguro?");
-        dialog.setMessage("Si acepta su cuenta sera completamente borrada y perdera todos los datos");
-        dialog.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+        final AlertDialog.Builder mBuilder = new AlertDialog.Builder(ConfiguracionActivity.this);
+        LayoutInflater layoutInflater = (LayoutInflater) ConfiguracionActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View mView = layoutInflater.inflate(R.layout.dialog_action, null);
+        TextView mTitulo = (TextView) mView.findViewById(R.id.action_title);
+        TextView mMsg = (TextView) mView.findViewById(R.id.action_msg);
+        Button mCancelar = (Button) mView.findViewById(R.id.btn_action_cancelar);
+        Button mAceptar = (Button) mView.findViewById(R.id.btn_action_aceptar);
+
+        mTitulo.setText("Borrar Usuario");
+        mMsg.setText("Si acepta su cuenta sera completamente borrada y perdera todos los datos");
+
+
+        mBuilder.setView(mView);
+        final AlertDialog dialog = mBuilder.create();
+
+        mCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
+                setFlags();
+                dialog.dismiss();
+            }
+        });
+
+        mAceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 FirebaseUser currentUser = mAuth.getCurrentUser();
-                currentUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(ConfiguracionActivity.this,"cuenta eliminada",Toast.LENGTH_LONG).show();
-                           startActivity(new Intent(ConfiguracionActivity.this,MainActivity.class));
-                        }else{
-                            Toast.makeText(ConfiguracionActivity.this,"error al eliminar el usuario",Toast.LENGTH_LONG).show();
+                if (currentUser!=null){
+                    eliminarUser();
+                    currentUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(ConfiguracionActivity.this,"Se ha eliminado el usuario correctamente",Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(ConfiguracionActivity.this,MainActivity.class));
+                            }else{
+                                Toast.makeText(ConfiguracionActivity.this,"Error al eliminar usuario",Toast.LENGTH_LONG).show();
+                            }
                         }
-                    }
-                });
-            }
+                    });
+                }else {
+                    eliminarUser();
+                    mGoogleSignInClient.revokeAccess() .addOnCompleteListener (new OnCompleteListener <Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(ConfiguracionActivity.this,"Se ha eliminado el usuario correctamente",Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(ConfiguracionActivity.this,MainActivity.class));
+                            }else{
+                                Toast.makeText(ConfiguracionActivity.this,"Error al eliminar usuario",Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+                }}
         });
-        dialog.setNegativeButton("cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int which) {
-                dialogInterface.dismiss();
-            }
-        });
-        AlertDialog alertDialog = dialog.create();
-        alertDialog.show();
+
+        dialog.show();
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public void eliminarUser(){
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser!=null) {
+            DatabaseReference uidRef = myRef.child(currentUser.getUid());
+            uidRef.removeValue();
+        }else{
+            GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
+            DatabaseReference uidRef = myRef.child(googleUser.getId());
+            uidRef.removeValue();
+        }
     }
 
     public void init() {
+        mAuth = FirebaseAuth.getInstance();
+
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
         setFlags();
 
         Switch aSwitch = (Switch) findViewById(R.id.switch1);
