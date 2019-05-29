@@ -29,10 +29,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.common.internal.SignInButtonImpl;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -368,10 +366,11 @@ public class MainActivity extends AppCompatActivity {
                 googleUser = completedTask.getResult(ApiException.class);
 
                 //AQUI COGE EL EMAIL, Y EL USER Y LLAMA AL METODO DE GUARDAR, Y FALLA
-                //  String personName = googleUser.getDisplayName();
-                //    String personEmail = googleUser.getEmail();
+                String personName = googleUser.getDisplayName();
+                String personEmail = googleUser.getEmail();
+                String personId = googleUser.getId();
 
-                //      insertarUser(personEmail, personName, personEmail);
+                insertarUser(personId, personName, personEmail);
 
                 // Signed in successfully, show authenticated UI.
                 updateUI(null, googleUser);
@@ -385,8 +384,9 @@ public class MainActivity extends AppCompatActivity {
             FirebaseUser firebaseUser = mAuth.getCurrentUser();
             updateUI(firebaseUser, null);
         }
-    }
 
+        currentUsername();
+    }
 
     public boolean checkPassword(String password) {
         if(password.length() < 6){
@@ -422,6 +422,35 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public void currentUsername() {
+        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
+        if(googleUser != null){
+            currentUser = (TextView)findViewById(R.id.current_user);
+            String personName = googleUser.getDisplayName();
+            currentUser.setText(personName);
+        }
+
+        if(mAuth.getCurrentUser()!=null){
+            FirebaseUser currentusuario = mAuth.getCurrentUser();
+            currentUser = (TextView)findViewById(R.id.current_user);
+            myRef.child( currentusuario.getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.exists()){
+                        String personName = dataSnapshot.child("nombre").getValue().toString();
+                        currentUser.setText(personName);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
     }
 
     private void init() {
@@ -474,32 +503,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
-        if(googleUser != null){
-            currentUser = (TextView)findViewById(R.id.current_user);
-            String personName = googleUser.getDisplayName();
-            currentUser.setText(personName);
-        }
-        if(mAuth.getCurrentUser()!=null){
-            FirebaseUser currentusuario = mAuth.getCurrentUser();
-            currentUser = (TextView)findViewById(R.id.current_user);
-            myRef.child( currentusuario.getUid()).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.exists()){
-                        String personName = dataSnapshot.child("nombre").getValue().toString();
-                        currentUser.setText(personName);
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-
-        }
 
         setFlags();
 
