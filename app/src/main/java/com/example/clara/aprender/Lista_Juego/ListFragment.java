@@ -67,12 +67,14 @@ public class ListFragment extends Fragment {
         mDragListView = (DragListView) view.findViewById(R.id.drag_list_view);
         mDragListView.getRecyclerView().setVerticalScrollBarEnabled(true);
         mDragListView.setDragListListener(new DragListView.DragListListenerAdapter() {
+            //No va a ser utilizado
             @Override
             public void onItemDragStarted(int position) {
                 mRefreshLayout.setEnabled(false);
                 //Toast.makeText(mDragListView.getContext(), "Start - position: " + position, Toast.LENGTH_SHORT).show();
             }
 
+            //No va a ser utilizado
             @Override
             public void onItemDragEnded(int fromPosition, int toPosition) {
                 mRefreshLayout.setEnabled(true);
@@ -125,6 +127,8 @@ public class ListFragment extends Fragment {
     }
 
     @Override
+
+    //Eliminar?
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("List and Grid");

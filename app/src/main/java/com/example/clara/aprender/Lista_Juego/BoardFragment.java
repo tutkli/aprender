@@ -64,7 +64,9 @@ public class BoardFragment extends Fragment {
         mBoardView.setSnapToColumnWhenDragging(true);
         mBoardView.setSnapDragItemToTouch(true);
         mBoardView.setCustomDragItem(new MyDragItem(getActivity(), R.layout.column_item));
-        mBoardView.setCustomColumnDragItem(new MyColumnDragItem(getActivity(), R.layout.column_drag_layout));
+        // Poner comentado para que no se pueda mover las columnas
+
+        //mBoardView.setCustomColumnDragItem(new MyColumnDragItem(getActivity(), R.layout.column_drag_layout));
         mBoardView.setSnapToColumnInLandscape(false);
         mBoardView.setColumnSnapPosition(BoardView.ColumnSnapPosition.CENTER);
         mBoardView.setBoardListener(new BoardView.BoardListener() {
@@ -132,31 +134,33 @@ public class BoardFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        //Pueden haber 2 problemas, num 1, la app necesita identificadores únicos, num2 el custon listview
         addelementos();
         addlistaJuego();
     }
 
     private void addelementos() {
-        final ArrayList<Pair<Long, String>> mItemArray = new ArrayList<>();
+        final ArrayList<Pair<Long, String>> elementosArray = new ArrayList<>();
         long id = sCreatedItems++;
-        mItemArray.add(new Pair<>(id, "Input"));
-        mItemArray.add(new Pair<>(id, "Output"));
-        mItemArray.add(new Pair<>(id, "Bump+"));
-        mItemArray.add(new Pair<>(id, "Bump-"));
-        mItemArray.add(new Pair<>(id, "Copyto"));
-        mItemArray.add(new Pair<>(id, "Copyfrom"));
-        mItemArray.add(new Pair<>(id, "Sum"));
-        mItemArray.add(new Pair<>(id, "Sub"));
-        mItemArray.add(new Pair<>(id, "Jump"));
-        final ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.column_item, R.id.item_layout, true);
+        elementosArray.add(new Pair<>(id, "Input"));
+        elementosArray.add(new Pair<>(id, "Output"));
+        elementosArray.add(new Pair<>(id, "Bump+"));
+        elementosArray.add(new Pair<>(id, "Bump-"));
+        elementosArray.add(new Pair<>(id, "Copyto"));
+        elementosArray.add(new Pair<>(id, "Copyfrom"));
+        elementosArray.add(new Pair<>(id, "Sum"));
+        elementosArray.add(new Pair<>(id, "Sub"));
+        elementosArray.add(new Pair<>(id, "Jump"));
+        final ItemAdapter listAdapter = new ItemAdapter(elementosArray, R.layout.column_item, R.id.item_layout, true);
         final View header = View.inflate(getActivity(), R.layout.column_header, null);
         ((TextView) header.findViewById(R.id.text)).setText("Elementos");
         mBoardView.addColumn(listAdapter, header, header, false);
     }
 
+    //
     private void addlistaJuego() {
-        final ArrayList<Pair<Long, String>> mItemArray = new ArrayList<>();
-        final ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.column_item, R.id.item_layout, true);
+        final ArrayList<Pair<Long, String>> InstruccionesArray = new ArrayList<>();
+        final ItemAdapter listAdapter = new ItemAdapter(InstruccionesArray, R.layout.column_item, R.id.item_layout, true);
         final View header = View.inflate(getActivity(), R.layout.column_header, null);
         ((TextView) header.findViewById(R.id.text)).setText("Instrucciones");
         ((TextView) header.findViewById(R.id.item_count)).setText("");
