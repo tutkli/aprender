@@ -140,17 +140,27 @@ public class BoardFragment extends Fragment {
     }
 
     private void addelementos() {
+        // Poner un contador que cada vez que añade un elemento de la base de datos, como id le ponga un número único.
         final ArrayList<Pair<Long, String>> elementosArray = new ArrayList<>();
-        long id = sCreatedItems++;
+        long id = 1;
         elementosArray.add(new Pair<>(id, "Input"));
+        id++;
         elementosArray.add(new Pair<>(id, "Output"));
+        id++;
         elementosArray.add(new Pair<>(id, "Bump+"));
+        id++;
         elementosArray.add(new Pair<>(id, "Bump-"));
+        id++;
         elementosArray.add(new Pair<>(id, "Copyto"));
+        id++;
         elementosArray.add(new Pair<>(id, "Copyfrom"));
+        id++;
         elementosArray.add(new Pair<>(id, "Sum"));
+        id++;
         elementosArray.add(new Pair<>(id, "Sub"));
+        id++;
         elementosArray.add(new Pair<>(id, "Jump"));
+        id++;
         final ItemAdapter listAdapter = new ItemAdapter(elementosArray, R.layout.column_item, R.id.item_layout, true);
         final View header = View.inflate(getActivity(), R.layout.column_header, null);
         ((TextView) header.findViewById(R.id.text)).setText("Elementos");
