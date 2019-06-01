@@ -138,16 +138,26 @@ public class BoardFragment extends Fragment {
 
     private void addelementos() {
         final ArrayList<Pair<Long, String>> mItemArray = new ArrayList<>();
-        long id = sCreatedItems++;
+        long id=0;
+        id++;
         mItemArray.add(new Pair<>(id, "Input"));
+        id++;
         mItemArray.add(new Pair<>(id, "Output"));
+        id++;
         mItemArray.add(new Pair<>(id, "Bump+"));
+        id++;
         mItemArray.add(new Pair<>(id, "Bump-"));
+        id++;
         mItemArray.add(new Pair<>(id, "Copyto"));
+        id++;
         mItemArray.add(new Pair<>(id, "Copyfrom"));
+        id++;
         mItemArray.add(new Pair<>(id, "Sum"));
+        id++;
         mItemArray.add(new Pair<>(id, "Sub"));
+        id++;
         mItemArray.add(new Pair<>(id, "Jump"));
+        id++;
         final ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.column_item, R.id.item_layout, true);
         final View header = View.inflate(getActivity(), R.layout.column_header, null);
         ((TextView) header.findViewById(R.id.text)).setText("Elementos");

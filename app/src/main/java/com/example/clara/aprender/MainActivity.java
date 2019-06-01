@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-        GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
+        //FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        //GoogleSignInAccount googleUser = GoogleSignIn.getLastSignedInAccount(this);
 
-        updateUI(firebaseUser, googleUser);
+        //updateUI(firebaseUser, googleUser);
     }
 
     @Override
