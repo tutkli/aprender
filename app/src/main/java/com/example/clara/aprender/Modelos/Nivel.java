@@ -1,8 +1,8 @@
 package com.example.clara.aprender.Modelos;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.annotation.NonNull;
 
 @Entity(tableName = "nivel")
 public class Nivel {
@@ -59,11 +59,9 @@ public class Nivel {
         this.resuelto = resuelto;
     }
 
-
     public String getInput() {
         return input;
     }
-
     public void setInput(String input) {
         this.input = input;
     }
@@ -71,7 +69,6 @@ public class Nivel {
     public String getOutput() {
         return output;
     }
-
     public void setOutput(String output) {
         this.output = output;
     }

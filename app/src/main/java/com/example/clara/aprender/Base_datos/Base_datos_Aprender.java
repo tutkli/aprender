@@ -1,8 +1,8 @@
 package com.example.clara.aprender.Base_datos;
 
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.room.Database;
+import androidx.room.RoomDatabase;
 import com.example.clara.aprender.DAO.NivelDAO;
 import com.example.clara.aprender.DAO.SolucionDAO;
 import com.example.clara.aprender.DAO.UsuarioDAO;
