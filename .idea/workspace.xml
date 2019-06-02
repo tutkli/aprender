@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4791f189-af4f-422d-97ef-7e4ef3a59a38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -78,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3148#3293#0" expanded="true" />
@@ -581,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559466964427</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Boton de música en el juego funciona, falta hacer que cambie el botón">
+      <created>1559469548728</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559469548728</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -610,9 +616,9 @@
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Android Profiler" order="3" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.5090618" weight="0.39095744" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="4" sideWeight="0.5090618" visible="true" weight="0.3900325" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Build" order="6" sideWeight="0.49946696" visible="true" weight="0.22968581" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.49946696" weight="0.3575298" />
       <window_info anchor="bottom" id="Run" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Find" order="9" />
@@ -698,7 +704,8 @@
     <MESSAGE value="Para que la lista funcione, necesitas poner ids únicos" />
     <MESSAGE value="Eliminada la tabla de los ussuarios." />
     <MESSAGE value="Cambiado el Nivel, Para añadir la lista de instrucciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiado el Nivel, Para añadir la lista de instrucciones" />
+    <MESSAGE value="Boton de música en el juego funciona, falta hacer que cambie el botón" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boton de música en el juego funciona, falta hacer que cambie el botón" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Aprender/app/src/main/gen/com/example/clara/aprender/Manifest.java" />
@@ -955,8 +962,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3148#3293#0" expanded="true" />

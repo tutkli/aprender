@@ -64,26 +64,18 @@ public class Juego extends AppCompatActivity {
     //Cada uno de estos corresponde a los botones.
     //Poner un cambio de sonido a muteado en la imagen, y poner cierto sonido cuando pulsamos play, aunque sea como test
     private void Sonido(){
-        Toast toast;
-
         if(EstadoMusica) {
             //Para silenciar la canción
             EstadoMusica = false;
             musica.pause();
-
-
-
-
-            toast=Toast.makeText(getApplicationContext(),"La cancion se ha parado",Toast.LENGTH_SHORT);
+            IBSonido.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_lock_silent_mode));
         }else{
             int length = musica.getCurrentPosition();
             musica.seekTo(length);
             musica.start();
             EstadoMusica= true;
-            toast=Toast.makeText(getApplicationContext(),"La cancion ha vuelto",Toast.LENGTH_SHORT);
-
+            IBSonido.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_lock_silent_mode_off));
         }
-        toast.show();
         // Mirar como hacer esto -> IBSonido.setImageResource(R.drawable.ic_lock_silent_mode_off);
     }
     // Poner un Android Tour? para explicar los diferentes items en la lista
