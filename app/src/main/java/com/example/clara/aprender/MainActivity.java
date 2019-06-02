@@ -511,9 +511,8 @@ public class MainActivity extends AppCompatActivity {
         //Insertar datos, al final con el main thread. Ya que si la base es pequeña no imprta.
         Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
 
-        //Insertamos un nivel para comprobar
-        Nivel nivel = new Nivel();
-        nivel = new Nivel(1, "1. Entrar y Salir", "in-ou", "Haz que todos los elementos de la cola de entrada terminen en la cola de salida.", "1-2-3-4", "1-2-3-4", false);
+        //Insertamos unos niveles para comprobar
+        Nivel nivel = new Nivel(1, "1. Entrar y Salir", "in-ou", "Haz que todos los elementos de la cola de entrada terminen en la cola de salida.", "1-2-3-4", "1-2-3-4", false);
         BDAprender.getNivelDAO().insert(nivel);
         nivel = new Nivel(2, "Nivel 2", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
         BDAprender.getNivelDAO().insert(nivel);

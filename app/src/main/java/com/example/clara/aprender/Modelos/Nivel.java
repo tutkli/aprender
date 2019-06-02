@@ -42,10 +42,10 @@ public class Nivel {
         this.titulo = titulo;
     }
 
-    public String getIntrucciones() {
+    public String getInstrucciones() {
         return instrucciones;
     }
-    public void setIntrucciones(String instrucciones) {
+    public void setInstrucciones(String instrucciones) {
         this.instrucciones = instrucciones;
     }
 
