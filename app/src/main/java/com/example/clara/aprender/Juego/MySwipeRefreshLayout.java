@@ -1,4 +1,4 @@
-package com.example.clara.aprender.Lista_Juego;
+package com.example.clara.aprender.Juego;
 
 import android.content.Context;
 import android.util.AttributeSet;

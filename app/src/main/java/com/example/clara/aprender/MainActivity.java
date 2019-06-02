@@ -7,7 +7,6 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
@@ -22,7 +21,6 @@ import android.widget.ImageView;
 import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
 import com.example.clara.aprender.Modelos.Nivel;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -512,19 +510,23 @@ public class MainActivity extends AppCompatActivity {
         Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
 
         //Insertamos unos niveles para comprobar
-        Nivel nivel = new Nivel(1, "1. Entrar y Salir", "in-ou", "Haz que todos los elementos de la cola de entrada terminen en la cola de salida.", "1-2-3-4", "1-2-3-4", false);
+        Nivel nivel = new Nivel(1, "1. Entrar y Salir", "input-input-input-output-output-output", "Haz que todos los elementos de la cola de entrada terminen en la cola de salida.",
+                "6-5-4", "6-5-4");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(2, "Nivel 2", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        nivel = new Nivel(2, "2. Repitiendo Tareas", "input-output-jump A-A", "Envía todos los elementos a la salida",
+                "A-B-D-S-G-U-E-S-D-C-G-D-W-A-A", "A-B-D-S-G-U-E-S-D-C-G-D-W-A-A");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(3, "Nivel 3", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        nivel = new Nivel(3, "3. Copiando elementos", "input-input-input-copyto 1- copyfrom 1-output-output-output-output-output", "Coge los elementos de la lista input y escribe ERROR, mediante el uso de copyto.",
+                "E-R-O", "E-R-R-O-R");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(4, "Nivel 4", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        nivel = new Nivel(4, "4. Mezclador", "input-input-output-output-copyto 1-copyfrom 1-jump A-A", "Coge los dos primeros objetos del input y envíalos al revés, repite hasta que la cola esté vacía. ",
+                "3-5-N-A-4-6", "5-3-A-N-6-4");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(5, "Nivel 5", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        nivel = new Nivel(5, "Nivel 5", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(6, "Nivel 6", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        nivel = new Nivel(6, "Nivel 6", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(7, "Nivel 7", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        nivel = new Nivel(7, "Nivel 7", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4");
         BDAprender.getNivelDAO().insert(nivel);
 
     }

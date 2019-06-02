@@ -13,19 +13,17 @@ public class Nivel {
     private String problema;
     private String input;
     private String output;
-    private boolean resuelto;
 
     public Nivel(){
     }
 
-    public Nivel(int idNivel, String titulo, String instrucciones, String problema, String input, String output, boolean resuelto) {
+    public Nivel(int idNivel, String titulo, String instrucciones, String problema, String input, String output) {
         this.idNivel = idNivel;
         this.titulo = titulo; // Título de cada problema
         this.instrucciones = instrucciones; // La cadena de elementos
         this.problema = problema; // Enunciado del problema
         this.input = input; // Cadena de elementos Input
         this.output = output; // Cadena de elementos Output
-        this.resuelto = resuelto; // Si está hecho o no.
     }
 
     public int getIdNivel() {
@@ -51,13 +49,6 @@ public class Nivel {
 
     public String getProblema() { return problema;}
     public void setProblema(String problema) { this.problema = problema;}
-
-    public boolean getResuelto() {
-        return resuelto;
-    }
-    public void setResuelto(boolean resuelto) {
-        this.resuelto = resuelto;
-    }
 
     public String getInput() {
         return input;

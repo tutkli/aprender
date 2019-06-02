@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.clara.aprender.Juego;
+import com.example.clara.aprender.Juego.Juego;
 import com.example.clara.aprender.Modelos.Nivel;
 import com.example.clara.aprender.R;
 

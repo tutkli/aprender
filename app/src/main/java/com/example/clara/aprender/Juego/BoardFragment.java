@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.clara.aprender.Lista_Juego;
+package com.example.clara.aprender.Juego;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -24,7 +24,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -35,6 +34,7 @@ import androidx.core.util.Pair;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.clara.aprender.Modelos.Nivel;
 import com.example.clara.aprender.R;
 import com.woxthebox.draglistview.BoardView;
 import com.woxthebox.draglistview.DragItem;
@@ -85,6 +85,7 @@ public class BoardFragment extends Fragment {
                 //Toast.makeText(mBoardView.getContext(), "Position changed - column: " + newColumn + " row: " + newRow, Toast.LENGTH_SHORT).show();
             }
 
+            // Ejemplo para controlar los elementos.
             @Override
             public void onItemChangedColumn(int oldColumn, int newColumn) {
                 TextView itemCount1 = mBoardView.getHeaderView(oldColumn).findViewById(R.id.item_count);
@@ -135,29 +136,15 @@ public class BoardFragment extends Fragment {
         addelementos();
         addlistaJuego();
     }
-
     private void addelementos() {
+        String Elementos = Juego.nivel_actual.getInstrucciones();
+        String[] arrElementos = Elementos.split("-");
         final ArrayList<Pair<Long, String>> mItemArray = new ArrayList<>();
         long id=0;
-        id++;
-        mItemArray.add(new Pair<>(id, "Input"));
-        id++;
-        mItemArray.add(new Pair<>(id, "Output"));
-        id++;
-        mItemArray.add(new Pair<>(id, "Bump+"));
-        id++;
-        mItemArray.add(new Pair<>(id, "Bump-"));
-        id++;
-        mItemArray.add(new Pair<>(id, "Copyto"));
-        id++;
-        mItemArray.add(new Pair<>(id, "Copyfrom"));
-        id++;
-        mItemArray.add(new Pair<>(id, "Sum"));
-        id++;
-        mItemArray.add(new Pair<>(id, "Sub"));
-        id++;
-        mItemArray.add(new Pair<>(id, "Jump"));
-        id++;
+        for(String elemento : arrElementos){
+            id++;
+            mItemArray.add(new Pair<>(id, elemento));
+        }
         final ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.column_item, R.id.item_layout, true);
         final View header = View.inflate(getActivity(), R.layout.column_header, null);
         ((TextView) header.findViewById(R.id.text)).setText("Elementos");

@@ -1,12 +1,10 @@
-package com.example.clara.aprender;
+package com.example.clara.aprender.Juego;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
-import com.example.clara.aprender.Lista_Juego.BoardFragment;
 import com.example.clara.aprender.Modelos.Nivel;
+import com.example.clara.aprender.R;
 
 public class Juego extends AppCompatActivity {
 
@@ -26,8 +24,9 @@ public class Juego extends AppCompatActivity {
     TextView Input, Output;
     boolean EstadoMusica;
     MediaPlayer musica;
-    Nivel nivel_actual;
+    static Nivel nivel_actual;
     boolean juego_start;
+    Toast Pruebas;
 
 
     @Override
@@ -89,6 +88,7 @@ public class Juego extends AppCompatActivity {
     private void Jugar(){
         // Recorrer la lista
         // Poner un switch, que según el elemento de la lista, haga distintas cosas.
+        IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
 
     }
     //Cuando esta ejecutandose, el boton de play se cambia a parar, donde podemos parar el juego, el index de instrucciones se reinicia y se cambia el boton a play
@@ -97,6 +97,8 @@ public class Juego extends AppCompatActivity {
         // Cambiar todos los elementos a color normal
         // Reiniciar el contador
         // Reiniciar las animaciones
+        IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
+
     }
     //Mover hacia atrás en la lista de elementos
     private void Atras(){
@@ -133,13 +135,12 @@ public class Juego extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(juego_start){
-                    juego_start=true;
-                    Jugar();
-                }else{
                     juego_start=false;
                     Parar();
+                }else{
+                    juego_start=true;
+                    Jugar();
                 }
-
             }
         });
         IBAdelante = findViewById(R.id.IBAdelante);
@@ -167,6 +168,10 @@ public class Juego extends AppCompatActivity {
         Input.setText(Input_ini);
         Output_ini = nivel_actual.getOutput();
         Output.setText(Output_ini);
+    }
+    @Override
+    public void onBackPressed() {
+        musica.pause();
     }
 
 

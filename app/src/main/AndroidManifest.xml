@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".Login" />
-        <activity android:name=".Juego"
+        <activity android:name=".Juego.Juego"
             android:screenOrientation="landscape"/>
         <activity
             android:name=".PuntuacionActivity"

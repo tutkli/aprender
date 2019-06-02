@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.clara.aprender.Lista_Juego;
+package com.example.clara.aprender.Juego;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.util.Pair;
