@@ -77,7 +77,7 @@ public class ListFragment extends Fragment {
                 }
             }
         });
-
+        //ni idea
         mItemArray = new ArrayList<>();
         for (int i = 0; i < 40; i++) {
             mItemArray.add(new Pair<>((long) i, "Item " + i));
@@ -126,6 +126,7 @@ public class ListFragment extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("List and Grid");
     }
 
+    // Creo que esto es para las imagenes
     private void setupListRecyclerView() {
         mDragListView.setLayoutManager(new LinearLayoutManager(getContext()));
         ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.list_item, R.id.image, false);

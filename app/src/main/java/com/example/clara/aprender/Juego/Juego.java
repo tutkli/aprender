@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
 import com.example.clara.aprender.Modelos.Nivel;
 import com.example.clara.aprender.R;
+import com.woxthebox.draglistview.BoardView;
 
 public class Juego extends AppCompatActivity {
 
@@ -89,6 +90,7 @@ public class Juego extends AppCompatActivity {
         // Recorrer la lista
         // Poner un switch, que según el elemento de la lista, haga distintas cosas.
         IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
+
 
     }
     //Cuando esta ejecutandose, el boton de play se cambia a parar, donde podemos parar el juego, el index de instrucciones se reinicia y se cambia el boton a play
@@ -172,10 +174,34 @@ public class Juego extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         musica.pause();
+        finish();
     }
 
-
-
+    public void DetectorElementos(String Instruccion){
+        if(Instruccion.equals("input") || Instruccion.equals("output") ||Instruccion.equals("bumpmas") ||Instruccion.equals("bumpmenos"))
+        switch (Instruccion){
+            case "input": Input();
+            case "output": Output();
+            case "bumpmas": BumpMas();
+            case "bumpmenos": BumpMenos();
+        }else{
+            if(Instruccion.contains(" ")){
+                String[] InstruccionesArray = Instruccion.split(" ");
+                switch (InstruccionesArray[0]) {
+                    case "copyto":
+                        copyTo(InstruccionesArray[1]);
+                    case "copyfrom":
+                        copyFrom(InstruccionesArray[1]);
+                    case "sum":
+                        Sum(InstruccionesArray[1]);
+                    case "sub":
+                        Sub(InstruccionesArray[1]);
+                    case "jump":
+                        Jump(InstruccionesArray[1]);
+                }
+            }
+            }
+    }
 
     // Métodos del juego.
     // El objeto es un cuadro.
@@ -197,22 +223,22 @@ public class Juego extends AppCompatActivity {
 
     }
     // mueve el objeto a uno de los holders, y lo rellena con el cuadro y el valor (cambia el fondo del cuadrado.), y vuelve a la posición inicial
-    public void copyTo(int holder){
+    public void copyTo(String holder){
 
     }
     // mueve el objeto al holder y cambia el valor del objeto al contenido del holder, y vuelve a la posición inicio
-    public void copyFrom(int holder){
+    public void copyFrom(String holder){
 
     }
     // Coge el objeto de la zona de inicio, lo lleva a uno de las posiciones de los holders, y le añade realiza la suma
-    public void Sum(int holder){
+    public void Sum(String holder){
 
     }
     // El objeto de la zona de inicio, va al holder marcado, hace la resta, el resultado se queda en el objeto y vuelve al inicio
-    public void Sub(int holder){
+    public void Sub(String holder){
 
     }
-    public void Jump(String Tipo){
+    public void Jump(String Lugar){
         // Diferentes Jump
         //Jump
         //Jump if zero

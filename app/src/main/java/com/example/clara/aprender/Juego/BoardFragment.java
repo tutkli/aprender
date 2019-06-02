@@ -27,6 +27,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -40,11 +41,13 @@ import com.woxthebox.draglistview.BoardView;
 import com.woxthebox.draglistview.DragItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BoardFragment extends Fragment {
 
     private static int sCreatedItems = 0;
     private BoardView mBoardView;
+    public String CadenaInstrucciones;
 
     public static BoardFragment newInstance() {
         return new BoardFragment();
@@ -90,8 +93,19 @@ public class BoardFragment extends Fragment {
             public void onItemChangedColumn(int oldColumn, int newColumn) {
                 TextView itemCount1 = mBoardView.getHeaderView(oldColumn).findViewById(R.id.item_count);
                 itemCount1.setText(String.valueOf(mBoardView.getAdapter(oldColumn).getItemCount()));
+                // Con esto conseguimos saber cuales son los elementos de la lista
+
+                List Instrucciones=  mBoardView.getAdapter(1).getItemList();
+                Object[] ArrayInstrucciones = Instrucciones.toArray();
+                CadenaInstrucciones="";
+                for(int conInst = 0; conInst < ArrayInstrucciones.length; conInst++){
+                    String Instruccion =ArrayInstrucciones[conInst].toString().substring(7, ArrayInstrucciones[conInst].toString().length()-1);
+                    CadenaInstrucciones = CadenaInstrucciones+"-"+Instruccion;
+                }
+                Toast.makeText(getContext(), CadenaInstrucciones, Toast.LENGTH_SHORT).show();
                 TextView itemCount2 = mBoardView.getHeaderView(newColumn).findViewById(R.id.item_count);
                 itemCount2.setText(String.valueOf(mBoardView.getAdapter(newColumn).getItemCount()));
+
             }
 
             @Override
@@ -135,6 +149,7 @@ public class BoardFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         addelementos();
         addlistaJuego();
+
     }
     private void addelementos() {
         String Elementos = Juego.nivel_actual.getInstrucciones();

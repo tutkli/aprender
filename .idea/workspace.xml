@@ -11,16 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4791f189-af4f-422d-97ef-7e4ef3a59a38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/BoardFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/BoardFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/ItemAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ItemAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/ListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/MySwipeRefreshLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/MySwipeRefreshLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Nivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Nivel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_juego.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_juego.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/BoardFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/BoardFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ItemAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ItemAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ListFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/column_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/column_item.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,94 +57,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="174" column="5" lean-forward="true" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="182" column="34" selection-start-line="182" selection-start-column="34" selection-end-line="182" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3876#4021#0" expanded="true" />
-                <element signature="e#4020#4021#0" expanded="true" />
-                <element signature="e#4108#4253#0" expanded="true" />
-                <element signature="e#4252#4253#0" expanded="true" />
-                <element signature="e#4330#4491#0" expanded="true" />
-                <element signature="e#4490#4491#0" expanded="true" />
-                <element signature="e#4572#4717#0" expanded="true" />
-                <element signature="e#4716#4717#0" expanded="true" />
-                <element signature="e#4804#4949#0" expanded="true" />
-                <element signature="e#4948#4949#0" expanded="true" />
-                <element signature="e#5981#5982#0" expanded="true" />
-                <element signature="e#6011#6012#0" expanded="true" />
+                <element signature="e#4500#4828#0" expanded="true" />
+                <element signature="e#4827#4828#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/BoardFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="129" column="20" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+            <state relative-caret-position="510">
+              <caret line="99" column="91" selection-start-line="99" selection-start-column="91" selection-end-line="99" selection-end-column="91" />
               <folding>
-                <element signature="e#9656#9657#0" expanded="true" />
-                <element signature="e#9704#9705#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#onFocusedColumnChanged#0;class#2585:4989" />
+                <element signature="method#onColumnDragStarted#0;class#2585:4989" />
+                <element signature="method#onColumnDragChangedPosition#0;class#2585:4989" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="327" column="71" selection-start-line="327" selection-start-column="71" selection-end-line="327" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_juego.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/column_item.xml">
           <provider selected="true" editor-type-id="android-designer2" />
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+            <state relative-caret-position="612">
+              <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MenuNivelActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/column_drag_layout.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_action.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_signup.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_layout.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+            <state relative-caret-position="499">
+              <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/PuntuacionActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Solucion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="419">
+              <caret line="129" column="42" selection-start-line="129" selection-start-column="42" selection-end-line="129" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -171,7 +162,13 @@
       <find>new</find>
       <find>width</find>
       <find>setColumnWidth</find>
+      <find>star</find>
       <find>mBoardView</find>
+      <find>onback</find>
+      <find>draglist</find>
+      <find>mItemArray</find>
+      <find>image</find>
+      <find>getItemCount</find>
     </findStrings>
     <replaceStrings>
       <replace>MenuNivel</replace>
@@ -217,14 +214,17 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/BoardFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/BoardFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ItemAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/column_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/BoardFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-64" />
-    <option name="y" value="-8" />
+    <option name="x" value="129" />
+    <option name="y" value="-16" />
     <option name="width" value="1766" />
     <option name="height" value="885" />
   </component>
@@ -635,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559476751819</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Añadido unos cambios, para que coja la lista de la base de datos">
+      <created>1559486575034</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1559486575034</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -652,7 +659,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50226927" side_tool="true" weight="0.17217484" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4977307" visible="true" weight="0.1609808" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977307" visible="true" weight="0.1609808" />
       <window_info id="Structure" order="2" sideWeight="0.50226927" side_tool="true" weight="0.17217484" />
       <window_info id="Build Variants" order="3" sideWeight="0.50226927" side_tool="true" weight="0.17217484" />
       <window_info id="Image Layers" order="4" />
@@ -755,26 +762,10 @@
     <MESSAGE value="Boton de música en el juego funciona, falta hacer que cambie el botón" />
     <MESSAGE value="Boton de Musica cambia de icono caundo se le da para ofrecer feedback" />
     <MESSAGE value="Añadido, comentarios y métodos a jugar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido, comentarios y métodos a jugar" />
+    <MESSAGE value="Añadido unos cambios, para que coja la lista de la base de datos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadido unos cambios, para que coja la lista de la base de datos" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Aprender/app/src/main/gen/com/example/clara/aprender/Manifest.java" />
-    <entry file="file://$PROJECT_DIR$/Aprender/app/src/main/gen/com/example/clara/aprender/R.java" />
-    <entry file="file://$PROJECT_DIR$/Aprender/app/src/main/gen/com/example/clara/aprender/BuildConfig.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/DAO/SolucionDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/DAO/UsuarioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/local.properties" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/SQLiteHelper.java" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
@@ -872,14 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -996,35 +979,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/BoardFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/board_layout.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ItemAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="129" column="20" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
-          <folding>
-            <element signature="e#9656#9657#0" expanded="true" />
-            <element signature="e#9704#9705#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/column_header.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_bienvenido.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_action.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_signup.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_layout.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/column_drag_layout.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/ListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="129" column="42" selection-start-line="129" selection-start-column="42" selection-end-line="129" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="174" column="5" lean-forward="true" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+        <state relative-caret-position="238">
+          <caret line="182" column="34" selection-start-line="182" selection-start-column="34" selection-end-line="182" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3876#4021#0" expanded="true" />
-            <element signature="e#4020#4021#0" expanded="true" />
-            <element signature="e#4108#4253#0" expanded="true" />
-            <element signature="e#4252#4253#0" expanded="true" />
-            <element signature="e#4330#4491#0" expanded="true" />
-            <element signature="e#4490#4491#0" expanded="true" />
-            <element signature="e#4572#4717#0" expanded="true" />
-            <element signature="e#4716#4717#0" expanded="true" />
-            <element signature="e#4804#4949#0" expanded="true" />
-            <element signature="e#4948#4949#0" expanded="true" />
-            <element signature="e#5981#5982#0" expanded="true" />
-            <element signature="e#6011#6012#0" expanded="true" />
+            <element signature="e#4500#4828#0" expanded="true" />
+            <element signature="e#4827#4828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/column_item.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/BoardFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="99" column="91" selection-start-line="99" selection-start-column="91" selection-end-line="99" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onFocusedColumnChanged#0;class#2585:4989" />
+            <element signature="method#onColumnDragStarted#0;class#2585:4989" />
+            <element signature="method#onColumnDragChangedPosition#0;class#2585:4989" />
           </folding>
         </state>
       </provider>

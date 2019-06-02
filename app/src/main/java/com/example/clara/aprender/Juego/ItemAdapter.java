@@ -19,6 +19,7 @@ package com.example.clara.aprender.Juego;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -56,7 +57,7 @@ class ItemAdapter extends DragItemAdapter<Pair<Long, String>, ItemAdapter.ViewHo
         holder.mText.setText(text);
         holder.itemView.setTag(mItemList.get(position));
     }
-
+    // Siempre utiliza IDs únicas.
     @Override
     public long getUniqueItemId(int position) {
         return mItemList.get(position).first;
@@ -64,10 +65,13 @@ class ItemAdapter extends DragItemAdapter<Pair<Long, String>, ItemAdapter.ViewHo
 
     class ViewHolder extends DragItemAdapter.ViewHolder {
         TextView mText;
+        ImageView IV;
 
         ViewHolder(final View itemView) {
             super(itemView, mGrabHandleId, mDragOnLongPress);
             mText = (TextView) itemView.findViewById(R.id.text);
+            IV = itemView.findViewById(R.id.image);
+
         }
     }
 }
