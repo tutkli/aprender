@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4791f189-af4f-422d-97ef-7e4ef3a59a38" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -53,10 +54,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/BoardFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7058">
-              <caret line="512" selection-start-line="512" selection-end-line="512" />
+            <state relative-caret-position="283">
+              <caret line="470" column="11" lean-forward="true" selection-start-line="470" selection-start-column="11" selection-end-line="470" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,12 +87,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
+            <state relative-caret-position="323">
+              <caret line="139" column="28" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3148#3293#0" expanded="true" />
-                <element signature="e#3292#3293#0" expanded="true" />
+                <element signature="e#3876#4021#0" expanded="true" />
+                <element signature="e#4020#4021#0" expanded="true" />
+                <element signature="e#4108#4253#0" expanded="true" />
+                <element signature="e#4252#4253#0" expanded="true" />
+                <element signature="e#4330#4491#0" expanded="true" />
+                <element signature="e#4490#4491#0" expanded="true" />
+                <element signature="e#4572#4717#0" expanded="true" />
+                <element signature="e#4716#4717#0" expanded="true" />
+                <element signature="e#4804#4949#0" expanded="true" />
+                <element signature="e#4948#4949#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MenuNivelActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="433">
               <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
             </state>
           </provider>
@@ -109,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-263">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="417">
+              <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="70" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -147,6 +165,7 @@
     <findStrings>
       <find>levelMenu</find>
       <find>toast</find>
+      <find>new</find>
     </findStrings>
     <replaceStrings>
       <replace>MenuNivel</replace>
@@ -587,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559469548728</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Boton de Musica cambia de icono caundo se le da para ofrecer feedback">
+      <created>1559470102452</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559470102452</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -604,7 +630,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50226927" side_tool="true" weight="0.17217484" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4977307" visible="true" weight="0.1609808" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4977307" visible="true" weight="0.1609808" />
       <window_info id="Structure" order="2" sideWeight="0.50226927" side_tool="true" weight="0.17217484" />
       <window_info id="Build Variants" order="3" sideWeight="0.50226927" side_tool="true" weight="0.17217484" />
       <window_info id="Image Layers" order="4" />
@@ -616,7 +642,7 @@
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Android Profiler" order="3" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="4" sideWeight="0.5090618" visible="true" weight="0.3900325" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.5090618" weight="0.3900325" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Build" order="6" sideWeight="0.49946696" weight="0.3575298" />
       <window_info anchor="bottom" id="Run" order="7" weight="0.32936078" />
@@ -705,7 +731,8 @@
     <MESSAGE value="Eliminada la tabla de los ussuarios." />
     <MESSAGE value="Cambiado el Nivel, Para añadir la lista de instrucciones" />
     <MESSAGE value="Boton de música en el juego funciona, falta hacer que cambie el botón" />
-    <option name="LAST_COMMIT_MESSAGE" value="Boton de música en el juego funciona, falta hacer que cambie el botón" />
+    <MESSAGE value="Boton de Musica cambia de icono caundo se le da para ofrecer feedback" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boton de Musica cambia de icono caundo se le da para ofrecer feedback" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Aprender/app/src/main/gen/com/example/clara/aprender/Manifest.java" />
@@ -834,13 +861,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Aprender - copia/aprender/app/src/main/java/com/example/clara/aprender/Juego.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/BoardFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Base_datos/Base_datos_Aprender_adaptador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -921,13 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/PuntuacionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -935,20 +948,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7058">
-          <caret line="512" selection-start-line="512" selection-end-line="512" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MenuNivelActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+        <state relative-caret-position="417">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="70" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -960,14 +963,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
+        <state relative-caret-position="283">
+          <caret line="470" column="11" lean-forward="true" selection-start-line="470" selection-start-column="11" selection-end-line="470" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3148#3293#0" expanded="true" />
-            <element signature="e#3292#3293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/BoardFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MenuNivelActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="139" column="28" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3876#4021#0" expanded="true" />
+            <element signature="e#4020#4021#0" expanded="true" />
+            <element signature="e#4108#4253#0" expanded="true" />
+            <element signature="e#4252#4253#0" expanded="true" />
+            <element signature="e#4330#4491#0" expanded="true" />
+            <element signature="e#4490#4491#0" expanded="true" />
+            <element signature="e#4572#4717#0" expanded="true" />
+            <element signature="e#4716#4717#0" expanded="true" />
+            <element signature="e#4804#4949#0" expanded="true" />
+            <element signature="e#4948#4949#0" expanded="true" />
           </folding>
         </state>
       </provider>
