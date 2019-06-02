@@ -512,12 +512,22 @@ public class MainActivity extends AppCompatActivity {
         Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
 
         //Insertamos un nivel para comprobar
-        Nivel nivel = new Nivel(1, "Nivel 1", 5, "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        Nivel nivel = new Nivel();
+        nivel = new Nivel(1, "1. Entrar y Salir", "in-ou", "Haz que todos los elementos de la cola de entrada terminen en la cola de salida.", "1-2-3-4", "1-2-3-4", false);
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(2, "Nivel 2", 7, "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        nivel = new Nivel(2, "Nivel 2", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(3, "Nivel 3", 9, "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        nivel = new Nivel(3, "Nivel 3", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
         BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(4, "Nivel 4", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(5, "Nivel 5", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(6, "Nivel 6", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(7, "Nivel 7", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4", false);
+        BDAprender.getNivelDAO().insert(nivel);
+
     }
 
     public void setFlags() {
