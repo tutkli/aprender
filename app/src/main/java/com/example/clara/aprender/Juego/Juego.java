@@ -92,6 +92,7 @@ public class Juego extends AppCompatActivity {
         IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
 
 
+
     }
     //Cuando esta ejecutandose, el boton de play se cambia a parar, donde podemos parar el juego, el index de instrucciones se reinicia y se cambia el boton a play
     private void Parar(){
@@ -251,6 +252,11 @@ public class Juego extends AppCompatActivity {
     }
     // Muestra la calificación, en un cardview y la guarda en la base de datos.
     public void Victoria(){
+
+    }
+
+    public void getValores(String Cadena){
+        Toast.makeText(this, Cadena, Toast.LENGTH_SHORT).show();
 
     }
 

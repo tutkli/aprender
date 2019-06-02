@@ -47,7 +47,7 @@ public class BoardFragment extends Fragment {
 
     private static int sCreatedItems = 0;
     private BoardView mBoardView;
-    public String CadenaInstrucciones;
+    public static String CadenaInstrucciones;
 
     public static BoardFragment newInstance() {
         return new BoardFragment();
@@ -86,6 +86,8 @@ public class BoardFragment extends Fragment {
             @Override
             public void onItemChangedPosition(int oldColumn, int oldRow, int newColumn, int newRow) {
                 //Toast.makeText(mBoardView.getContext(), "Position changed - column: " + newColumn + " row: " + newRow, Toast.LENGTH_SHORT).show();
+                //Para cuando cambie de posicion
+                GetValuesColumnaInstrucciones();
             }
 
             // Ejemplo para controlar los elementos.
@@ -93,19 +95,10 @@ public class BoardFragment extends Fragment {
             public void onItemChangedColumn(int oldColumn, int newColumn) {
                 TextView itemCount1 = mBoardView.getHeaderView(oldColumn).findViewById(R.id.item_count);
                 itemCount1.setText(String.valueOf(mBoardView.getAdapter(oldColumn).getItemCount()));
-                // Con esto conseguimos saber cuales son los elementos de la lista
-
-                List Instrucciones=  mBoardView.getAdapter(1).getItemList();
-                Object[] ArrayInstrucciones = Instrucciones.toArray();
-                CadenaInstrucciones="";
-                for(int conInst = 0; conInst < ArrayInstrucciones.length; conInst++){
-                    String Instruccion =ArrayInstrucciones[conInst].toString().substring(7, ArrayInstrucciones[conInst].toString().length()-1);
-                    CadenaInstrucciones = CadenaInstrucciones+"-"+Instruccion;
-                }
-                Toast.makeText(getContext(), CadenaInstrucciones, Toast.LENGTH_SHORT).show();
                 TextView itemCount2 = mBoardView.getHeaderView(newColumn).findViewById(R.id.item_count);
                 itemCount2.setText(String.valueOf(mBoardView.getAdapter(newColumn).getItemCount()));
-
+                //Aqui invocamos caundo queremos saber la lista de los elementos. Para cuando cambien de columna
+                GetValuesColumnaInstrucciones();
             }
 
             @Override
@@ -143,13 +136,23 @@ public class BoardFragment extends Fragment {
         });
         return view;
     }
-//Numero de Columnas
+    //Para pasar los valores.
+    public void GetValuesColumnaInstrucciones(){
+        List Instrucciones=  mBoardView.getAdapter(1).getItemList();
+        Object[] ArrayInstrucciones = Instrucciones.toArray();
+        CadenaInstrucciones="";
+        for(int conInst = 0; conInst < ArrayInstrucciones.length; conInst++){
+            String Instruccion =ArrayInstrucciones[conInst].toString().substring(7, ArrayInstrucciones[conInst].toString().length()-1);
+            CadenaInstrucciones = CadenaInstrucciones+"-"+Instruccion;
+        }
+        ((Juego)getActivity()).getValores(CadenaInstrucciones);
+    }
+    //Numero de Columnas
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         addelementos();
         addlistaJuego();
-
     }
     private void addelementos() {
         String Elementos = Juego.nivel_actual.getInstrucciones();
