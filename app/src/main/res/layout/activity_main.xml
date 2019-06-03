@@ -7,7 +7,8 @@
     android:orientation="horizontal"
     android:background="@drawable/bg"
     android:weightSum="10"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:baselineAligned="false">
 
     <RelativeLayout
         android:layout_width="0dp"
@@ -19,23 +20,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/btn_config"
                 android:contentDescription="Imagen Configuracion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_settings_black_24dp"
+                app:srcCompat="@drawable/ic_person_black_24dp"
                 android:layout_margin="20dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"/>
+                android:background="@null"/>
+
 
             <TextView
                 android:id="@+id/current_user"
-                android:layout_margin="30dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="30dp"
                 android:textSize="18sp"
                 android:textColor="#FFF"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"/>
@@ -44,7 +44,8 @@
 
         <TextView
             android:id="@+id/titulo"
-            android:text="APRENDER( )"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
             android:textSize="34sp"
             android:textColor="#FFF"
             android:layout_centerInParent="true"
@@ -65,7 +66,8 @@
         android:layout_height="match_parent"
         android:paddingTop="70dp"
         android:paddingBottom="70dp"
-        android:paddingRight="70dp"
+        android:paddingEnd="70dp"
+        android:paddingStart="0dp"
         >
 
         <androidx.cardview.widget.CardView
