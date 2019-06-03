@@ -9,10 +9,12 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".LoadGame"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Login" />
         <activity
-            android:name=".Login" />
-        <activity android:name=".Juego.Juego"
-            android:screenOrientation="landscape"/>
+            android:name=".Juego.Juego"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".PuntuacionActivity"
             android:screenOrientation="landscape" />
