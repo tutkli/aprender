@@ -52,12 +52,11 @@
             android:clickable="true"
             android:focusable="true">
 
-            <TextView
-                android:textColor="#FFF"
-                android:textSize="20sp"
-                android:text="Configuración 1"
+            <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:onClick="iniciarSesion"
+                android:text="INICIAR SESIÓN" />
         </LinearLayout>
 
         <!--COLUMNA 2 -->
@@ -75,10 +74,13 @@
             android:clickable="true"
             android:focusable="true">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BOTÓN"/>
+                android:text="Iniciar sesión con tu email o con Google"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"/>
+
         </LinearLayout>
 
         <!-- FILA 2 -->
@@ -97,12 +99,11 @@
             android:clickable="true"
             android:focusable="true">
 
-            <TextView
-                android:textColor="#FFF"
-                android:textSize="20sp"
-                android:text="Configuración 2"
+            <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:onClick="cerrarSesion"
+                android:text="Cerrar Sesión" />
         </LinearLayout>
 
         <!--COLUMNA 2 -->
@@ -120,10 +121,12 @@
             android:clickable="true"
             android:focusable="true">
 
-            <Switch
-                android:id="@+id/switch1"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Cerrar sesión actual"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"/>
 
         </LinearLayout>
 
@@ -165,11 +168,13 @@
             android:clickable="true"
             android:focusable="true">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="cerrarSesion"
-                android:text="Cerrar Sesión" />
+                android:text="Borrar tu usuario de nuestra base de datos"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"/>
+
         </LinearLayout>
 
     </GridLayout>
