@@ -36,6 +36,7 @@ public class Juego extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
+        setFlags();
         EstadoMusica=true;
         juego_start=false;
         init();
@@ -260,6 +261,18 @@ public class Juego extends AppCompatActivity {
     public void getValores(String Cadena){
         Toast.makeText(this, Cadena, Toast.LENGTH_SHORT).show();
 
+    }
+
+    public void setFlags() {
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 
 }
