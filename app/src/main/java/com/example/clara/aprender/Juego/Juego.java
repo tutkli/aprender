@@ -20,15 +20,15 @@ import com.woxthebox.draglistview.BoardView;
 public class Juego extends AppCompatActivity {
 
     ImageButton IBSonido, IBAyuda, IBAtras, IBPlay, IBAdelante;
-    String Input_ini;
-    String Output_ini;
     TextView Input, Output;
     boolean EstadoMusica;
     MediaPlayer musica;
     static Nivel nivel_actual;
     boolean juego_start;
-    Toast Pruebas;
 
+    //Valores para el juego
+    String Objeto, Output_ini, Input_ini, Instrucciones, Problema;
+    int ContadorInstruccion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,18 +54,13 @@ public class Juego extends AppCompatActivity {
         transaction.replace(R.id.container, fragment, "fragment").commit();
     }
 
-    //Como se hacen los botones?
-    /*
-    IBSonido.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent i = new Intent(MainActivity.this, CreditosActivity.class);
-            startActivity(i);
-        }
-    });
-    */
-    //Cada uno de estos corresponde a los botones.
-    //Poner un cambio de sonido a muteado en la imagen, y poner cierto sonido cuando pulsamos play, aunque sea como test
+    public void IniciarElementos(){
+        Input_ini = nivel_actual.getInput();
+        Output_ini = nivel_actual.getOutput();
+        Problema = nivel_actual.getProblema();
+        ContadorInstruccion=0;
+    }
+
     private void Sonido(){
         if(EstadoMusica) {
             //Para silenciar la canción
@@ -92,6 +87,11 @@ public class Juego extends AppCompatActivity {
         // Poner un switch, que según el elemento de la lista, haga distintas cosas.
         IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
 
+        //De esta manera conseguimos tener las instrucciones para ser traducidas.
+        String[] InstruccionesArray = Instrucciones.split("-");
+        for(String Instruccion : InstruccionesArray){
+            DetectorElementos(Instruccion);
+        }
         //Poner para que la cadena se recorte por uno, porque en el inicio hay un guión que sobra.
 
 
@@ -129,6 +129,7 @@ public class Juego extends AppCompatActivity {
                 Sonido();
             }
         });
+
         IBAyuda = findViewById(R.id.IBAyuda);
         IBAyuda.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,10 +137,12 @@ public class Juego extends AppCompatActivity {
                 Ayuda();
             }
         });
+
         IBPlay = findViewById(R.id.IBPlay);
         IBPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Objeto="";
                 if(juego_start){
                     juego_start=false;
                     Parar();
@@ -149,6 +152,7 @@ public class Juego extends AppCompatActivity {
                 }
             }
         });
+
         IBAdelante = findViewById(R.id.IBAdelante);
         IBAdelante.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +160,7 @@ public class Juego extends AppCompatActivity {
                 Adelante();
             }
         });
+
         IBAtras = findViewById(R.id.IBAtras);
         IBAtras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,55 +169,18 @@ public class Juego extends AppCompatActivity {
             }
         });
 
-
         // Con el id que le pasamos desde la parte de niveles, hacemos una busqueda que cargaremos en la pantalla.
         int id_nivel = getIntent().getExtras().getInt("id");
         Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
         nivel_actual = BDAprender.getNivelDAO().getNivelPorID(id_nivel);
+
         // De momento se pone en un textView,
-        Input_ini = nivel_actual.getInput();
+        IniciarElementos();
         Input.setText(Input_ini);
-        Output_ini = nivel_actual.getOutput();
         Output.setText(Output_ini);
     }
 
-    //Para los botones de abajo, para que pare la cancion
-    @Override
-    public void onBackPressed() {
-        musica.pause();
-        finish();
-    }
 
-    @Override
-    public void onPause()
-    {
-        super.onPause();
-        if(musica.isPlaying())
-            Sonido();
-        else
-            return;
-    }
-
-    @Override
-    public void onStop()
-    {
-        super.onStop();
-        if(musica.isPlaying())
-            Sonido();
-        else
-            return;
-    }
-
-    @Override
-    public void onResume()
-    {
-        super.onResume();
-        if(musica.isPlaying())
-            return;
-        else
-            Sonido();
-
-    }
 
 
     public void DetectorElementos(String Instruccion){
@@ -287,16 +255,21 @@ public class Juego extends AppCompatActivity {
     public void ErrorEnEjecución(){
 
     }
+
     // Muestra la calificación, en un cardview y la guarda en la base de datos.
     public void Victoria(){
 
     }
 
     public void getValores(String Cadena){
-        Toast.makeText(this, Cadena, Toast.LENGTH_SHORT).show();
-
+        //Por si la cadena esta vacía y solo tiene un -
+        if(Cadena.length()>1){
+            Instrucciones=Cadena.substring(1);
+        }
     }
 
+
+    //Para eliminar la barra de abajo y hacerlo en pantalla completa
     public void setFlags() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
@@ -307,6 +280,44 @@ public class Juego extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
+    }
+
+    //Para los botones de abajo, para que pare la cancion
+    @Override
+    public void onBackPressed() {
+        musica.pause();
+        finish();
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        if(musica.isPlaying())
+            Sonido();
+        else
+            return;
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        if(musica.isPlaying())
+            Sonido();
+        else
+            return;
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        if(musica.isPlaying())
+            return;
+        else
+            Sonido();
+
     }
 
 }
