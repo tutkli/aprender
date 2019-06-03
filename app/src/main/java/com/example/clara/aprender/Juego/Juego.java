@@ -91,6 +91,8 @@ public class Juego extends AppCompatActivity {
         // Poner un switch, que según el elemento de la lista, haga distintas cosas.
         IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
 
+        //Poner para que la cadena se recorte por uno, porque en el inicio hay un guión que sobra.
+
 
 
     }
