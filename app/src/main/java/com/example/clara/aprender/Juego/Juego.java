@@ -175,11 +175,45 @@ public class Juego extends AppCompatActivity {
         Output_ini = nivel_actual.getOutput();
         Output.setText(Output_ini);
     }
+
+    //Para los botones de abajo, para que pare la cancion
     @Override
     public void onBackPressed() {
         musica.pause();
         finish();
     }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        if(musica.isPlaying())
+            Sonido();
+        else
+            return;
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        if(musica.isPlaying())
+            Sonido();
+        else
+            return;
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        if(musica.isPlaying())
+            return;
+        else
+            Sonido();
+
+    }
+
 
     public void DetectorElementos(String Instruccion){
         if(Instruccion.equals("input") || Instruccion.equals("output") ||Instruccion.equals("bumpmas") ||Instruccion.equals("bumpmenos"))

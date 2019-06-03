@@ -107,6 +107,11 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
+
+
+
+
+
     @Override
     public void onResume(){
         super.onResume();
@@ -231,5 +236,6 @@ public class MainActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
+
 
 }
