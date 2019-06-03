@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Es necesario iniciar sesión para jugar"
+        android:text="Inicia sesión o crea una cuenta nueva"
         android:textSize="18sp"
         android:padding="5dp"/>
 

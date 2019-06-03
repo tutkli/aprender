@@ -1,20 +1,34 @@
 package com.example.clara.aprender.Juego;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
+import com.example.clara.aprender.MainActivity;
+import com.example.clara.aprender.MenuNivelActivity;
 import com.example.clara.aprender.Modelos.Nivel;
 import com.example.clara.aprender.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.woxthebox.draglistview.BoardView;
 
 public class Juego extends AppCompatActivity {
@@ -28,6 +42,12 @@ public class Juego extends AppCompatActivity {
     static Nivel nivel_actual;
     boolean juego_start;
     Toast Pruebas;
+
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private FirebaseAuth mAuth;
+    DatabaseReference myRef = database.getReference("usuarios");
+    FirebaseUser firebaseUser;
+    GoogleSignInAccount googleUser;
 
 
     @Override
@@ -252,7 +272,93 @@ public class Juego extends AppCompatActivity {
     }
     // Muestra la calificación, en un cardview y la guarda en la base de datos.
     public void Victoria(){
+        //INSERTAR DATOS DE LA PARTIDA
+        mAuth = FirebaseAuth.getInstance();
+        firebaseUser = mAuth.getCurrentUser();
+        googleUser = GoogleSignIn.getLastSignedInAccount(this);
+        String uid ="";
+        int puntuacion, numeroDelNivel;
+        puntuacion=numeroDelNivel=0;
 
+        //ver si se ha iniciado sesion con google o con firebase
+        if(firebaseUser != null || googleUser != null) {
+            //inicio de sesion con firebase
+            if(firebaseUser != null) {
+                uid = firebaseUser.getUid();
+            }else{
+             //inicio de sesion con google
+                uid = googleUser.getId();
+            }
+
+            //guardar puntuaciones
+            DatabaseReference lvlmaxRef = myRef.child(uid + "/lvlmax");
+            lvlmaxRef.setValue(numeroDelNivel);
+            //ACTUALIZAR LA PUNTUACION DEL NIVEL
+            DatabaseReference puntuacionesRef = myRef.child(uid + "/puntuaciones/lvl" + numeroDelNivel);
+            puntuacionesRef.setValue(puntuacion);
+
+        }else{
+            //TODO No se ha iniciado sesion ni con firebase ni con google. Guardar la puntuacion en la base de datos local
+        }
+
+        //MOSTRAR DIALOGO
+        final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Juego.this);
+        View mView = getLayoutInflater().inflate(R.layout.dialog_result, null);
+        Button mSiguiente = (Button)mView.findViewById(R.id.victory_next);
+        Button mVolver = (Button)mView.findViewById(R.id.victory_back);
+        ImageView star1 = (ImageView)mView.findViewById(R.id.star1);
+        ImageView star2 = (ImageView)mView.findViewById(R.id.star2);
+        ImageView star3 = (ImageView)mView.findViewById(R.id.star3);
+
+        //SEGUN LA PUNTUACION, CAMBIAR LA IMAGEN DE LA ESTRELLA (POR EJEMPLO, SE PUEDE PONER LA IMAGEN POR DEFECTO LA ESTRELLA VACIA Y CAMBIAR LA IMAGEN CON UN SWITCH)
+        star1.setImageResource(R.drawable.star);
+        star2.setImageResource(R.drawable.empty_star);
+        star3.setImageResource(R.drawable.empty_star);
+
+        mBuilder.setView(mView);
+        final AlertDialog dialog = mBuilder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+        dialog.show();
+        dialog.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+        dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
+        mSiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //AÑADIR INTENT AL SIGUIENTE NIVEL
+                //startActivity(new Intent(MainActivity.this, MenuNivelActivity.class));
+                Toast.makeText(Juego.this, "Siguiente nivel", Toast.LENGTH_LONG).show();
+                dialog.dismiss();
+            }
+        });
+
+        mVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //CAMBIAR EL CONTEXT POR EL DEL JUEGO
+                startActivity(new Intent(Juego.this, MenuNivelActivity.class));
+                dialog.dismiss();
+            }
+        });
+
+        //IR AL MENU DE NIVELES CUANDO SE DA A LA FLECHITA DE ATRAS DEL MOVIL
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener()
+        {
+            @Override
+            public void onCancel(DialogInterface dialog)
+            {
+                startActivity(new Intent(Juego.this, MenuNivelActivity.class));
+            }
+        });
+
+        dialog.show();
     }
 
     public void getValores(String Cadena){
