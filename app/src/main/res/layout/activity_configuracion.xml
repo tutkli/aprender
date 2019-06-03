@@ -53,10 +53,14 @@
             android:focusable="true">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:onClick="iniciarSesion"
-                android:text="INICIAR SESIÓN" />
+                android:text="INICIAR SESIÓN"
+                android:textColor="@android:color/black"
+                android:padding="10dp"
+                android:background="@drawable/custom_config_button"
+                android:foreground="?android:attr/selectableItemBackground"/>
         </LinearLayout>
 
         <!--COLUMNA 2 -->
@@ -100,10 +104,13 @@
             android:focusable="true">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:onClick="cerrarSesion"
-                android:text="Cerrar Sesión" />
+                android:text="Cerrar Sesión"
+                android:textColor="@android:color/black"
+                android:background="@drawable/custom_config_button"
+                android:foreground="?android:attr/selectableItemBackground"/>
         </LinearLayout>
 
         <!--COLUMNA 2 -->
@@ -147,10 +154,14 @@
             android:focusable="true">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:onClick="borrarUser"
-                android:text="Borrar usuario" />
+                android:text="Borrar usuario"
+                android:textColor="@android:color/black"
+                android:background="@drawable/custom_config_button"
+                android:shadowDx="@android:integer/config_longAnimTime"
+                android:foreground="?android:attr/selectableItemBackground"/>
         </LinearLayout>
 
         <!--COLUMNA 2 -->
@@ -187,13 +198,15 @@
 
         <Button
             android:id="@+id/volver_creditos"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:onClick="volver"
-            android:text="Volver" />
+            android:text="Volver"
+            android:background="@drawable/custom_back_button"
+            android:textColor="@android:color/white"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
     </LinearLayout>
 

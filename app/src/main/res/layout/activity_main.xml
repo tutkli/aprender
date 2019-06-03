@@ -27,7 +27,8 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_person_black_24dp"
                 android:layout_margin="20dp"
-                android:background="@null"/>
+                android:background="@null"
+                android:foreground="?android:attr/selectableItemBackground"/>
 
 
             <TextView

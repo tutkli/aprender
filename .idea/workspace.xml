@@ -11,9 +11,19 @@
   <component name="ChangeListManager">
     <list default="true" id="4791f189-af4f-422d-97ef-7e4ef3a59a38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/ConfiguracionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/ConfiguracionActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_creditos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_creditos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu_nivel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu_nivel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_action.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_bienvenido.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_bienvenido.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,48 +68,75 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="301" column="12" selection-start-line="301" selection-start-column="12" selection-end-line="301" selection-end-column="12" />
+            <state relative-caret-position="-329">
+              <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12789#13168#0" expanded="true" />
-                <element signature="e#13167#13168#0" expanded="true" />
-                <element signature="e#13207#13491#0" expanded="true" />
-                <element signature="e#13490#13491#0" expanded="true" />
-                <element signature="e#13608#13853#0" expanded="true" />
-                <element signature="e#13852#13853#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="53" column="36" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="36" />
-              <folding>
-                <element signature="e#1714#1732#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="316">
+              <caret line="205" column="33" lean-forward="true" selection-start-line="205" selection-start-column="33" selection-end-line="208" selection-end-column="71" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/column_drag_layout.xml">
+          <provider editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_action.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_bienvenido.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="367">
+              <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_menu_nivel.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
@@ -108,74 +145,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="1343">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_creditos.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="128" column="12" selection-start-line="128" selection-start-column="12" selection-end-line="141" selection-end-column="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5904#6072#0" expanded="true" />
-                <element signature="e#6071#6072#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="384">
+              <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/app/Dialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="681" column="16" selection-start-line="681" selection-start-column="16" selection-end-line="681" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/ConfiguracionActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="243" column="67" lean-forward="true" selection-start-line="243" selection-start-column="40" selection-end-line="243" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/LoadGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1676#1677#0" expanded="true" />
-                <element signature="e#1750#1751#0" expanded="true" />
-                <element signature="e#1809#1810#0" expanded="true" />
-                <element signature="e#1853#1854#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -186,6 +170,7 @@
         <option value="Class" />
         <option value="layoutResourceFile" />
         <option value="layoutResourceFile_vertical" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -204,6 +189,7 @@
       <find>image</find>
       <find>getItemCount</find>
       <find>insert</find>
+      <find>bien</find>
     </findStrings>
     <replaceStrings>
       <replace>MenuNivel</replace>
@@ -229,13 +215,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/SplashScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/PuntuacionActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/ConfiguracionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/CreditosActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/RecyclerViewAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_creditos.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_menu_nivel.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/Lista_juego.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Solucion.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Usuario.java" />
@@ -254,11 +235,25 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_load_game.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/LoadGame.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_bienvenido.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_dialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_bienvenido.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/custom_dialog_title.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/custom_dialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_action.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/ConfiguracionActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_signup.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/custom_config_button.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/custom_back_button.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_menu_nivel.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_creditos.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml" />
       </list>
     </option>
   </component>
@@ -387,7 +382,19 @@
               <item name="aprender" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="aprender" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="aprender" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -696,7 +703,7 @@
       <window_info anchor="bottom" id="Android Profiler" order="3" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.5090618" weight="0.3900325" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.49946696" weight="0.3575298" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.49946696" visible="true" weight="0.3575298" />
       <window_info anchor="bottom" id="Run" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Find" order="9" />
@@ -705,7 +712,7 @@
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="right" id="Gradle" order="4" weight="0.015991472" />
-      <window_info anchor="right" id="Preview" order="5" weight="0.40458423" />
+      <window_info anchor="right" id="Preview" order="5" weight="0.4717484" />
       <window_info anchor="right" id="Assistant" order="6" />
     </layout>
     <layout-to-restore>
@@ -790,67 +797,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Conseguido hacer un sistema para que lea los elementos de la lista 2, siguiente pasar al activity y saber en que lugar se tendría que ejecutar" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/CreditosActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/RecyclerViewAdapter.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_menu_nivel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Lista_Juego/Lista_juego.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nivel_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="57" column="33" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_creditos.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Aprender - copia/aprender/app/src/main/java/com/example/clara/aprender/Juego.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Base_datos/Base_datos_Aprender_adaptador.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Usuario.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-799">
@@ -936,31 +882,11 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_action.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_signup.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_layout.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/column_drag_layout.xml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
@@ -1018,13 +944,6 @@
         </state>
       </provider>
       <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_settings_black_24dp.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1094,17 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="53" column="36" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="36" />
-          <folding>
-            <element signature="e#1714#1732#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/app/Dialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -1112,56 +1020,172 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/custom_dialog.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="17">
+          <caret line="1" column="81" selection-start-line="1" selection-start-column="81" selection-end-line="1" selection-end-column="81" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/card_view_drag_foreground.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/card_view_selector.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/custom_dialog_title.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/custom_dialog.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_signup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_bienvenido.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="48" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/ConfiguracionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="243" column="67" lean-forward="true" selection-start-line="243" selection-start-column="40" selection-end-line="243" selection-end-column="67" />
+        <state relative-caret-position="299">
+          <caret line="220" column="86" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/custom_config_button.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="128" column="12" selection-start-line="128" selection-start-column="12" selection-end-line="141" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5904#6072#0" expanded="true" />
-            <element signature="e#6071#6072#0" expanded="true" />
-          </folding>
+        <state>
+          <caret selection-end-line="26" selection-end-column="11" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/custom_back_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/column_drag_layout.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_person_black_24dp.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="51" selection-start-column="45" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_action.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_creditos.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="62" column="71" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_menu_nivel.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_configuracion.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="205" column="33" lean-forward="true" selection-start-line="205" selection-start-column="33" selection-end-line="208" selection-end-column="71" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="301" column="12" selection-start-line="301" selection-start-column="12" selection-end-line="301" selection-end-column="12" />
+        <state relative-caret-position="-329">
+          <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#12789#13168#0" expanded="true" />
-            <element signature="e#13167#13168#0" expanded="true" />
-            <element signature="e#13207#13491#0" expanded="true" />
-            <element signature="e#13490#13491#0" expanded="true" />
-            <element signature="e#13608#13853#0" expanded="true" />
-            <element signature="e#13852#13853#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         mCancelar.setOnClickListener(new View.OnClickListener() {
             @Override

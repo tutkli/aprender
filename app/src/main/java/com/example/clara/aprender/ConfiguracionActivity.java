@@ -96,6 +96,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         setFlags();
 
         mCancelar.setOnClickListener(new View.OnClickListener() {
@@ -179,6 +180,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
                 mBuilder.setView(mView);
                 final AlertDialog dialog = mBuilder.create();
+                dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
                 setFlags();
 
                 mLogin.setOnClickListener(new View.OnClickListener() {
@@ -216,6 +218,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         setFlags();
 
         mCancelar.setOnClickListener(new View.OnClickListener() {
@@ -293,6 +296,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         setFlags();
 
         mRecuperar.setOnClickListener(new View.OnClickListener() {

@@ -58,17 +58,24 @@
             android:id="@+id/victory_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Siguiente nivel" />
+            android:text="Siguiente nivel"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:background="@drawable/custom_back_button"
+            android:textColor="@android:color/white"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
         <Button
             android:id="@+id/victory_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Volver al menú" />
+            android:text="Volver al menú"
+            android:layout_marginStart="10dp"
+            android:padding="10dp"
+            android:background="@drawable/custom_back_button"
+            android:textColor="@android:color/white"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>
