@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.clara.aprender.Juego;
+import com.example.clara.aprender.Juego.Juego;
+import com.example.clara.aprender.LoadGame;
 import com.example.clara.aprender.Modelos.Nivel;
 import com.example.clara.aprender.R;
 
@@ -64,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,Juego.class);
+                Intent intent = new Intent(mContext, LoadGame.class);
                 intent.putExtra("id",mData.get(position).getIdNivel());
                 mContext.startActivity(intent);
             }

@@ -9,23 +9,21 @@ public class Nivel {
     @PrimaryKey
     private int idNivel;
     private String titulo;
-    private int espacios;
+    private String instrucciones;
     private String problema;
     private String input;
     private String output;
-    private boolean resuelto;
 
     public Nivel(){
     }
 
-    public Nivel(int idNivel, String titulo, int espacios, String problema, String input, String output, boolean resuelto) {
+    public Nivel(int idNivel, String titulo, String instrucciones, String problema, String input, String output) {
         this.idNivel = idNivel;
-        this.titulo = titulo;
-        this.espacios = espacios;
-        this.problema = problema;
-        this.input = input;
-        this.output = output;
-        this.resuelto = resuelto;
+        this.titulo = titulo; // Título de cada problema
+        this.instrucciones = instrucciones; // La cadena de elementos
+        this.problema = problema; // Enunciado del problema
+        this.input = input; // Cadena de elementos Input
+        this.output = output; // Cadena de elementos Output
     }
 
     public int getIdNivel() {
@@ -42,22 +40,15 @@ public class Nivel {
         this.titulo = titulo;
     }
 
-    public int getEspacios() {
-        return espacios;
+    public String getInstrucciones() {
+        return instrucciones;
     }
-    public void setEspacios(int espacios) {
-        this.espacios = espacios;
+    public void setInstrucciones(String instrucciones) {
+        this.instrucciones = instrucciones;
     }
 
     public String getProblema() { return problema;}
     public void setProblema(String problema) { this.problema = problema;}
-
-    public boolean getResuelto() {
-        return resuelto;
-    }
-    public void setResuelto(boolean resuelto) {
-        this.resuelto = resuelto;
-    }
 
     public String getInput() {
         return input;
