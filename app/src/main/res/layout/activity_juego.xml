@@ -12,42 +12,200 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="320dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Constraint_Layout"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:background="@color/fondo_juego">
 
                 <TextView
-                    android:id="@+id/Input"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/Output_1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginEnd="24dp"
                     android:layout_weight="1"
-                    android:text="Num" />
+                    android:background="@color/caja_numero"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/Output_2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_weight="1"
+                    android:background="@color/caja_numero"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Output_1" />
+
+                <TextView
+                    android:id="@+id/Output_3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_weight="1"
+                    android:background="@color/caja_numero"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Output_2" />
+
+                <TextView
+                    android:id="@+id/Input_1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="160dp"
+                    android:layout_weight="1"
+                    android:background="@color/caja_numero"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/Input_2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/caja_numero"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Input_1" />
+
+                <TextView
+                    android:id="@+id/Input_3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/caja_numero"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Input_2" />
+
+                <TextView
+                    android:id="@+id/holder_1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="116dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_error"
+                    android:gravity="center"
+                    android:text="H1"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Actual" />
+
+                <TextView
+                    android:id="@+id/holder_2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="164dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_error"
+                    android:gravity="center"
+                    android:text="H2"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Actual" />
+
+                <TextView
+                    android:id="@+id/holder_3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="116dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_error"
+                    android:gravity="center"
+                    android:text="H3"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/holder_1" />
+
+                <TextView
+                    android:id="@+id/holder_4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="164dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/color_error"
+                    android:gravity="center"
+                    android:text="H4"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/holder_2" />
 
                 <TextView
                     android:id="@+id/Actual"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginTop="60dp"
                     android:layout_weight="1"
-                    android:text="Num" />
-
-                <TextView
-                    android:id="@+id/Output"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Num" />
-            </LinearLayout>
+                    android:background="@color/caja_letra"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
+                android:background="@color/fondo_juego"
                 android:orientation="horizontal">
 
                 <ImageButton
@@ -89,8 +247,10 @@
         </LinearLayout>
 
         <FrameLayout
+            android:id="@+id/container"
             android:layout_width="330dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"></FrameLayout>
+            android:layout_weight="1"
+            android:background="@color/fondo_juego"></FrameLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

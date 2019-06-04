@@ -6,12 +6,15 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -19,7 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
-import com.example.clara.aprender.MainActivity;
 import com.example.clara.aprender.MenuNivelActivity;
 import com.example.clara.aprender.Modelos.Nivel;
 import com.example.clara.aprender.R;
@@ -29,31 +31,34 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.woxthebox.draglistview.BoardView;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Juego extends AppCompatActivity {
 
     ImageButton IBSonido, IBAyuda, IBAtras, IBPlay, IBAdelante;
-    TextView Input, Output;
+    TextView Output_1, Output_2, Output_3, Input_1, Input_2, Input_3, Actual;
     boolean EstadoMusica;
     MediaPlayer musica;
     static Nivel nivel_actual;
     boolean juego_start;
-
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private FirebaseAuth mAuth;
     DatabaseReference myRef = database.getReference("usuarios");
     FirebaseUser firebaseUser;
     GoogleSignInAccount googleUser;
+    // Porque una lista y no un array? Me gustan las listas.
+    List<String> Entrada, Salida;
+    int Contador_Entrada, Contador_Salida, Contador_Inicial_Entrada, Contador_Inicial_Salida, Contador_Veces_Play;
 
     //Valores para el juego
-    String Objeto, Output_ini, Input_ini, Instrucciones, Problema;
+    String Objeto, Output_ini, Input_ini, Instrucciones, Problema, Valor_actual;
     int ContadorInstruccion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
         setFlags();
@@ -64,8 +69,6 @@ public class Juego extends AppCompatActivity {
         if (savedInstanceState == null) {
             showFragment(BoardFragment.newInstance());
         }
-
-
     }
 
     private void showFragment(Fragment fragment) {
@@ -75,10 +78,21 @@ public class Juego extends AppCompatActivity {
     }
 
     public void IniciarElementos(){
+        // Elementos de entrada
         Input_ini = nivel_actual.getInput();
+        Entrada = Arrays.asList(Input_ini.split("-"));
+        Contador_Inicial_Entrada = Entrada.size();
+
+        // Elemenentos de Salida
         Output_ini = nivel_actual.getOutput();
+        Salida = Arrays.asList(Output_ini.split("-"));
+        Contador_Inicial_Salida = Salida.size();
+
+        // Cargar el enunciado del problema
         Problema = nivel_actual.getProblema();
         ContadorInstruccion=0;
+        Contador_Entrada=0;
+        Contador_Salida=0;
     }
 
     private void Sonido(){
@@ -98,24 +112,24 @@ public class Juego extends AppCompatActivity {
     }
     // Poner un Android Tour? para explicar los diferentes items en la lista
     private void Ayuda(){
-        //Mostrar un cardview con
+        //Mostrar un cardview con la informacion del nivel y explicaciones de los distintos elementos
     }
     //Ir cada 0.5 segundos una instruccion hacia adelante
     //Tiene que coger los elementos de la columna 2, y lo tiene que comparar con una solucion?
     private void Jugar(){
         // Recorrer la lista
         // Poner un switch, que según el elemento de la lista, haga distintas cosas.
+        //Iniciamos los elementos
+        IniciarElementos();
         IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
 
         //De esta manera conseguimos tener las instrucciones para ser traducidas.
-        String[] InstruccionesArray = Instrucciones.split("-");
+        List<String> InstruccionesArray = Arrays.asList(Instrucciones.split("-"));
         for(String Instruccion : InstruccionesArray){
             DetectorElementos(Instruccion);
         }
+        Contador_Veces_Play++;
         //Poner para que la cadena se recorte por uno, porque en el inicio hay un guión que sobra.
-
-
-
     }
     //Cuando esta ejecutandose, el boton de play se cambia a parar, donde podemos parar el juego, el index de instrucciones se reinicia y se cambia el boton a play
     private void Parar(){
@@ -124,8 +138,20 @@ public class Juego extends AppCompatActivity {
         // Reiniciar el contador
         // Reiniciar las animaciones
         IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
+        IniciarElementos();
 
     }
+
+    public int DetectarColores(String Valor) {
+        int color;
+        if(Character.isLetter(Valor.charAt(0))){
+            color = getResources().getColor(R.color.caja_letra);
+        }else{
+            color = getResources().getColor(R.color.caja_numero);
+        }
+        return color;
+    }
+
     //Mover hacia atrás en la lista de elementos
     private void Atras(){
 
@@ -136,12 +162,20 @@ public class Juego extends AppCompatActivity {
     }
 
     private void init(){
-        Input = findViewById(R.id.Input);
-        Output = findViewById(R.id.Output);
+        //Iniciar los elementos del constraint layout
+        Input_1 = findViewById(R.id.Input_1);
+        Input_2 = findViewById(R.id.Input_2);
+        Input_3 = findViewById(R.id.Input_3);
+        Output_1 = findViewById(R.id.Output_1);
+        Output_2 = findViewById(R.id.Output_2);
+        Output_3 = findViewById(R.id.Output_3);
+        Actual = findViewById(R.id.Actual);
+
+        // Iniciar la musica y ponerla en Loop
         musica = MediaPlayer.create(getApplicationContext(), R.raw.musica);
         musica.setLooping(true);
         musica.start();
-
+        //Inicializar los botones de la barra de abajo
         IBSonido = findViewById(R.id.IBSonido);
         IBSonido.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,11 +230,62 @@ public class Juego extends AppCompatActivity {
 
         // De momento se pone en un textView,
         IniciarElementos();
-        Input.setText(Input_ini);
-        Output.setText(Output_ini);
+        Inputs();
+        Outputs();
     }
 
+    public void Inputs() {
+        // Cargar los valores del input en las cajas de los inputs.
+        if(Entrada.size()>0){
+            Input_1.setText(Entrada.get(Contador_Entrada));
+            Input_1.setBackgroundColor(DetectarColores(Entrada.get(Contador_Entrada)));
+        }else{
+            Input_1.setText("");
+            Input_1.setBackgroundColor(getResources().getColor(R.color.fondo_juego));
+        }
+        if(Entrada.size()>1){
+            Input_2.setText(Entrada.get(Contador_Entrada+1));
+            Input_2.setBackgroundColor(DetectarColores(Entrada.get(Contador_Entrada+1)));
+        }else{
+            Input_2.setText("");
+            Input_2.setBackgroundColor(getResources().getColor(R.color.fondo_juego));
+        }
+        if(Entrada.size()>2) {
+            Input_3.setText(Entrada.get(Contador_Entrada+2));
+            Input_3.setBackgroundColor(DetectarColores(Entrada.get(Contador_Entrada+2)));
+        }else{
+            Input_3.setText("");
+            Input_3.setBackgroundColor(getResources().getColor(R.color.fondo_juego));
+        }
+    }
 
+    public void Outputs(){
+        // Cargar los valores del input en las cajas de los inputs.
+        if(Salida.size()>0){
+            Output_1.setText(Salida.get(Contador_Salida));
+            Output_1.setBackgroundColor(DetectarColores(Salida.get(Contador_Salida)));
+        }else{
+            Output_1.setText("");
+            Output_1.setBackgroundColor(DetectarColores(Salida.get(Contador_Salida)));
+        }
+        if(Salida.size()>1){
+            Output_2.setText(Salida.get(Contador_Salida+1));
+            Output_2.setBackgroundColor(DetectarColores(Salida.get(Contador_Salida+1)));
+        }else{
+
+        }
+        if(Salida.size()>2) {
+            Output_3.setText(Salida.get(Contador_Salida+2));
+            Output_3.setBackgroundColor(DetectarColores(Salida.get(Contador_Salida+2)));
+        }else{
+
+        }
+
+    }
+
+    public void DetectarColor(String Valor){
+
+    }
 
 
     public void DetectorElementos(String Instruccion){
@@ -229,15 +314,44 @@ public class Juego extends AppCompatActivity {
             }
     }
 
+    //Para las animaciones:
+
+    public void AnimacionInput(){
+        Actual.getLeft();
+        Actual.getTop();
+        ObjectAnimator animation = ObjectAnimator.ofFloat(Input_1, "translationX", Actual.getLeft(), Actual.getTop());
+        animation.setDuration(500);
+        animation.start();
+    }
+
+    public void AnimacionOutput(){
+        Output_1.getLeft();
+        Output_1.getTop();
+        ObjectAnimator animation = ObjectAnimator.ofFloat(Actual, "translationX", Output_1.getLeft(), Output_1.getTop());
+        animation.setDuration(500);
+        animation.start();
+    }
+
+
+
+
     // Métodos del juego.
     // El objeto es un cuadro.
     // Inicio: es el estado por defecto, a lo que vuelve la caja.
 
     public void Input(){
+        Inputs();
+        AnimacionInput();
+        Valor_actual=Entrada.get(Contador_Entrada);
+        Contador_Entrada++;
 
     }
     // Mueve la caja de inicio, que necesita un valor dentro y lo mueve a la parte de output, y elimina el valor de la caja, y vuelve al inicio
     public void Output(){
+        Outputs();
+        AnimacionOutput();
+        Input_1.setText(Valor_actual);
+        Valor_actual="";
 
     }
     // Suma 1 al valor del cuadro, y le hace zoom (al cuadro) por unos milisegundos, para mostrar que está ocurriendo algo.

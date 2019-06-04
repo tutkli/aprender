@@ -8,4 +8,10 @@
     <color name="gris">#B1B1B1</color>
     <color name="list_item_background">#AACCCCCC</color>
     <color name="app_color">#8EAE3C</color>
+
+
+    <color name="caja_numero">#2AB746</color>
+    <color name="caja_letra">#CE94B2</color>
+    <color name="fondo_juego">#F5F3BB</color>
+    <color name="color_error">#DF2935</color>
 </resources>
