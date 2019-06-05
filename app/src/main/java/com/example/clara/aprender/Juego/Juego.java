@@ -5,22 +5,18 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-
 import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
 import com.example.clara.aprender.MenuNivelActivity;
 import com.example.clara.aprender.Modelos.Nivel;
@@ -31,12 +27,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.Arrays;
 import java.util.List;
 
-public class Juego extends AppCompatActivity {
+public class Juego extends AppCompatActivity{
 
     ImageButton IBSonido, IBAyuda, IBAtras, IBPlay, IBAdelante;
     TextView Output_1, Output_2, Output_3, Input_1, Input_2, Input_3, Actual;
@@ -50,11 +44,11 @@ public class Juego extends AppCompatActivity {
     FirebaseUser firebaseUser;
     GoogleSignInAccount googleUser;
     // Porque una lista y no un array? Me gustan las listas.
-    List<String> Entrada, Salida;
+    List<String> Entrada, Salida, Resultado;
     int Contador_Entrada, Contador_Salida, Contador_Inicial_Entrada, Contador_Inicial_Salida, Contador_Veces_Play;
 
     //Valores para el juego
-    String Objeto, Output_ini, Input_ini, Instrucciones, Problema, Valor_actual;
+    String Objeto, Input_ini, Instrucciones, Problema, Valor_actual;
     int ContadorInstruccion;
 
     @Override
@@ -72,7 +66,6 @@ public class Juego extends AppCompatActivity {
     }
 
     private void showFragment(Fragment fragment) {
-
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment, "fragment").commit();
     }
@@ -84,10 +77,13 @@ public class Juego extends AppCompatActivity {
         Contador_Inicial_Entrada = Entrada.size();
 
         // Elemenentos de Salida
-        Output_ini = nivel_actual.getOutput();
-        Salida = Arrays.asList(Output_ini.split("-"));
-        Contador_Inicial_Salida = Salida.size();
-
+        Resultado = Arrays.asList(nivel_actual.getOutput().split("-"));
+        if(Salida !=null){
+            if(!Salida.isEmpty()){
+                Contador_Inicial_Salida = Salida.size();
+                Salida.clear();
+            }
+        }
         // Cargar el enunciado del problema
         Problema = nivel_actual.getProblema();
         ContadorInstruccion=0;
@@ -142,15 +138,7 @@ public class Juego extends AppCompatActivity {
 
     }
 
-    public int DetectarColores(String Valor) {
-        int color;
-        if(Character.isLetter(Valor.charAt(0))){
-            color = getResources().getColor(R.color.caja_letra);
-        }else{
-            color = getResources().getColor(R.color.caja_numero);
-        }
-        return color;
-    }
+
 
     //Mover hacia atrás en la lista de elementos
     private void Atras(){
@@ -236,48 +224,41 @@ public class Juego extends AppCompatActivity {
 
     public void Inputs() {
         // Cargar los valores del input en las cajas de los inputs.
-        if(Entrada.size()>0){
-            Input_1.setText(Entrada.get(Contador_Entrada));
-            Input_1.setBackgroundColor(DetectarColores(Entrada.get(Contador_Entrada)));
-        }else{
-            Input_1.setText("");
-            Input_1.setBackgroundColor(getResources().getColor(R.color.fondo_juego));
-        }
         if(Entrada.size()>1){
-            Input_2.setText(Entrada.get(Contador_Entrada+1));
-            Input_2.setBackgroundColor(DetectarColores(Entrada.get(Contador_Entrada+1)));
+            //Mostrar
         }else{
-            Input_2.setText("");
-            Input_2.setBackgroundColor(getResources().getColor(R.color.fondo_juego));
+            //Ocultar
         }
-        if(Entrada.size()>2) {
-            Input_3.setText(Entrada.get(Contador_Entrada+2));
-            Input_3.setBackgroundColor(DetectarColores(Entrada.get(Contador_Entrada+2)));
+        if(Entrada.size()>2){
         }else{
-            Input_3.setText("");
-            Input_3.setBackgroundColor(getResources().getColor(R.color.fondo_juego));
+
+        }
+        if(Entrada.size()>3) {
+
+        }else{
+
         }
     }
 
     public void Outputs(){
         // Cargar los valores del input en las cajas de los inputs.
-        if(Salida.size()>0){
-            Output_1.setText(Salida.get(Contador_Salida));
-            Output_1.setBackgroundColor(DetectarColores(Salida.get(Contador_Salida)));
-        }else{
-            Output_1.setText("");
-            Output_1.setBackgroundColor(DetectarColores(Salida.get(Contador_Salida)));
-        }
-        if(Salida.size()>1){
-            Output_2.setText(Salida.get(Contador_Salida+1));
-            Output_2.setBackgroundColor(DetectarColores(Salida.get(Contador_Salida+1)));
-        }else{
+        if(Salida!= null){
+            if(Salida.size()>1){
 
-        }
-        if(Salida.size()>2) {
-            Output_3.setText(Salida.get(Contador_Salida+2));
-            Output_3.setBackgroundColor(DetectarColores(Salida.get(Contador_Salida+2)));
-        }else{
+            }else{
+
+            }
+            if(Salida.size()>2){
+
+            }else{
+
+            }
+            if(Salida.size()>3) {
+
+            }else{
+
+            }
+        }else{ //Ocultar todos
 
         }
 
