@@ -348,7 +348,7 @@ public class Juego extends AppCompatActivity{
         handler.postDelayed(new Runnable() {
             public void run() {
                 A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
-                Salida.set(CElemento-1, Actual_Valor);
+                Salida.add(Actual_Valor);
                 Actual_Valor="";
                 CargarOutputs();
                 A.Desaparecer_Objeto(Actual);
