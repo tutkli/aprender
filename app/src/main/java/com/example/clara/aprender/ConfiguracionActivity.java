@@ -73,7 +73,6 @@ public class ConfiguracionActivity extends AppCompatActivity {
             }
 
             Toast.makeText(ConfiguracionActivity.this, "Se ha cerrado sesión correctamente", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(ConfiguracionActivity.this, MainActivity.class));
             finish();
         }else{
             Toast.makeText(ConfiguracionActivity.this, "No se ha iniciado sesión", Toast.LENGTH_LONG).show();
@@ -132,7 +131,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(ConfiguracionActivity.this, "Se ha eliminado el usuario correctamente", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(ConfiguracionActivity.this, MainActivity.class));
+                        finish();
                     } else {
                         Toast.makeText(ConfiguracionActivity.this, "Error al eliminar usuario", Toast.LENGTH_LONG).show();
                     }
@@ -147,7 +146,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(ConfiguracionActivity.this, "Se ha eliminado el usuario correctamente", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(ConfiguracionActivity.this, MainActivity.class));
+                        finish();
                     } else {
                         Toast.makeText(ConfiguracionActivity.this, "Error al eliminar usuario", Toast.LENGTH_LONG).show();
                     }
@@ -164,12 +163,12 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 Toast.makeText(ConfiguracionActivity.this, "Verifica tu email antes de continuar", Toast.LENGTH_SHORT).show();
             }else {
                 Toast.makeText(ConfiguracionActivity.this, "Se ha iniciado sesión correctamente con un email", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ConfiguracionActivity.this, MainActivity.class));
+                finish();
             }
         }else{
             if(googleUser != null){
                 Toast.makeText(ConfiguracionActivity.this, "Se ha iniciado sesión correctamente con Google", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ConfiguracionActivity.this, MainActivity.class));
+                finish();
             }else{
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(ConfiguracionActivity.this);
                 LayoutInflater layoutInflater = (LayoutInflater) ConfiguracionActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -351,7 +350,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
                             });
                 }
             }
-        });
+        });º
 
         mGoogle.setOnClickListener(new View.OnClickListener() {
             @Override

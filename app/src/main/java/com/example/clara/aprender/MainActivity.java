@@ -8,9 +8,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.content.Intent;
 import android.widget.TextView;
@@ -40,6 +43,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.tooltip.Tooltip;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
     TextView currentUser;
     GoogleSignInAccount googleUser;
     FirebaseUser firebaseUser;
-    static final int RC_SIGN_IN = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +72,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        //updateUI(firebaseUser, googleUser);
         firebaseUser = mAuth.getCurrentUser();
         googleUser = GoogleSignIn.getLastSignedInAccount(this);
 
         currentUsername();
+        if(firebaseUser == null && googleUser == null) {
+            showTooltip(btn_config, Gravity.BOTTOM);
+        }
     }
 
     @Override
@@ -111,10 +115,16 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
-
-
-
+    public void showTooltip(View v, int gravity) {
+        ImageButton btn = (ImageButton)v;
+        Tooltip tooltip = new Tooltip.Builder(btn)
+                .setText("¡Inicia sesión para guardar tu progreso!")
+                .setTextColor(Color.WHITE)
+                .setGravity(gravity)
+                .setCornerRadius(8f)
+                .setDismissOnClick(true)
+                .show();
+    }
 
     @Override
     public void onResume(){
@@ -246,6 +256,4 @@ public class MainActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
-
-
 }
