@@ -38,7 +38,14 @@ public class Animaciones{
                 .duration(1)
                 .start();
     }
-    public void ZoomObjeto(TextView Objeto){
+    public void ZoomObjetomas(TextView Objeto){
+        ViewAnimator
+                .animate(Objeto)
+                .scale(1f, 1.5f, 1f)
+                .duration(190)
+                .start();
+    }
+    public void ZoomObjetomenos(TextView Objeto){
         ViewAnimator
                 .animate(Objeto)
                 .scale(1f, 0.5f, 1f)

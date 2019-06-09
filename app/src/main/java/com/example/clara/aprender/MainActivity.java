@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
         Nivel nivel = new Nivel(1, "1. Entrar y Salir", "input-input-input-output-output-output", "Haz que todos los elementos de la cola de entrada terminen en la cola de salida.",
                 "6-5-4", "6-5-4");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(2, "2. Repitiendo Tareas", "input-output-jump A-A", "Envía todos los elementos a la salida",
+        nivel = new Nivel(2, "2. Repitiendo Tareas", "input-output-jump A-A", "Envía todos los elementos a la salida. Esta vez con la instruccion de Jump.",
                 "A-B-D-S-G-U-E-S-D-C-G-D-W-A-A", "A-B-D-S-G-U-E-S-D-C-G-D-W-A-A");
         BDAprender.getNivelDAO().insert(nivel);
         nivel = new Nivel(3, "3. Copiando elementos", "input-input-input-copyto 1- copyfrom 1-output-output-output-output-output", "Coge los elementos de la lista input y escribe ERROR, mediante el uso de copyto.",
@@ -220,11 +220,17 @@ public class MainActivity extends AppCompatActivity {
         nivel = new Nivel(4, "4. Mezclador", "input-input-output-output-copyto 1-copyfrom 1-jump A-A", "Coge los dos primeros objetos del input y envíalos al revés, repite hasta que la cola esté vacía. ",
                 "3-5-N-A-4-6", "5-3-A-N-6-4");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(5, "Nivel 5", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4");
+        nivel = new Nivel(5, "Nivel 5", "input-input-output-copyto 0-add 0-jump A-A", "Por cada 2 elementos, sumalos y entrega el resultado.", "2-6-1-3-2-4-5-4", "8-4-6-8");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(6, "Nivel 6", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4");
+        nivel = new Nivel(6, "Nivel 6", "input-output-copyto 0-sum 0-sum 0-jump A-A", "Por cada Input, envialo triplicado", "5-7-5-0-2", "15-21-15-0-6");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(7, "Nivel 7", "in", "Desplaza del input al output", "1-2-3-4", "1-2-3-4");
+        nivel = new Nivel(7, "Nivel 7", "input-output-jump A-A-jump if 0 B-B", "Envia solo los objetos que no sean zero.", "3-0-2-A-D-0-0-2", "3-2-A-D-2");
+        BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(8, "Nivel 8", "input-output-jump A-A-jump B-B-jump if 0 C-C", "Envía solo los 0.", "A-2-0-1-0-2-G-0-A-0", "0-0-0-0");
+        BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(9, "Nivel 9", "input-output-jump A-A-jump B-B-jump if 0 C-C", "Envía solo los 0.", "A-2-0-1-0-2-G-0-A-0", "0-0-0-0");
+        BDAprender.getNivelDAO().insert(nivel);
+        nivel = new Nivel(10, "Nivel 10", "input-output-jump A-A-jump B-B-jump if 0 C-C", "Envía solo los 0.", "1-2-3-4", "1-2-3-4");
         BDAprender.getNivelDAO().insert(nivel);
 
     }

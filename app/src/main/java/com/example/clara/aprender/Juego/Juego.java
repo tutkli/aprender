@@ -67,8 +67,6 @@ public class Juego extends AppCompatActivity{
 
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -366,7 +364,7 @@ public class Juego extends AppCompatActivity{
             A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
             Actual_Valor = Integer.toString(Integer.parseInt(Actual_Valor)+1);
             A.Mostrar_Objeto(Actual, Actual_Valor);
-            A.ZoomObjeto(Actual);
+            A.ZoomObjetomas(Actual);
         }
 
     }
@@ -379,7 +377,7 @@ public class Juego extends AppCompatActivity{
             A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
             Actual_Valor = Integer.toString(Integer.parseInt(Actual_Valor) - 1);
             A.Mostrar_Objeto(Actual, Actual_Valor);
-            A.ZoomObjeto(Actual);
+            A.ZoomObjetomenos(Actual);
         }
     }
 
