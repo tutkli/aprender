@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -27,39 +28,83 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Juego extends AppCompatActivity{
 
-    ImageButton IBSonido, IBAyuda, IBAtras, IBPlay, IBAdelante;
-    TextView Output_1, Output_2, Output_3, Input_1, Input_2, Input_3, Actual;
-    boolean EstadoMusica;
-    MediaPlayer musica;
-    static Nivel nivel_actual;
-    boolean juego_start;
+
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private FirebaseAuth mAuth;
     DatabaseReference myRef = database.getReference("usuarios");
     FirebaseUser firebaseUser;
     GoogleSignInAccount googleUser;
-    // Porque una lista y no un array? Me gustan las listas.
-    List<String> Entrada, Salida, Resultado;
-    int Contador_Entrada, Contador_Salida, Contador_Inicial_Entrada, Contador_Inicial_Salida, Contador_Veces_Play;
-
     //Valores para el juego
-    String Objeto, Input_ini, Instrucciones, Problema, Valor_actual;
-    int ContadorInstruccion;
+
+    public int color_caja_letra;
+    public int color_caja_numero;
+    public int color_fondo_juego;
+    public int color_color_error;
+
+    static Nivel nivel_actual;
+    // Los inputs que tenemos
+    ImageButton IBAtras, IBPlay, IBAdelante, IBAyuda, IBSonido;
+    TextView Input_1,Input_2,Input_3,Actual,Output_1,Output_2,Output_3, Holder_1, Holder_2, Holder_3, Holder_4;
+    // Coordenadas.
+    float IX=30, IO1Y=160, IO2Y=210, IO3Y=260, AX=150, AY=50 ,OX=250, HIX=120, HDX=170, HAY=180, HDY=230;
+    Animaciones A;
+    // Listas que definen las instrucciones, los elementos de entrada y los elementos de salida
+    List<String> Entrada, Salida, Instrucciones, Resultado;
+    // Valor Actual y enunciado
+    String Actual_Valor, Problema, InstruccionesString;
+    // Para saber en que instruccion se encuentra, Milisegundos para que se ejectue esta parte y numero de intentos
+    int CElemento, x, num_intentos;
+    MediaPlayer musica;
+    boolean Jugando=false, EstadoMusica;
+    // Librería utilizada https://github.com/florent37/ViewAnimator
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
+        //Todos los views
+        Input_1 = findViewById(R.id.Input_1);
+        Input_2 = findViewById(R.id.Input_2);
+        Input_3 = findViewById(R.id.Input_3);
+        Actual = findViewById(R.id.Actual);
+        Output_1 = findViewById(R.id.Output_1);
+        Output_2 = findViewById(R.id.Output_2);
+        Output_3 = findViewById(R.id.Output_3);
+        Holder_1 = findViewById(R.id.Holder_1);
+        Holder_2 = findViewById(R.id.Holder_2);
+        Holder_3 = findViewById(R.id.Holder_3);
+        Holder_4 = findViewById(R.id.Holder_4);
+        IBAtras = findViewById(R.id.IBAtras);
+        IBPlay = findViewById(R.id.IBPlay);
+        IBAdelante = findViewById(R.id.IBAdelante);
+        IBAyuda = findViewById(R.id.IBAyuda);
+        IBSonido = findViewById(R.id.IBSonido);
+        //Colores
+        color_caja_letra = getResources().getColor(R.color.caja_letra);
+        color_caja_numero = getResources().getColor(R.color.caja_numero);
+        color_fondo_juego = getResources().getColor(R.color.fondo_juego);
+        color_color_error = getResources().getColor(R.color.color_error);
+        //Posiciones de todos los views
+        Colocar();
+        x=0;
+        num_intentos=0;
+        CElemento=0;
+        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
         setFlags();
         EstadoMusica=true;
-        juego_start=false;
+        Jugando=false;
         init();
-
         if (savedInstanceState == null) {
             showFragment(BoardFragment.newInstance());
         }
@@ -71,27 +116,72 @@ public class Juego extends AppCompatActivity{
     }
 
     public void IniciarElementos(){
-        // Elementos de entrada
-        Input_ini = nivel_actual.getInput();
-        Entrada = Arrays.asList(Input_ini.split("-"));
-        Contador_Inicial_Entrada = Entrada.size();
 
-        // Elemenentos de Salida
-        Resultado = Arrays.asList(nivel_actual.getOutput().split("-"));
-        if(Salida !=null){
-            if(!Salida.isEmpty()){
-                Contador_Inicial_Salida = Salida.size();
-                Salida.clear();
-            }
+        Log.i("Entrada", "Estos son los valores: "+nivel_actual.getInput());
+        Entrada.addAll(Arrays.asList((nivel_actual.getInput()).split("-")));
+        for(int y=0; y<Salida.size(); y++){
+            Salida.set(y, "");
         }
-        // Cargar el enunciado del problema
         Problema = nivel_actual.getProblema();
-        ContadorInstruccion=0;
-        Contador_Entrada=0;
-        Contador_Salida=0;
+        CargarInputs();
+        CargarOutputs();
     }
 
-    private void Sonido(){
+    private void init(){
+        // Iniciar la musica y ponerla en Loop
+        musica = MediaPlayer.create(getApplicationContext(), R.raw.musica);
+        musica.setLooping(true);
+        musica.start();
+        // Con el id que le pasamos desde la parte de niveles, hacemos una busqueda que cargaremos en la pantalla.
+        int id_nivel = getIntent().getExtras().getInt("id");
+        Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
+        nivel_actual = BDAprender.getNivelDAO().getNivelPorID(id_nivel);
+
+        Salida = new ArrayList<String>(0);
+        Instrucciones = new ArrayList<String>(0);
+        Resultado = new ArrayList<String>(0);
+        Entrada = new ArrayList<String>(0);
+        IniciarElementos();
+        CargarInputs();
+    }
+
+
+    public void IBPlay(View v) {
+        if(!Jugando){
+            Jugando=true;
+            IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
+            CargarOutputs();
+            CElemento=0;
+            CargarInputs();
+            x =0;
+            // A Partir de aqui, nada cambia (Cuidado con los hilos. pueden romper el juego entero)
+            Instrucciones=  Arrays.asList(InstruccionesString.split("-"));
+            for(final String instruccion : Instrucciones){
+                Log.i("for", "Recorre la lista");
+                //Para que se inicie la siguiente animacion después de que se termine la otra, en realidad funciona a base de retrasos
+                DetectorElementos(instruccion);
+            }
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Jugando=false;
+                    IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
+                    num_intentos++;
+                    ComrobarResultado();
+                }
+            }, x);
+        }else{
+            Toast toast = Toast.makeText(this, "El juego se está ejecutando", Toast.LENGTH_SHORT);
+            toast.show();
+            //IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
+            //Colocar();
+        }
+    }
+
+    public void IBSonido(View v) {
+        Sonido();
+    }
+    public void Sonido(){
         if(EstadoMusica) {
             //Para silenciar la canción
             EstadoMusica = false;
@@ -104,245 +194,196 @@ public class Juego extends AppCompatActivity{
             EstadoMusica= true;
             IBSonido.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_lock_silent_mode_off));
         }
-        // Mirar como hacer esto -> IBSonido.setImageResource(R.drawable.ic_lock_silent_mode_off);
     }
-    // Poner un Android Tour? para explicar los diferentes items en la lista
-    private void Ayuda(){
+
+    public void IBAyuda(View v) {
         //Mostrar un cardview con la informacion del nivel y explicaciones de los distintos elementos
     }
-    //Ir cada 0.5 segundos una instruccion hacia adelante
-    //Tiene que coger los elementos de la columna 2, y lo tiene que comparar con una solucion?
-    private void Jugar(){
-        // Recorrer la lista
-        // Poner un switch, que según el elemento de la lista, haga distintas cosas.
-        //Iniciamos los elementos
-        IniciarElementos();
-        IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
 
-        //De esta manera conseguimos tener las instrucciones para ser traducidas.
-        List<String> InstruccionesArray = Arrays.asList(Instrucciones.split("-"));
-        for(String Instruccion : InstruccionesArray){
-            DetectorElementos(Instruccion);
-        }
-        Contador_Veces_Play++;
-        //Poner para que la cadena se recorte por uno, porque en el inicio hay un guión que sobra.
-    }
-    //Cuando esta ejecutandose, el boton de play se cambia a parar, donde podemos parar el juego, el index de instrucciones se reinicia y se cambia el boton a play
-    private void Parar(){
-        // Poner el estado de restart
-        // Cambiar todos los elementos a color normal
-        // Reiniciar el contador
-        // Reiniciar las animaciones
-        IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
-        IniciarElementos();
-
+    public void IBAtras(View v){
+        //Mover hacia atras en la lista de elementos
     }
 
 
-
-    //Mover hacia atrás en la lista de elementos
-    private void Atras(){
-
-    }
-    //Mover hacia adelante en la lista de elementos
-    private void Adelante(){
-
+    public void IBAdelante(View v){
+        //Mover hacia adelante en la lista de elementos
     }
 
-    private void init(){
-        //Iniciar los elementos del constraint layout
-        Input_1 = findViewById(R.id.Input_1);
-        Input_2 = findViewById(R.id.Input_2);
-        Input_3 = findViewById(R.id.Input_3);
-        Output_1 = findViewById(R.id.Output_1);
-        Output_2 = findViewById(R.id.Output_2);
-        Output_3 = findViewById(R.id.Output_3);
-        Actual = findViewById(R.id.Actual);
-
-        // Iniciar la musica y ponerla en Loop
-        musica = MediaPlayer.create(getApplicationContext(), R.raw.musica);
-        musica.setLooping(true);
-        musica.start();
-        //Inicializar los botones de la barra de abajo
-        IBSonido = findViewById(R.id.IBSonido);
-        IBSonido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Sonido();
-            }
-        });
-
-        IBAyuda = findViewById(R.id.IBAyuda);
-        IBAyuda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Ayuda();
-            }
-        });
-
-        IBPlay = findViewById(R.id.IBPlay);
-        IBPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Objeto="";
-                if(juego_start){
-                    juego_start=false;
-                    Parar();
-                }else{
-                    juego_start=true;
-                    Jugar();
-                }
-            }
-        });
-
-        IBAdelante = findViewById(R.id.IBAdelante);
-        IBAdelante.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Adelante();
-            }
-        });
-
-        IBAtras = findViewById(R.id.IBAtras);
-        IBAtras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Atras();
-            }
-        });
-
-        // Con el id que le pasamos desde la parte de niveles, hacemos una busqueda que cargaremos en la pantalla.
-        int id_nivel = getIntent().getExtras().getInt("id");
-        Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
-        nivel_actual = BDAprender.getNivelDAO().getNivelPorID(id_nivel);
-
-        // De momento se pone en un textView,
-        IniciarElementos();
-        Inputs();
-        Outputs();
-    }
-
-    public void Inputs() {
-        // Cargar los valores del input en las cajas de los inputs.
-        if(Entrada.size()>1){
-            //Mostrar
+    public void CargarInputs(){
+        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+        if(CElemento<=Entrada.size()-1){
+            A.Mostrar_Objeto(Input_1, Entrada.get(CElemento));
         }else{
-            //Ocultar
+            A.Desaparecer_Objeto(Input_1);
+            Toast.makeText(this, "No hay nada que cargar", Toast.LENGTH_SHORT).show();
         }
-        if(Entrada.size()>2){
+        if(CElemento+1<=Entrada.size()-1){
+            A.Mostrar_Objeto(Input_2, Entrada.get(CElemento+1));
         }else{
-
+            A.Desaparecer_Objeto(Input_2);
         }
-        if(Entrada.size()>3) {
-
+        if(CElemento+2<=Entrada.size()-1){
+            A.Mostrar_Objeto(Input_3, Entrada.get(CElemento+2));
         }else{
-
+            A.Desaparecer_Objeto(Input_3);
         }
     }
 
-    public void Outputs(){
-        // Cargar los valores del input en las cajas de los inputs.
-        if(Salida!= null){
-            if(Salida.size()>1){
-
+    public void CargarOutputs(){
+        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+        if(CElemento-1>=0) {
+            if(Salida.get(CElemento-1).equals("")){
+                A.Desaparecer_Objeto(Output_1);
             }else{
-
+                A.Mostrar_Objeto(Output_1, Salida.get(CElemento-1));
             }
-            if(Salida.size()>2){
-
+        }
+        if(CElemento-2>=0){
+            if(Salida.get(CElemento-2).equals("")){
+                A.Desaparecer_Objeto(Output_2);
             }else{
-
+                A.Mostrar_Objeto(Output_2, Salida.get(CElemento-2));
             }
-            if(Salida.size()>3) {
-
-            }else{
-
+        }
+        if(CElemento-3>=0) {
+            if (Salida.get(CElemento-3).equals("")) {
+                A.Desaparecer_Objeto(Output_3);
+            } else {
+                A.Mostrar_Objeto(Output_3, Salida.get(CElemento-3));
             }
-        }else{ //Ocultar todos
-
         }
 
     }
 
-    public void DetectarColor(String Valor){
-
-    }
 
 
-    public void DetectorElementos(String Instruccion){
-        if(Instruccion.equals("input") || Instruccion.equals("output") ||Instruccion.equals("bumpmas") ||Instruccion.equals("bumpmenos"))
-        switch (Instruccion){
-            case "input": Input();
-            case "output": Output();
-            case "bumpmas": BumpMas();
-            case "bumpmenos": BumpMenos();
-        }else{
-            if(Instruccion.contains(" ")){
-                String[] InstruccionesArray = Instruccion.split(" ");
-                switch (InstruccionesArray[0]) {
-                    case "copyto":
-                        copyTo(InstruccionesArray[1]);
-                    case "copyfrom":
-                        copyFrom(InstruccionesArray[1]);
-                    case "sum":
-                        Sum(InstruccionesArray[1]);
-                    case "sub":
-                        Sub(InstruccionesArray[1]);
-                    case "jump":
-                        Jump(InstruccionesArray[1]);
-                }
+    public void DetectorElementos(String Instruccion) {
+        Handler handler = new Handler();
+        if (Instruccion.equals("input") || Instruccion.equals("output") || Instruccion.equals("bump+") || Instruccion.equals("bump-")) {
+            switch (Instruccion) {
+                case "input":
+                    Input();
+                    break;
+                case "output":
+                    Output();
+                    break;
+                case "bump+":
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            BumpMas();
+                        }
+                    }, x);
+                    x=x+300;
+                    break;
+                case "bump-":
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            BumpMenos();
+                        }
+                    }, x);
+                    x=x+300;
+                    break;
             }
-            }
+        }else{ // TODO Añadir el resto de instrucciones.
+                /*
+                if(Instruccion.contains(" ")){
+                    String[] InstruccionesArray = Instruccion.split(" ");
+                    switch (InstruccionesArray[0]) {
+                        case "copyto":
+                            copyTo(InstruccionesArray[1]);
+                        case "copyfrom":
+                            copyFrom(InstruccionesArray[1]);
+                        case "sum":
+                            Sum(InstruccionesArray[1]);
+                        case "sub":
+                            Sub(InstruccionesArray[1]);
+                        case "jump":
+                            Jump(InstruccionesArray[1]);
+                    }
+                }*/
+        }
     }
 
-    //Para las animaciones:
-
-    public void AnimacionInput(){
-        Actual.getLeft();
-        Actual.getTop();
-        ObjectAnimator animation = ObjectAnimator.ofFloat(Input_1, "translationX", Actual.getLeft(), Actual.getTop());
-        animation.setDuration(500);
-        animation.start();
-    }
-
-    public void AnimacionOutput(){
-        Output_1.getLeft();
-        Output_1.getTop();
-        ObjectAnimator animation = ObjectAnimator.ofFloat(Actual, "translationX", Output_1.getLeft(), Output_1.getTop());
-        animation.setDuration(500);
-        animation.start();
-    }
-
-
-
-
-    // Métodos del juego.
-    // El objeto es un cuadro.
-    // Inicio: es el estado por defecto, a lo que vuelve la caja.
 
     public void Input(){
-        Inputs();
-        AnimacionInput();
-        Valor_actual=Entrada.get(Contador_Entrada);
-        Contador_Entrada++;
+        // todas tienen sus propias cosas.
+        Handler handler = new Handler();
+        Log.i("Input 1", "Tiempo: "+x);
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                A.MoverYVolver(Input_3, Input_2);
+                A.MoverYVolver(Input_2, Input_1);
+                A.MoverYVolver(Input_1, Actual);
+            }
+        }, x);
+        x=x+510;
+        Log.i("Input 2", "Tiempo: "+x);
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                A.Mostrar_Objeto(Actual, Entrada.get(CElemento));
+                Actual_Valor=Actual.getText().toString();
+                CElemento++;
+                CargarInputs();
+
+            }
+        }, x);
+        x=x+100;
+    }
+
+    private void Output() {
+        Log.i("Output 1", "Tiempo: "+x);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                A.MoverYVolver(Actual, Output_1);
+                A.MoverYVolver(Output_1, Output_2);
+                A.MoverYVolver(Output_2, Output_3);
+            }
+        }, x);
+        x=x+510;
+        Log.i("Output 2", "Tiempo: "+x);
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                Salida.set(CElemento-1, Actual_Valor);
+                Actual_Valor="";
+                CargarOutputs();
+                A.Desaparecer_Objeto(Actual);
+            }
+        }, x);
+        x=x+100;
+    }
+
+    // Suma 1 al valor del cuadro, y le hace zoom (al cuadro) por unos milisegundos , para mostrar que está ocurriendo algo.
+    private void BumpMas() {
+        if(Character.isLetter(Actual_Valor.charAt(0))){
+            Toast toast = Toast.makeText(this, "Error, esto es una letra", Toast.LENGTH_SHORT);
+            toast.show();
+        }else{
+            A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+            Actual_Valor = Integer.toString(Integer.parseInt(Actual_Valor)+1);
+            A.Mostrar_Objeto(Actual, Actual_Valor);
+            A.ZoomObjeto(Actual);
+        }
 
     }
-    // Mueve la caja de inicio, que necesita un valor dentro y lo mueve a la parte de output, y elimina el valor de la caja, y vuelve al inicio
-    public void Output(){
-        Outputs();
-        AnimacionOutput();
-        Input_1.setText(Valor_actual);
-        Valor_actual="";
 
+    private void BumpMenos() {
+        if(Character.isLetter(Actual_Valor.charAt(0))){
+            Toast toast = Toast.makeText(this, "Error, esto es una letra", Toast.LENGTH_SHORT);
+            toast.show();
+        }else {
+            A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+            Actual_Valor = Integer.toString(Integer.parseInt(Actual_Valor) - 1);
+            A.Mostrar_Objeto(Actual, Actual_Valor);
+            A.ZoomObjeto(Actual);
+        }
     }
-    // Suma 1 al valor del cuadro, y le hace zoom (al cuadro) por unos milisegundos, para mostrar que está ocurriendo algo.
-    public void BumpMas(){
 
-    }
-    // Lo mismo pero le quita 1
-    public void BumpMenos(){
 
-    }
     // mueve el objeto a uno de los holders, y lo rellena con el cuadro y el valor (cambia el fondo del cuadrado.), y vuelve a la posición inicial
     public void copyTo(String holder){
 
@@ -366,6 +407,24 @@ public class Juego extends AppCompatActivity{
         //Jump if negative
         //Jump if not number
     }
+
+
+
+
+    public void ComrobarResultado(){
+        //TODO, si es incorrecto resetear todas las posiciones sino has ganado
+        // Comprobamos comparando la salida con lo que nos debería dar en el nivel.
+
+        if(num_intentos==1){
+            //Mostrar resultado con 3 estrellas
+        }
+        if(num_intentos==2 || num_intentos==3){
+            //Mostrar resultado con 2 estrellas
+        }
+        if(num_intentos>3){
+            //Mostrar resultado con 1 estrellas
+        }
+    }
     // Si mientras se ejecuta, ocurre algún error en la ejecución, con las reglas, te lo mostraría con este método, hace que ele elemento se ponga en rojo en la lista.
     public void ErrorEnEjecución(){
 
@@ -387,7 +446,7 @@ public class Juego extends AppCompatActivity{
             if(firebaseUser != null) {
                 uid = firebaseUser.getUid();
             }else{
-             //inicio de sesion con google
+                //inicio de sesion con google
                 uid = googleUser.getId();
             }
 
@@ -462,15 +521,48 @@ public class Juego extends AppCompatActivity{
         dialog.show();
     }
 
+    // Método para colocar de nuevo todos los elementos
+    public void Colocar(){
+        Input_1.setX(IX);
+        Input_1.setY(IO1Y);
+        Input_2.setX(IX);
+        Input_2.setY(IO2Y);
+        Input_3.setX(IX);
+        Input_3.setY(IO3Y);
+
+        Actual.setX(AX);
+        Actual.setY(AY);
+
+        Output_1.setX(OX);
+        Output_1.setY(IO1Y);
+        Output_2.setX(OX);
+        Output_2.setY(IO2Y);
+        Output_3.setX(OX);
+        Output_3.setY(IO3Y);
+
+
+        Holder_1.setX(HIX);
+        Holder_1.setY(HAY);
+        Holder_2.setX(HDX);
+        Holder_2.setY(HAY);
+        Holder_3.setX(HIX);
+        Holder_3.setY(HDY);
+        Holder_4.setX(HDX);
+        Holder_4.setY(HDY);
+
+    }
+
+    // Hacer que la cadena de instrucciones se pase a esta clase.
     public void getValores(String Cadena){
         //Por si la cadena esta vacía y solo tiene un -
         if(Cadena.length()>1){
-            Instrucciones=Cadena.substring(1);
+
+
+            InstruccionesString=Cadena.substring(1);
         }
     }
 
-
-    //Para eliminar la barra de abajo y hacerlo en pantalla completa
+    // Pantalla Completa
     public void setFlags() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(

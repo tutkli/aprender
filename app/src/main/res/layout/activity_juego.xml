@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <RelativeLayout
                 android:id="@+id/Constraint_Layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -25,181 +25,94 @@
                 android:background="@color/fondo_juego">
 
                 <TextView
-                    android:id="@+id/Output_1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="160dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_weight="1"
-                    android:background="@color/caja_numero"
-                    android:gravity="center"
-                    android:text="4"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/Output_2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_weight="1"
-                    android:background="@color/caja_numero"
-                    android:gravity="center"
-                    android:text="5"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Output_1" />
-
-                <TextView
-                    android:id="@+id/Output_3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_weight="1"
-                    android:background="@color/caja_numero"
-                    android:gravity="center"
-                    android:text="6"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Output_2" />
-
-                <TextView
                     android:id="@+id/Input_1"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="160dp"
-                    android:layout_weight="1"
-                    android:background="@color/caja_numero"
-                    android:gravity="center"
-                    android:text="1"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Input_2"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:background="@color/caja_numero"
-                    android:gravity="center"
-                    android:text="2"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Input_1" />
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Input_3"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:background="@color/caja_numero"
-                    android:gravity="center"
-                    android:text="3"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Input_2" />
-
-                <TextView
-                    android:id="@+id/holder_1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="116dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_weight="1"
-                    android:background="@color/color_error"
-                    android:gravity="center"
-                    android:text="H1"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Actual" />
-
-                <TextView
-                    android:id="@+id/holder_2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="164dp"
-                    android:layout_marginTop="80dp"
-                    android:layout_weight="1"
-                    android:background="@color/color_error"
-                    android:gravity="center"
-                    android:text="H2"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Actual" />
-
-                <TextView
-                    android:id="@+id/holder_3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="116dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:background="@color/color_error"
-                    android:gravity="center"
-                    android:text="H3"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/holder_1" />
-
-                <TextView
-                    android:id="@+id/holder_4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="164dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:background="@color/color_error"
-                    android:gravity="center"
-                    android:text="H4"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/holder_2" />
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Actual"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="140dp"
-                    android:layout_marginTop="60dp"
-                    android:layout_weight="1"
-                    android:background="@color/caja_letra"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Output_1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Output_2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Output_3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Holder_1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Holder_2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Holder_3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Holder_4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -213,6 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="IBSonido"
                     app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
 
                 <ImageButton
@@ -220,6 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="IBAyuda"
                     android:src="@android:drawable/ic_menu_help" />
 
                 <ImageButton
@@ -227,6 +142,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="IBAtras"
                     app:srcCompat="@android:drawable/ic_media_previous" />
 
                 <ImageButton
@@ -234,6 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="IBPlay"
                     app:srcCompat="@android:drawable/ic_media_play" />
 
                 <ImageButton
@@ -241,6 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="IBAdelante"
                     app:srcCompat="@android:drawable/ic_media_next" />
             </LinearLayout>
 
