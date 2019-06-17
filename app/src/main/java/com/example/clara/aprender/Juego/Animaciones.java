@@ -16,9 +16,6 @@ public class Animaciones{
         color_caja_numero = caja_numero;
         color_fondo_juego = fondo_juego;
         color_color_error = color_error;
-
-
-
     }
 
 
@@ -30,7 +27,7 @@ public class Animaciones{
         ViewAnimator
                 .animate(Inicio)
                 .translationY(Y, OY)
-                .dp().translationX(X, OX)
+                .translationX(X, OX)
                 .duration(500)
                 .thenAnimate(Inicio)
                 .translationY(OY, Y)
@@ -38,6 +35,8 @@ public class Animaciones{
                 .duration(1)
                 .start();
     }
+
+
     public void ZoomObjetomas(TextView Objeto){
         ViewAnimator
                 .animate(Objeto)
@@ -45,6 +44,7 @@ public class Animaciones{
                 .duration(190)
                 .start();
     }
+
     public void ZoomObjetomenos(TextView Objeto){
         ViewAnimator
                 .animate(Objeto)

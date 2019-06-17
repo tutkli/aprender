@@ -63,23 +63,17 @@ public class ListFragment extends Fragment {
         mDragListView = (DragListView) view.findViewById(R.id.drag_list_view);
         mDragListView.getRecyclerView().setVerticalScrollBarEnabled(true);
         mDragListView.setDragListListener(new DragListView.DragListListenerAdapter() {
-            //No va a ser utilizado
             @Override
             public void onItemDragStarted(int position) {
                 mRefreshLayout.setEnabled(false);
-                //Toast.makeText(mDragListView.getContext(), "Start - position: " + position, Toast.LENGTH_SHORT).show();
             }
-
-            //No va a ser utilizado
             @Override
             public void onItemDragEnded(int fromPosition, int toPosition) {
                 mRefreshLayout.setEnabled(true);
                 if (fromPosition != toPosition) {
-                    //Toast.makeText(mDragListView.getContext(), "End - position: " + toPosition, Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        //ni idea
         mItemArray = new ArrayList<>();
         for (int i = 0; i < 40; i++) {
             mItemArray.add(new Pair<>((long) i, "Item " + i));
@@ -130,7 +124,6 @@ public class ListFragment extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("List and Grid");
     }
 
-    // Creo que esto es para las imagenes
     private void setupListRecyclerView() {
         mDragListView.setLayoutManager(new LinearLayoutManager(getContext()));
         ItemAdapter listAdapter = new ItemAdapter(mItemArray, R.layout.list_item, R.id.image, false);

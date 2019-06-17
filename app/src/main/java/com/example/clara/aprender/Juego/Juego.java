@@ -60,7 +60,7 @@ public class Juego extends AppCompatActivity{
     // Valor Actual y enunciado
     String Actual_Valor, Problema, InstruccionesString;
     // Para saber en que instruccion se encuentra, Milisegundos para que se ejectue esta parte y numero de intentos
-    int CElemento, x, num_intentos;
+    int CElemento, x, num_intentos, JUMPA,JUMPB,JUMPC,JUMPD;
     MediaPlayer musica;
     boolean Jugando=false, EstadoMusica;
     // Librería utilizada https://github.com/florent37/ViewAnimator
@@ -117,6 +117,7 @@ public class Juego extends AppCompatActivity{
 
         Log.i("Entrada", "Estos son los valores: "+nivel_actual.getInput());
         Entrada.addAll(Arrays.asList((nivel_actual.getInput()).split("-")));
+        Resultado.addAll(Arrays.asList((nivel_actual.getOutput()).split("-")));
         for(int y=0; y<Salida.size(); y++){
             Salida.set(y, "");
         }
@@ -145,32 +146,42 @@ public class Juego extends AppCompatActivity{
 
 
     public void IBPlay(View v) {
+
+        //TODO COMPROBAR SI HAY INSTRUCCIONES
+        //TODO LIMPIAR DISPLAY
         if(!Jugando){
-            Jugando=true;
-            IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
-            CargarOutputs();
-            CElemento=0;
-            CargarInputs();
-            x =0;
-            // A Partir de aqui, nada cambia (Cuidado con los hilos. pueden romper el juego entero)
-            Instrucciones=  Arrays.asList(InstruccionesString.split("-"));
-            for(final String instruccion : Instrucciones){
-                Log.i("for", "Recorre la lista");
-                //Para que se inicie la siguiente animacion después de que se termine la otra, en realidad funciona a base de retrasos
-                DetectorElementos(instruccion);
-            }
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                public void run() {
-                    Jugando=false;
-                    IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
-                    num_intentos++;
-                    ComrobarResultado();
+            if(InstruccionesString!=null){
+                CElemento=0;
+                // TODO Métodos de contains para saber las posiciones de los A B C y D
+
+                Instrucciones=  Arrays.asList(InstruccionesString.split("-"));
+                Salida.clear();
+                Jugando=true;
+                IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_pause));
+                CargarOutputs();
+                CargarInputs();
+                x =0;
+                // A Partir de aqui, nada cambia (Cuidado con los hilos. pueden romper el juego entero)
+                for(final String instruccion : Instrucciones){
+                    Log.i("for", "Recorre la lista");
+                    //Para que se inicie la siguiente animacion después de que se termine la otra, en realidad funciona a base de retrasos
+                    DetectorElementos(instruccion);
                 }
-            }, x);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        Jugando=false;
+                        IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
+                        num_intentos++;
+                        ComrobarResultado();
+                    }
+                }, x);
+            }else{
+                Toast toast = Toast.makeText(this, "La lista de instrucciones esta vacía", Toast.LENGTH_SHORT);
+                toast.show();
+            }
         }else{
-            Toast toast = Toast.makeText(this, "El juego se está ejecutando", Toast.LENGTH_SHORT);
-            toast.show();
+
             //IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
             //Colocar();
         }
@@ -185,6 +196,7 @@ public class Juego extends AppCompatActivity{
             EstadoMusica = false;
             musica.pause();
             IBSonido.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_lock_silent_mode));
+            Input_1.setBackgroundColor(color_color_error);
         }else{
             int length = musica.getCurrentPosition();
             musica.seekTo(length);
@@ -195,16 +207,18 @@ public class Juego extends AppCompatActivity{
     }
 
     public void IBAyuda(View v) {
-        //Mostrar un cardview con la informacion del nivel y explicaciones de los distintos elementos
+        // TODO Mostrar un cardview con la informacion del nivel y explicaciones de los distintos elementos
+
+
     }
 
     public void IBAtras(View v){
-        //Mover hacia atras en la lista de elementos
+        //TODO Mover hacia atras en la lista de elementos
     }
 
 
     public void IBAdelante(View v){
-        //Mover hacia adelante en la lista de elementos
+        //TODO Mover hacia adelante en la lista de elementos
     }
 
     public void CargarInputs(){
@@ -213,7 +227,6 @@ public class Juego extends AppCompatActivity{
             A.Mostrar_Objeto(Input_1, Entrada.get(CElemento));
         }else{
             A.Desaparecer_Objeto(Input_1);
-            Toast.makeText(this, "No hay nada que cargar", Toast.LENGTH_SHORT).show();
         }
         if(CElemento+1<=Entrada.size()-1){
             A.Mostrar_Objeto(Input_2, Entrada.get(CElemento+1));
@@ -229,12 +242,16 @@ public class Juego extends AppCompatActivity{
 
     public void CargarOutputs(){
         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+        Log.i("COut",CElemento+"");
+        Log.i("COut",Salida+"");
         if(CElemento-1>=0) {
             if(Salida.get(CElemento-1).equals("")){
                 A.Desaparecer_Objeto(Output_1);
             }else{
                 A.Mostrar_Objeto(Output_1, Salida.get(CElemento-1));
             }
+        }else{
+            A.Desaparecer_Objeto(Output_1);
         }
         if(CElemento-2>=0){
             if(Salida.get(CElemento-2).equals("")){
@@ -242,6 +259,8 @@ public class Juego extends AppCompatActivity{
             }else{
                 A.Mostrar_Objeto(Output_2, Salida.get(CElemento-2));
             }
+        }else{
+            A.Desaparecer_Objeto(Output_2);
         }
         if(CElemento-3>=0) {
             if (Salida.get(CElemento-3).equals("")) {
@@ -249,6 +268,8 @@ public class Juego extends AppCompatActivity{
             } else {
                 A.Mostrar_Objeto(Output_3, Salida.get(CElemento-3));
             }
+        }else{
+            A.Desaparecer_Objeto(Output_3);
         }
 
     }
@@ -282,8 +303,7 @@ public class Juego extends AppCompatActivity{
                     x=x+300;
                     break;
             }
-        }else{ // TODO Añadir el resto de instrucciones.
-                /*
+        }else{
                 if(Instruccion.contains(" ")){
                     String[] InstruccionesArray = Instruccion.split(" ");
                     switch (InstruccionesArray[0]) {
@@ -296,9 +316,27 @@ public class Juego extends AppCompatActivity{
                         case "sub":
                             Sub(InstruccionesArray[1]);
                         case "jump":
+                            // Controlar el valor de jump
+
                             Jump(InstruccionesArray[1]);
                     }
-                }*/
+                }else{
+                    switch (Instruccion){
+                        //TODO Asignar a una variable el valor de la posicion.
+                        case "A":
+                            Input();
+                            break;
+                        case "B":
+                            Input();
+                            break;
+                        case "C":
+                            Input();
+                            break;
+                        case "D":
+                            Input();
+                            break;
+                    }
+                }
         }
     }
 
@@ -399,7 +437,9 @@ public class Juego extends AppCompatActivity{
 
     }
     public void Jump(String Lugar){
-        // Diferentes Jump
+
+
+        // TODO Jumps basados en cambiar el valor de CElemento
         //Jump
         //Jump if zero
         //Jump if negative
@@ -413,14 +453,17 @@ public class Juego extends AppCompatActivity{
         //TODO, si es incorrecto resetear todas las posiciones sino has ganado
         // Comprobamos comparando la salida con lo que nos debería dar en el nivel.
 
-        if(num_intentos==1){
-            //Mostrar resultado con 3 estrellas
-        }
-        if(num_intentos==2 || num_intentos==3){
-            //Mostrar resultado con 2 estrellas
-        }
-        if(num_intentos>3){
-            //Mostrar resultado con 1 estrellas
+        Log.i("Salida", ""+Salida);
+        Log.i("Resultado", ""+Resultado);
+
+        if(Salida.equals(Resultado)){
+            Toast toast = Toast.makeText(this, "Good Job, has necesitado "+num_intentos+" intentos", Toast.LENGTH_SHORT);
+            toast.show();
+            Victoria();
+
+        }else{
+            Toast toast = Toast.makeText(this, "NO es la solucion, llevas: "+num_intentos+" intentos", Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
     // Si mientras se ejecuta, ocurre algún error en la ejecución, con las reglas, te lo mostraría con este método, hace que ele elemento se ponga en rojo en la lista.
@@ -468,10 +511,22 @@ public class Juego extends AppCompatActivity{
         ImageView star2 = (ImageView)mView.findViewById(R.id.star2);
         ImageView star3 = (ImageView)mView.findViewById(R.id.star3);
 
-        //SEGUN LA PUNTUACION, CAMBIAR LA IMAGEN DE LA ESTRELLA (POR EJEMPLO, SE PUEDE PONER LA IMAGEN POR DEFECTO LA ESTRELLA VACIA Y CAMBIAR LA IMAGEN CON UN SWITCH)
-        star1.setImageResource(R.drawable.star);
-        star2.setImageResource(R.drawable.empty_star);
-        star3.setImageResource(R.drawable.empty_star);
+        //TODO SEGUN LA PUNTUACION, CAMBIAR LA IMAGEN DE LA ESTRELLA (POR EJEMPLO, SE PUEDE PONER LA IMAGEN POR DEFECTO LA ESTRELLA VACIA Y CAMBIAR LA IMAGEN CON UN SWITCH)
+        if(num_intentos==1){
+            star1.setImageResource(R.drawable.star);
+            star2.setImageResource(R.drawable.star);
+            star3.setImageResource(R.drawable.star);
+        }
+        if(num_intentos==2 || num_intentos==3){
+            star1.setImageResource(R.drawable.star);
+            star2.setImageResource(R.drawable.star);
+            star3.setImageResource(R.drawable.empty_star);
+        }
+        if(num_intentos>3){
+            star1.setImageResource(R.drawable.star);
+            star2.setImageResource(R.drawable.empty_star);
+            star3.setImageResource(R.drawable.empty_star);
+        }
 
         mBuilder.setView(mView);
         final AlertDialog dialog = mBuilder.create();
@@ -490,8 +545,8 @@ public class Juego extends AppCompatActivity{
         mSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //AÑADIR INTENT AL SIGUIENTE NIVEL
-                //startActivity(new Intent(MainActivity.this, MenuNivelActivity.class));
+                //TODO AÑADIR INTENT AL SIGUIENTE NIVEL
+                //TODO startActivity(new Intent(MainActivity.this, MenuNivelActivity.class));
                 Toast.makeText(Juego.this, "Siguiente nivel", Toast.LENGTH_LONG).show();
                 dialog.dismiss();
             }
@@ -554,8 +609,6 @@ public class Juego extends AppCompatActivity{
     public void getValores(String Cadena){
         //Por si la cadena esta vacía y solo tiene un -
         if(Cadena.length()>1){
-
-
             InstruccionesString=Cadena.substring(1);
         }
     }
@@ -586,6 +639,7 @@ public class Juego extends AppCompatActivity{
         super.onPause();
         if(musica.isPlaying())
             Sonido();
+
         else
             return;
     }
