@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
+import com.example.clara.aprender.LoadGame;
 import com.example.clara.aprender.MenuNivelActivity;
 import com.example.clara.aprender.Modelos.Nivel;
 import com.example.clara.aprender.Modelos.Solucion;
@@ -147,9 +148,9 @@ public class Juego extends AppCompatActivity{
 
 
     public void IBPlay(View v) {
-
         //TODO COMPROBAR SI HAY INSTRUCCIONES
         //TODO LIMPIAR DISPLAY
+        //TODO LIMPIAR LOS HOLDERS
         if(!Jugando){
             if(InstruccionesString!=null){
                 CElemento=0;
@@ -763,7 +764,6 @@ public class Juego extends AppCompatActivity{
                 Solucion solucion = new Solucion(nivel_actual.getIdNivel(), 1);
                 BDAprender.getSolucionDAO().insert(solucion);
             }
-
             //TODO No se ha iniciado sesion ni con firebase ni con google. Guardar la puntuacion en la base de datos local
         }
 
@@ -776,7 +776,6 @@ public class Juego extends AppCompatActivity{
         ImageView star2 = (ImageView)mView.findViewById(R.id.star2);
         ImageView star3 = (ImageView)mView.findViewById(R.id.star3);
 
-        //TODO SEGUN LA PUNTUACION, CAMBIAR LA IMAGEN DE LA ESTRELLA (POR EJEMPLO, SE PUEDE PONER LA IMAGEN POR DEFECTO LA ESTRELLA VACIA Y CAMBIAR LA IMAGEN CON UN SWITCH)
         if(num_intentos==1){
             star1.setImageResource(R.drawable.star);
             star2.setImageResource(R.drawable.star);
@@ -812,6 +811,10 @@ public class Juego extends AppCompatActivity{
             public void onClick(View v) {
                 //TODO AÑADIR INTENT AL SIGUIENTE NIVEL
                 //TODO startActivity(new Intent(MainActivity.this, MenuNivelActivity.class));
+                Intent intent = new Intent(Juego.this, LoadGame.class);
+                intent.putExtra("id",nivel_actual.getIdNivel()+1);
+                Juego.this.startActivity(intent);
+
                 Toast.makeText(Juego.this, "Siguiente nivel", Toast.LENGTH_LONG).show();
                 dialog.dismiss();
             }
