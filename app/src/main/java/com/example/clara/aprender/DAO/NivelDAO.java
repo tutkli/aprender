@@ -12,7 +12,7 @@ import java.util.List;
 @Dao
 public interface NivelDAO {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Nivel... Niveles);
 
     @Update

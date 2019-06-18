@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
 import com.example.clara.aprender.MenuNivelActivity;
 import com.example.clara.aprender.Modelos.Nivel;
+import com.example.clara.aprender.Modelos.Solucion;
 import com.example.clara.aprender.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -162,10 +163,15 @@ public class Juego extends AppCompatActivity{
                 CargarInputs();
                 x =0;
                 // A Partir de aqui, nada cambia (Cuidado con los hilos. pueden romper el juego entero)
+                Log.i("for", "Lista entera: "+Instrucciones);
                 for(final String instruccion : Instrucciones){
-                    Log.i("for", "Recorre la lista");
+                    Log.i("for", "Recorre la lista con isntrucción: "+instruccion);
                     //Para que se inicie la siguiente animacion después de que se termine la otra, en realidad funciona a base de retrasos
-                    DetectorElementos(instruccion);
+                    if(instruccion.startsWith(" ")){
+                        DetectorElementos(instruccion.substring(1));
+                    }else{
+                        DetectorElementos(instruccion);
+                    }
                 }
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -242,6 +248,7 @@ public class Juego extends AppCompatActivity{
 
     public void CargarOutputs(){
         // TODO Si hay 2 inputs seguidos, se rompe
+        // Controlar el CElemento
         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
         Log.i("COut",CElemento+"");
         Log.i("COut",Salida+"");
@@ -307,6 +314,7 @@ public class Juego extends AppCompatActivity{
         }else{
                 if(Instruccion.contains(" ")){
                     String[] InstruccionesArray = Instruccion.split(" ");
+                    // TODO mirar porque cunado es un copyfrom le añade un espacio al principio
                     switch (InstruccionesArray[0]) {
                         case "copyto":
                             Log.i("Instruccion",InstruccionesArray[1]+" CT");
@@ -324,7 +332,6 @@ public class Juego extends AppCompatActivity{
                             break;
                         case "jump":
                             // Controlar el valor de jump
-
                             Jump(InstruccionesArray[1]);
                             break;
                         default:
@@ -433,6 +440,7 @@ public class Juego extends AppCompatActivity{
 
     // mueve el objeto a uno de los holders, y lo rellena con el cuadro y el valor (cambia el fondo del cuadrado.), y vuelve a la posición inicial
     public void copyTo(final String holder){
+        // TODO Añadir para comprobar si hay algo en el Actual.
         Handler handler = new Handler();
         Log.i("CopyTo1", "Tiempo: "+x);
         switch(holder){
@@ -511,6 +519,7 @@ public class Juego extends AppCompatActivity{
     }
     // mueve el objeto al holder y cambia el valor del objeto al contenido del holder, y vuelve a la posición inicio
     public void copyFrom(String holder){
+        // TODO Añadir para comprobar si hay algo en el holder.
         Handler handler = new Handler();
         Log.i("CopyFrom1", "Tiempo: "+x);
         switch(holder){
@@ -589,18 +598,95 @@ public class Juego extends AppCompatActivity{
                     }
                 }, x);
                 x=x+100;
-
                 break;
         }
 
     }
-    // Coge el objeto de la zona de inicio, lo lleva a uno de las posiciones de los holders, y le añade realiza la suma
     public void Sum(String holder){
+        // TODO animacion para que vuelva el valor.
+        Handler handler = new Handler();
+        Log.i("Sum1", "Tiempo: "+x);
+        switch(holder){
+            case "1":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Actual, Holder_1);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Sum2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Integer.toString(Integer.parseInt(Holder_1.getText().toString()) + Integer.parseInt(Actual.getText().toString()));
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+                break;
+            case "2":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Actual, Holder_2);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Sum2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Integer.toString(Integer.parseInt(Holder_2.getText().toString()) + Integer.parseInt(Actual.getText().toString()));
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "3":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Actual, Holder_3);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Sum2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Integer.toString(Integer.parseInt(Holder_3.getText().toString()) + Integer.parseInt(Actual.getText().toString()));
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "4":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Actual, Holder_4);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Sum2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Integer.toString(Integer.parseInt(Holder_4.getText().toString()) + Integer.parseInt(Actual.getText().toString()));
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+                break;
+        }
 
     }
     // El objeto de la zona de inicio, va al holder marcado, hace la resta, el resultado se queda en el objeto y vuelve al inicio
     public void Sub(String holder){
-
+        // TODO mismo que con el suma
     }
     public void Jump(String Lugar){
 
@@ -617,8 +703,6 @@ public class Juego extends AppCompatActivity{
 
 
     public void ComrobarResultado(){
-        //TODO, si es incorrecto resetear todas las posiciones sino has ganado
-        // Comprobamos comparando la salida con lo que nos debería dar en el nivel.
 
         Log.i("Salida", ""+Salida);
         Log.i("Resultado", ""+Resultado);
@@ -666,6 +750,20 @@ public class Juego extends AppCompatActivity{
             puntuacionesRef.setValue(puntuacion);
 
         }else{
+            Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
+            if(num_intentos==1){
+                Solucion solucion = new Solucion(nivel_actual.getIdNivel(), 3);
+                BDAprender.getSolucionDAO().insert(solucion);
+            }
+            if(num_intentos==2 || num_intentos==3){
+                Solucion solucion = new Solucion(nivel_actual.getIdNivel(), 2);
+                BDAprender.getSolucionDAO().insert(solucion);
+            }
+            if(num_intentos>3){
+                Solucion solucion = new Solucion(nivel_actual.getIdNivel(), 1);
+                BDAprender.getSolucionDAO().insert(solucion);
+            }
+
             //TODO No se ha iniciado sesion ni con firebase ni con google. Guardar la puntuacion en la base de datos local
         }
 

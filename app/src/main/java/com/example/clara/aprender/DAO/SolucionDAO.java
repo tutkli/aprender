@@ -3,6 +3,7 @@ package com.example.clara.aprender.DAO;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 import com.example.clara.aprender.Modelos.Solucion;
@@ -10,7 +11,8 @@ import java.util.List;
 
 @Dao
 public interface SolucionDAO {
-    @Insert
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Solucion... Soluciones);
 
     @Update
@@ -22,6 +24,6 @@ public interface SolucionDAO {
     @Query("SELECT * FROM solucion")
     List<Solucion> getSoluciones();
 
-    @Query("SELECT * FROM solucion WHERE IdSolucion = :idsolucion")
-    Solucion getSolucionPorID(int idsolucion);
+    @Query("SELECT * FROM solucion WHERE IdSolucion = :IdNivel")
+    Solucion getSolucionPorID(int IdNivel);
 }

@@ -12,6 +12,8 @@ public class PuntuacionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_puntuacion);
 
         init();
+        // TODO, cargar las puntuacStr@ken14
+        
     }
 
     @Override
