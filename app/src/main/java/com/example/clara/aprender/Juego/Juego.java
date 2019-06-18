@@ -241,6 +241,7 @@ public class Juego extends AppCompatActivity{
     }
 
     public void CargarOutputs(){
+        // TODO Si hay 2 inputs seguidos, se rompe
         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
         Log.i("COut",CElemento+"");
         Log.i("COut",Salida+"");
@@ -308,17 +309,27 @@ public class Juego extends AppCompatActivity{
                     String[] InstruccionesArray = Instruccion.split(" ");
                     switch (InstruccionesArray[0]) {
                         case "copyto":
+                            Log.i("Instruccion",InstruccionesArray[1]+" CT");
                             copyTo(InstruccionesArray[1]);
+                            break;
                         case "copyfrom":
+                            Log.i("Instruccion",InstruccionesArray[1]+" CF");
                             copyFrom(InstruccionesArray[1]);
+                            break;
                         case "sum":
                             Sum(InstruccionesArray[1]);
+                            break;
                         case "sub":
                             Sub(InstruccionesArray[1]);
+                            break;
                         case "jump":
                             // Controlar el valor de jump
 
                             Jump(InstruccionesArray[1]);
+                            break;
+                        default:
+                            Log.i("Instruccion",InstruccionesArray[0]+" "+InstruccionesArray[1]+" DEFAULT");
+                            break;
                     }
                 }else{
                     switch (Instruccion){
@@ -421,11 +432,166 @@ public class Juego extends AppCompatActivity{
 
 
     // mueve el objeto a uno de los holders, y lo rellena con el cuadro y el valor (cambia el fondo del cuadrado.), y vuelve a la posición inicial
-    public void copyTo(String holder){
+    public void copyTo(final String holder){
+        Handler handler = new Handler();
+        Log.i("CopyTo1", "Tiempo: "+x);
+        switch(holder){
+            case "1":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Actual, Holder_1);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Copyto2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.Mostrar_Objeto(Holder_1, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
 
+                break;
+            case "2":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Actual, Holder_2);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Copyto2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.Mostrar_Objeto(Holder_2, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "3":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Actual, Holder_3);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Copyto2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.Mostrar_Objeto(Holder_3, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "4":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Actual, Holder_4);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Copyto2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.Mostrar_Objeto(Holder_4, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+                break;
+        }
     }
     // mueve el objeto al holder y cambia el valor del objeto al contenido del holder, y vuelve a la posición inicio
     public void copyFrom(String holder){
+        Handler handler = new Handler();
+        Log.i("CopyFrom1", "Tiempo: "+x);
+        switch(holder){
+            case "1":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Holder_1, Actual);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("CopyFrom2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Holder_1.getText().toString();
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "2":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Holder_2, Actual);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("CopyFrom2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.Mostrar_Objeto(Actual, Holder_2.getText().toString());
+                        Actual_Valor = Actual.getText().toString();
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "3":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Holder_3, Actual);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("CopyFrom2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.Mostrar_Objeto(Actual, Holder_3.getText().toString());
+                        Actual_Valor = Actual.getText().toString();
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "4":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Holder_4, Actual);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("CopyFrom2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.Mostrar_Objeto(Actual, Holder_4.getText().toString());
+                        Actual_Valor = Actual.getText().toString();
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+        }
 
     }
     // Coge el objeto de la zona de inicio, lo lleva a uno de las posiciones de los holders, y le añade realiza la suma
@@ -438,8 +604,9 @@ public class Juego extends AppCompatActivity{
     }
     public void Jump(String Lugar){
 
+        // Tiene que repetir, tantas veces como lo necesite, osea que mirar el resultado, con un if o algo, por lo que si no es necesario, no hace el salto
 
-        // TODO Jumps basados en cambiar el valor de CElemento
+        // TODO Jumps basados en cambiar el valor de CElemento no es CINstrucción, por lo que necesita uno nuevo
         //Jump
         //Jump if zero
         //Jump if negative
