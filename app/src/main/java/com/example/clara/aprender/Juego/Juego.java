@@ -206,6 +206,9 @@ public class Juego extends AppCompatActivity{
                         Log.i("while", "Jump indice: "+CInstruccion);
                         Log.i("while", "ijump: "+iJump);
                         iJump++;
+                        if(nivel_actual.getIdNivel()==6 && iJump==3){
+                            break;
+                        }
                     }
                     if(iJump<Resultado.size()){
                         if(Instrucciones.get(CInstruccion).startsWith(" ")){
