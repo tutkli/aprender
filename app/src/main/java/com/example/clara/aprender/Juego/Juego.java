@@ -97,6 +97,8 @@ public class Juego extends AppCompatActivity{
         color_fondo_juego = getResources().getColor(R.color.fondo_juego);
         color_color_error = getResources().getColor(R.color.color_error);
         //Posiciones de todos los views
+        IBAdelante.setVisibility(View.INVISIBLE);
+        IBAtras.setVisibility(View.INVISIBLE);
         Colocar();
         x=0;
         num_intentos=0;
