@@ -63,7 +63,7 @@ public class Juego extends AppCompatActivity{
     // Valor Actual y enunciado
     String Actual_Valor, Problema, InstruccionesString;
     // Para saber en que instruccion se encuentra, Milisegundos para que se ejectue esta parte y numero de intentos
-    int CElemento, x, num_intentos, JUMPA,JUMPB,JUMPC,JUMPD;
+    int CElemento, x, num_intentos, JUMPA,JUMPB,JUMPC,JUMPD, CInstruccion, iJump;
     MediaPlayer musica;
     boolean Jugando=false, EstadoMusica;
     // Librería utilizada https://github.com/florent37/ViewAnimator
@@ -101,6 +101,8 @@ public class Juego extends AppCompatActivity{
         x=0;
         num_intentos=0;
         CElemento=0;
+        CInstruccion=0;
+        iJump=0;
         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
         setFlags();
         EstadoMusica=true;
@@ -172,15 +174,37 @@ public class Juego extends AppCompatActivity{
                 // A Partir de aqui, nada cambia (Cuidado con los hilos. pueden romper el juego entero)
                 Log.i("for", "Lista entera: "+Instrucciones);
                 for(final String instruccion : Instrucciones){
-                    Log.i("for", "Recorre la lista con isntrucción: "+instruccion);
-                    //Para que se inicie la siguiente animacion después de que se termine la otra, en realidad funciona a base de retrasos
-
-                    // TODO, ejecutar las instrucciones según dice el contador
-                    if(instruccion.startsWith(" ")){
-                        DetectorElementos(instruccion.substring(1));
-                    }else{
-                        DetectorElementos(instruccion);
+                    if(instruccion.equals("A")){
+                        JUMPA=CInstruccion;
                     }
+                    if(instruccion.equals("B")){
+                        JUMPB=CInstruccion;
+                    }
+                    if(instruccion.equals("C")){
+                        JUMPC=CInstruccion;
+                    }
+                    if(instruccion.equals("D")){
+                        JUMPD=CInstruccion;
+                    }
+                    CInstruccion++;
+                }
+                CInstruccion=0;
+                // Pasar a una lista las instrucciones.
+                // Repetir hasta que no haya inputs
+                while(CInstruccion<Instrucciones.size()){
+                    Log.i("while", "Recorre la lista con isntrucción: "+Instrucciones.get(CInstruccion));
+                    if(Instrucciones.get(CInstruccion).contains("jump")){
+                        iJump++;
+                    }
+                    if(iJump<Resultado.size()){
+                        if(Instrucciones.get(CInstruccion).startsWith(" ")){
+                            DetectorElementos(Instrucciones.get(CInstruccion).substring(1));
+                        }else{
+                            DetectorElementos(Instrucciones.get(CInstruccion));
+                        }
+                    }
+                    CInstruccion++;
+                    Log.i("while", "Lista con indice: "+CInstruccion);
                 }
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -192,11 +216,10 @@ public class Juego extends AppCompatActivity{
                     }
                 }, x);
             }else{
-                Toast toast = Toast.makeText(this, "La lista de instrucciones esta vacía", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(this, "La lista de instrucciones esta vacía.", Toast.LENGTH_SHORT);
                 toast.show();
             }
         }else{
-
             //IBPlay.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_media_play));
             //Colocar();
         }
@@ -773,6 +796,27 @@ public class Juego extends AppCompatActivity{
         }
     }
     public void Jump(String Lugar){
+        // Nos va a dar la letra.
+
+        switch (Lugar){
+            //TODO Asignar a una variable el valor de la posicion.
+            case "A":
+                Log.i("Instruccion","Saltando por A");
+                CInstruccion=JUMPA;
+                break;
+            case "B":
+                Log.i("Instruccion","Saltando por B");
+                CInstruccion=JUMPB;
+                break;
+            case "C":
+                Log.i("Instruccion","Saltando por C");
+                CInstruccion=JUMPC;
+                break;
+            case "D":
+                Log.i("Instruccion","Saltando por D");
+                CInstruccion=JUMPD;
+                break;
+        }
 
         // Tiene que repetir, tantas veces como lo necesite, osea que mirar el resultado, con un if o algo, por lo que si no es necesario, no hace el salto
 
