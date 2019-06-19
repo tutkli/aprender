@@ -961,9 +961,9 @@ public class Juego extends AppCompatActivity{
                 Intent intent = new Intent(Juego.this, LoadGame.class);
                 intent.putExtra("id",nivel_actual.getIdNivel()+1);
                 Juego.this.startActivity(intent);
-
                 Toast.makeText(Juego.this, "Siguiente nivel", Toast.LENGTH_LONG).show();
                 dialog.dismiss();
+                finish();
             }
         });
 

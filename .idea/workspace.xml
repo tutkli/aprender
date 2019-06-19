@@ -73,20 +73,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="237" column="54" selection-start-line="237" selection-start-column="54" selection-end-line="237" selection-end-column="54" />
+            <state relative-caret-position="281">
+              <caret line="237" selection-start-line="237" selection-end-line="237" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="897" column="35" selection-start-line="897" selection-start-column="35" selection-end-line="897" selection-end-column="35" />
+            <state relative-caret-position="332">
+              <caret line="429" column="62" selection-start-line="429" selection-start-column="53" selection-end-line="429" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#9806#9807#0" expanded="true" />
@@ -100,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Solucion.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -555,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560959073593</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Cambiado los Niveles">
+      <created>1560960625075</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1560960625075</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -569,11 +576,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info id="Project" order="1" sideWeight="0.66305524" visible="true" weight="0.1684435" />
-      <window_info active="true" id="Structure" order="2" sideWeight="0.33694476" side_tool="true" visible="true" weight="0.1684435" />
+      <window_info id="Project" order="1" sideWeight="0.66269165" visible="true" weight="0.1684435" />
+      <window_info id="Structure" order="2" sideWeight="0.33730835" side_tool="true" visible="true" weight="0.1684435" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="5" />
@@ -588,7 +594,7 @@
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.28169015" />
       <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.36403033" />
+      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.36403033" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32827735" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -619,7 +625,8 @@
     <MESSAGE value="Iconos para la listas" />
     <MESSAGE value="Escondidos los botones de atras y adelante" />
     <MESSAGE value="Arreglados los outputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglados los outputs" />
+    <MESSAGE value="Cambiado los Niveles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiado los Niveles" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/custom_back_button.xml">
@@ -896,26 +903,26 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Solucion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="897" column="35" selection-start-line="897" selection-start-column="35" selection-end-line="897" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9806#9807#0" expanded="true" />
-            <element signature="e#9830#9831#0" expanded="true" />
-          </folding>
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="237" column="54" selection-start-line="237" selection-start-column="54" selection-end-line="237" selection-end-column="54" />
+        <state relative-caret-position="281">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="429" column="62" selection-start-line="429" selection-start-column="53" selection-end-line="429" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9806#9807#0" expanded="true" />
+            <element signature="e#9830#9831#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
