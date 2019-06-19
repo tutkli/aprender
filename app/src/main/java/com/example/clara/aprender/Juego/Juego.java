@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.clara.aprender.Base_datos.Base_datos_Aprender;
+import com.example.clara.aprender.Juego.Ayuda.ayuda;
 import com.example.clara.aprender.LoadGame;
 import com.example.clara.aprender.MenuNivelActivity;
 import com.example.clara.aprender.Modelos.Nivel;
@@ -221,8 +222,9 @@ public class Juego extends AppCompatActivity{
 
     public void IBAyuda(View v) {
         // TODO Mostrar un cardview con la informacion del nivel y explicaciones de los distintos elementos
-
-
+        Intent intent = new Intent(this, ayuda.class);
+        intent.putExtra("id",nivel_actual.getIdNivel());
+        this.startActivity(intent);
     }
 
     public void IBAtras(View v){

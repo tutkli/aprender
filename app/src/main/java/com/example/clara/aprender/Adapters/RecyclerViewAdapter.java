@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.clara.aprender.Juego.Juego;
@@ -44,7 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         // Cambiar de vuelta a esto -> holder.lvl_img.setImageResource(mData.get(holder.getAdapterPosition()).getImagen()); <- o no utilizar una base de datos y utilizar archivos del movil de la carpeta drawable.
 
-        holder.lvl_img.setImageResource(R.drawable.star);
+        holder.Titulo.setText("1");
 
         //prueba de que hace click, borrar luego
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -80,13 +81,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView lvl_img;
+        TextView Titulo;
         CardView cardView ;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            lvl_img = (ImageView) itemView.findViewById(R.id.level_img);
+            Titulo =  itemView.findViewById(R.id.Titulo);
             cardView = (CardView) itemView.findViewById(R.id.cardview_id);
         }
     }
