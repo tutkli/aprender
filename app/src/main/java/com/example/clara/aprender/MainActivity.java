@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
+        if(firebaseUser == null && googleUser == null) {
+            showTooltip(btn_config, Gravity.BOTTOM);
+        }
     }
 
     @Override
@@ -75,9 +78,6 @@ public class MainActivity extends AppCompatActivity {
         firebaseUser = mAuth.getCurrentUser();
         googleUser = GoogleSignIn.getLastSignedInAccount(this);
         currentUsername();
-        if(firebaseUser == null && googleUser == null) {
-            showTooltip(btn_config, Gravity.BOTTOM);
-        }
     }
 
     @Override

@@ -880,8 +880,6 @@ public class Juego extends AppCompatActivity{
         firebaseUser = mAuth.getCurrentUser();
         googleUser = GoogleSignIn.getLastSignedInAccount(this);
         String uid ="";
-        int puntuacion, numeroDelNivel;
-        puntuacion=numeroDelNivel=0;
 
         //ver si se ha iniciado sesion con google o con firebase
         if(firebaseUser != null || googleUser != null) {
@@ -893,13 +891,21 @@ public class Juego extends AppCompatActivity{
                 uid = googleUser.getId();
             }
 
-            //guardar puntuaciones
             DatabaseReference lvlmaxRef = myRef.child(uid + "/lvlmax");
-            lvlmaxRef.setValue(numeroDelNivel);
-            //ACTUALIZAR LA PUNTUACION DEL NIVEL
-            DatabaseReference puntuacionesRef = myRef.child(uid + "/puntuaciones/lvl" + numeroDelNivel);
-            puntuacionesRef.setValue(puntuacion);
+            DatabaseReference puntuacionesRef = myRef.child(uid + "/puntuaciones/lvl" + nivel_actual.getIdNivel());
 
+            if(num_intentos==1){
+                lvlmaxRef.setValue(nivel_actual.getIdNivel());
+                puntuacionesRef.setValue(3);
+            }
+            if(num_intentos==2 || num_intentos==3){
+                lvlmaxRef.setValue(nivel_actual.getIdNivel());
+                puntuacionesRef.setValue(2);
+            }
+            if(num_intentos>3){
+                lvlmaxRef.setValue(nivel_actual.getIdNivel());
+                puntuacionesRef.setValue(1);
+            }
         }else{
             Base_datos_Aprender BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build();
             if(num_intentos==1){
