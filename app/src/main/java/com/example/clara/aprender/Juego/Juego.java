@@ -1075,6 +1075,7 @@ public class Juego extends AppCompatActivity{
     public void onResume()
     {
         super.onResume();
+        setFlags();
         if(musica.isPlaying())
             return;
         else
