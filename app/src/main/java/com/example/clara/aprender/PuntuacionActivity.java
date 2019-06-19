@@ -33,6 +33,7 @@ public class PuntuacionActivity extends AppCompatActivity {
     }
 
     public void init() {
+
         setFlags();
     }
 

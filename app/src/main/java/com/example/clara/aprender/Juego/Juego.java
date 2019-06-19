@@ -112,6 +112,7 @@ public class Juego extends AppCompatActivity{
         if (savedInstanceState == null) {
             showFragment(BoardFragment.newInstance());
         }
+        Ayuda(1000);
     }
 
     private void showFragment(Fragment fragment) {
@@ -249,11 +250,20 @@ public class Juego extends AppCompatActivity{
         }
     }
 
+
+    public void Ayuda(int t){
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                Intent intent = new Intent(Juego.this, ayuda.class);
+                intent.putExtra("id",nivel_actual.getIdNivel());
+                Juego.this.startActivity(intent);
+            }
+        }, t);
+    }
     public void IBAyuda(View v) {
         // TODO Mostrar un cardview con la informacion del nivel y explicaciones de los distintos elementos
-        Intent intent = new Intent(this, ayuda.class);
-        intent.putExtra("id",nivel_actual.getIdNivel());
-        this.startActivity(intent);
+        Ayuda(10);
     }
 
     public void IBAtras(View v){

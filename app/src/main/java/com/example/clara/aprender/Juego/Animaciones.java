@@ -1,5 +1,6 @@
 package com.example.clara.aprender.Juego;
 
+import android.view.View;
 import android.widget.TextView;
 import com.github.florent37.viewanimator.ViewAnimator;
 
@@ -56,11 +57,13 @@ public class Animaciones{
     public void Mostrar_Objeto(TextView txt, String valor){
         txt.setText(valor);
         txt.setBackgroundColor(DetectarColores((txt.getText().toString())));
+        txt.setVisibility(View.VISIBLE);
     }
 
     public void Desaparecer_Objeto(TextView txt){
         txt.setText("");
         txt.setBackgroundColor(color_fondo_juego);
+        txt.setVisibility(View.INVISIBLE);
     }
 
     public int DetectarColores(String Valor) {
