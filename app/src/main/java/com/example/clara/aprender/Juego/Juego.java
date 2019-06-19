@@ -103,6 +103,7 @@ public class Juego extends AppCompatActivity{
         CElemento=0;
         CInstruccion=0;
         iJump=0;
+        JUMPA=JUMPB=JUMPC=JUMPD=0;
         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
         setFlags();
         EstadoMusica=true;
@@ -172,6 +173,8 @@ public class Juego extends AppCompatActivity{
                 CargarInputs();
                 x =0;
                 // A Partir de aqui, nada cambia (Cuidado con los hilos. pueden romper el juego entero)
+                JUMPA=JUMPB=JUMPC=JUMPD=0;
+                CInstruccion=0;
                 Log.i("for", "Lista entera: "+Instrucciones);
                 for(final String instruccion : Instrucciones){
                     if(instruccion.equals("A")){
