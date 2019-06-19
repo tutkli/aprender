@@ -350,7 +350,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
                             });
                 }
             }
-        });º
+        });
 
         mGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -422,14 +422,14 @@ public class ConfiguracionActivity extends AppCompatActivity {
     }
 
     public void recuperarPassword(String email) {
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-
-        auth.sendPasswordResetEmail(email)
+        mAuth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(ConfiguracionActivity.this, "Se ha enviado un correo a su email.", Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(ConfiguracionActivity.this, "Wack", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
