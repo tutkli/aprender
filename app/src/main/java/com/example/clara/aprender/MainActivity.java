@@ -162,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         mAuth = FirebaseAuth.getInstance();
-
         mainGrid = (GridLayout)findViewById(R.id.mainGrid);
 
         //JUGAR

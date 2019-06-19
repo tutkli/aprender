@@ -3,7 +3,7 @@
     <string name="title_activity_menu_nivel">MenuNivel</string>
     <string name="title_activity_splash_screen">Aprender( )</string>
 
-    <string name="creditos">"Esta aplicación ha sido creada por \n\n Aleksander M \n Clara Castillo \n Raúl Cruz \n\n Como proyecto final de Grado Superior de Desarrollo de Aplicaciones Multiplataforma \n\n ¡Gracias por usarla!"</string>
+    <string name="creditos">"Esta aplicación ha sido creada por \n\n Aleksander Mizielinski \n Clara Castillo \n Raúl Cruz \n\n Como proyecto final de Grado Superior de Desarrollo de Aplicaciones Multiplataforma \n\n ¡Gracias por usarla!"</string>
 
     <string name="action_lists">Test Listas</string>
     <string name="action_board">Test board </string>
