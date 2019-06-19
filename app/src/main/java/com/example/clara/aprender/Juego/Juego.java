@@ -610,7 +610,6 @@ public class Juego extends AppCompatActivity{
 
     }
     public void Sum(String holder){
-        // TODO animacion para que vuelva el valor. O Cambiar para que el holder se mueva a la posicion actual-
         Handler handler = new Handler();
         Log.i("Sum1", "Tiempo: "+x);
         switch(holder){
@@ -618,7 +617,7 @@ public class Juego extends AppCompatActivity{
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
-                        A.MoverYVolver(Actual, Holder_1);
+                        A.MoverYVolver(Holder_1,Actual);
                     }
                 }, x);
                 x=x+510;
@@ -636,7 +635,7 @@ public class Juego extends AppCompatActivity{
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
-                        A.MoverYVolver(Actual, Holder_2);
+                        A.MoverYVolver(Holder_2,Actual);
                     }
                 }, x);
                 x=x+510;
@@ -655,7 +654,7 @@ public class Juego extends AppCompatActivity{
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
-                        A.MoverYVolver(Actual, Holder_3);
+                        A.MoverYVolver(Holder_3,Actual);
                     }
                 }, x);
                 x=x+510;
@@ -674,7 +673,7 @@ public class Juego extends AppCompatActivity{
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
-                        A.MoverYVolver(Actual, Holder_4);
+                        A.MoverYVolver(Holder_4,Actual);
                     }
                 }, x);
                 x=x+510;
@@ -689,11 +688,87 @@ public class Juego extends AppCompatActivity{
                 x=x+100;
                 break;
         }
-
     }
     // El objeto de la zona de inicio, va al holder marcado, hace la resta, el resultado se queda en el objeto y vuelve al inicio
     public void Sub(String holder){
-        // TODO mismo que con el suma
+        Handler handler = new Handler();
+        Log.i("Sub1", "Tiempo: "+x);
+        switch(holder){
+            case "1":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Holder_1,Actual);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Sub2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Integer.toString(Integer.parseInt(Actual.getText().toString()) - Integer.parseInt(Holder_1.getText().toString()));
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+                break;
+            case "2":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Holder_2,Actual);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Sub2", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Integer.toString(Integer.parseInt(Actual.getText().toString()) - Integer.parseInt(Holder_2.getText().toString()));
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "3":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Holder_3,Actual);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Sub3", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Integer.toString(Integer.parseInt(Actual.getText().toString()) - Integer.parseInt(Holder_3.getText().toString()));
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+
+                break;
+            case "4":
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        A.MoverYVolver(Holder_4,Actual);
+                    }
+                }, x);
+                x=x+510;
+                Log.i("Sub4", "Tiempo: "+x);
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                        Actual_Valor = Integer.toString(Integer.parseInt(Actual.getText().toString()) - Integer.parseInt(Holder_4.getText().toString()));
+                        A.Mostrar_Objeto(Actual, Actual_Valor);
+                    }
+                }, x);
+                x=x+100;
+                break;
+        }
     }
     public void Jump(String Lugar){
 
