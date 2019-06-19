@@ -980,8 +980,9 @@ public class Juego extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 //CAMBIAR EL CONTEXT POR EL DEL JUEGO
-                startActivity(new Intent(Juego.this, MenuNivelActivity.class));
+                //startActivity(new Intent(Juego.this, MenuNivelActivity.class));
                 dialog.dismiss();
+                finish();
             }
         });
 
@@ -991,7 +992,7 @@ public class Juego extends AppCompatActivity{
             @Override
             public void onCancel(DialogInterface dialog)
             {
-                startActivity(new Intent(Juego.this, MenuNivelActivity.class));
+                //startActivity(new Intent(Juego.this, MenuNivelActivity.class));
                 finish();
             }
         });
