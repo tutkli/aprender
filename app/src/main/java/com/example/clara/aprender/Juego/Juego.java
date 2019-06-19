@@ -986,6 +986,7 @@ public class Juego extends AppCompatActivity{
             public void onCancel(DialogInterface dialog)
             {
                 startActivity(new Intent(Juego.this, MenuNivelActivity.class));
+                finish();
             }
         });
 
