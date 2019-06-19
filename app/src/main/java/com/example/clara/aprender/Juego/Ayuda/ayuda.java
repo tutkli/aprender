@@ -42,7 +42,7 @@ public class ayuda extends AppCompatActivity {
         nivel_actual = BDAprender.getNivelDAO().getNivelPorID(id_nivel);
         RecyclerView myrv = (RecyclerView) findViewById(R.id.recycler_view);
         ayuda_adapter myAdapter = new ayuda_adapter(this,nivel_actual);
-        myrv.setLayoutManager(new GridLayoutManager(this,5));
+        myrv.setLayoutManager(new GridLayoutManager(this,1));
         myrv.setAdapter(myAdapter);
 
         setFlags();

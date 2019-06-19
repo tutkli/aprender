@@ -189,11 +189,14 @@ public class Juego extends AppCompatActivity{
                     CInstruccion++;
                 }
                 CInstruccion=0;
+                iJump=0;
                 // Pasar a una lista las instrucciones.
                 // Repetir hasta que no haya inputs
                 while(CInstruccion<Instrucciones.size()){
                     Log.i("while", "Recorre la lista con isntrucción: "+Instrucciones.get(CInstruccion));
                     if(Instrucciones.get(CInstruccion).contains("jump")){
+                        Log.i("while", "Jump indice: "+CInstruccion);
+                        Log.i("while", "ijump: "+iJump);
                         iJump++;
                     }
                     if(iJump<Resultado.size()){

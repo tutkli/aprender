@@ -1,6 +1,7 @@
 package com.example.clara.aprender.Juego.Ayuda;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,21 +94,22 @@ public class ayuda_adapter extends RecyclerView.Adapter<ayuda_adapter.ViewHolder
         };
         View view ;
         LayoutInflater mInflater = LayoutInflater.from(mContext);
-        view = mInflater.inflate(R.layout.nivel_item,parent,false);
+        view = mInflater.inflate(R.layout.ayuda_item,parent,false);
         return new ayuda_adapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
-
-        viewHolder.Titulo.setText(Titulos[i]);
-        viewHolder.Imagen.setImageResource(imagenes[i]);
-        viewHolder.texto.setText(Descripciones[i]);
+    public void onBindViewHolder(ViewHolder holder, final int posicion) {
+        Log.i("Lista Titulos",posicion+"");
+        Log.i("Lista Titulos",Titulos[0]);
+        holder.Titulo.setText(Titulos[posicion]);
+        holder.Imagen.setImageResource(imagenes[posicion]);
+        holder.texto.setText(Descripciones[posicion]);
     }
 
     @Override
     public int getItemCount() {
-        return 11;
+        return Titulos.length;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
