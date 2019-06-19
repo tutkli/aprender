@@ -976,6 +976,7 @@ public class Juego extends AppCompatActivity{
                 //CAMBIAR EL CONTEXT POR EL DEL JUEGO
                 startActivity(new Intent(Juego.this, MenuNivelActivity.class));
                 dialog.dismiss();
+                finish();
             }
         });
 
