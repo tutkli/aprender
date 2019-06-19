@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Juego.Ayuda.ayuda"></activity>
+        <activity android:name=".Juego.Ayuda.ayuda"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".LoadGame"
             android:screenOrientation="landscape" />
