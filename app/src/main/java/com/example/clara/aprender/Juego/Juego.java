@@ -206,6 +206,9 @@ public class Juego extends AppCompatActivity{
                         Log.i("while", "Jump indice: "+CInstruccion);
                         Log.i("while", "ijump: "+iJump);
                         iJump++;
+                        if(nivel_actual.getIdNivel()==6 && iJump==3){
+                            break;
+                        }
                     }
                     if(iJump<Resultado.size()){
                         if(Instrucciones.get(CInstruccion).startsWith(" ")){
@@ -983,6 +986,7 @@ public class Juego extends AppCompatActivity{
             public void onCancel(DialogInterface dialog)
             {
                 startActivity(new Intent(Juego.this, MenuNivelActivity.class));
+                finish();
             }
         });
 
@@ -1075,6 +1079,7 @@ public class Juego extends AppCompatActivity{
     public void onResume()
     {
         super.onResume();
+        setFlags();
         if(musica.isPlaying())
             return;
         else

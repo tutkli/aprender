@@ -67,7 +67,7 @@ public class ayuda_adapter extends RecyclerView.Adapter<ayuda_adapter.ViewHolder
         };
         Descripciones = new String[]{nivel.getProblema(),
                 "Ordena las instrucciones de la izquierda para crear una serie de instrucciones a la derecha. La finalidad es que todos los elementos de la parte Input acaben en la parte Output.",
-                "En la parte derecha puedes  observar 2 cadenas de Objetos, una representa la entrada de objetos y la otra la salida.",
+                "En la parte izquierda puedes  observar 2 cadenas de Objetos, una representa la entrada de objetos y la otra la salida.",
                 "Aparecen bloques que significan una instrucción en el juego.",
                 "Es una lista creada a partir de los elementos que son arrastrados desde la lista de los elementos.",
                 "Coge el elemento del input, y es el foco de las instrucciones",
