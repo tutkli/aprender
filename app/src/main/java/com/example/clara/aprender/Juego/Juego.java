@@ -63,7 +63,7 @@ public class Juego extends AppCompatActivity{
     // Valor Actual y enunciado
     String Actual_Valor, Problema, InstruccionesString;
     // Para saber en que instruccion se encuentra, Milisegundos para que se ejectue esta parte y numero de intentos
-    int CElemento, x, num_intentos, JUMPA,JUMPB,JUMPC,JUMPD, CInstruccion, iJump;
+    int CElemento, CSElemento, x, num_intentos, JUMPA,JUMPB,JUMPC,JUMPD, CInstruccion, iJump;
     MediaPlayer musica;
     boolean Jugando=false, EstadoMusica;
     // Librería utilizada https://github.com/florent37/ViewAnimator
@@ -103,6 +103,7 @@ public class Juego extends AppCompatActivity{
         x=0;
         num_intentos=0;
         CElemento=0;
+        CSElemento=0;
         CInstruccion=0;
         iJump=0;
         JUMPA=JUMPB=JUMPC=JUMPD=0;
@@ -161,6 +162,7 @@ public class Juego extends AppCompatActivity{
         if(!Jugando){
             if(InstruccionesString!=null){
                 CElemento=0;
+                CSElemento=0;
                 // TODO Métodos de contains para saber las posiciones de los A B C y D
                 A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
                 A.Desaparecer_Objeto(Holder_1);
@@ -297,38 +299,37 @@ public class Juego extends AppCompatActivity{
     }
 
     public void CargarOutputs(){
-        // TODO Si hay 2 inputs seguidos, se rompe
-        // Controlar el CElemento
         A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
-        Log.i("COut",CElemento+"");
+        Log.i("COut",CSElemento+"");
         Log.i("COut",Salida+"");
-        if(CElemento-1>=0) {
-            if(Salida.get(CElemento-1).equals("")){
+        if(CSElemento-1>=0) {
+            if(Salida.get(CSElemento-1).equals("")){
                 A.Desaparecer_Objeto(Output_1);
             }else{
-                A.Mostrar_Objeto(Output_1, Salida.get(CElemento-1));
+                A.Mostrar_Objeto(Output_1, Salida.get(CSElemento-1));
             }
         }else{
             A.Desaparecer_Objeto(Output_1);
         }
-        if(CElemento-2>=0){
-            if(Salida.get(CElemento-2).equals("")){
+        if(CSElemento-2>=0){
+            if(Salida.get(CSElemento-2).equals("")){
                 A.Desaparecer_Objeto(Output_2);
             }else{
-                A.Mostrar_Objeto(Output_2, Salida.get(CElemento-2));
+                A.Mostrar_Objeto(Output_2, Salida.get(CSElemento-2));
             }
         }else{
             A.Desaparecer_Objeto(Output_2);
         }
-        if(CElemento-3>=0) {
-            if (Salida.get(CElemento-3).equals("")) {
+        if(CSElemento-3>=0) {
+            if (Salida.get(CSElemento-3).equals("")) {
                 A.Desaparecer_Objeto(Output_3);
             } else {
-                A.Mostrar_Objeto(Output_3, Salida.get(CElemento-3));
+                A.Mostrar_Objeto(Output_3, Salida.get(CSElemento-3));
             }
         }else{
             A.Desaparecer_Objeto(Output_3);
         }
+
 
     }
 
@@ -368,21 +369,21 @@ public class Juego extends AppCompatActivity{
                     switch (InstruccionesArray[0]) {
                         case "copyto":
                             Log.i("Instruccion",InstruccionesArray[1]+" CT");
-                            copyTo(InstruccionesArray[1]);
+                            copyTo(InstruccionesArray[InstruccionesArray.length-1]);
                             break;
                         case "copyfrom":
                             Log.i("Instruccion",InstruccionesArray[1]+" CF");
-                            copyFrom(InstruccionesArray[1]);
+                            copyFrom(InstruccionesArray[InstruccionesArray.length-1]);
                             break;
                         case "sum":
-                            Sum(InstruccionesArray[1]);
+                            Sum(InstruccionesArray[InstruccionesArray.length-1]);
                             break;
                         case "sub":
-                            Sub(InstruccionesArray[1]);
+                            Sub(InstruccionesArray[InstruccionesArray.length-1]);
                             break;
                         case "jump":
                             // Controlar el valor de jump
-                            Jump(InstruccionesArray[1]);
+                            Jump(InstruccionesArray[InstruccionesArray.length-1]);
                             break;
                         default:
                             Log.i("Instruccion",InstruccionesArray[0]+" "+InstruccionesArray[1]+" DEFAULT");
@@ -454,6 +455,7 @@ public class Juego extends AppCompatActivity{
                 A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
                 Salida.add(Actual_Valor);
                 Actual_Valor="";
+                CSElemento++;
                 CargarOutputs();
                 A.Desaparecer_Objeto(Actual);
             }

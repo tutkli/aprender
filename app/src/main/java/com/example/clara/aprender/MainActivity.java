@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
                 "Coge los dos primeros objetos del input y envíalos al revés, repite hasta que la cola esté vacía. ",
                 "3-5-N-A-4-6", "5-3-A-N-6-4");
         BDAprender.getNivelDAO().insert(nivel);
-        nivel = new Nivel(5, "Nivel 5", "input-input-output-copyto 1-sum 1-jump A-A", "Por cada 2 elementos, sumalos y entrega el resultado.", "2-6-1-3-2-4-5-4", "8-4-6-8");
+        nivel = new Nivel(5, "Nivel 5", "input-input-output-copyto 1-sum 1-jump A-A", "Por cada 2 elementos, sumalos y entrega el resultado.", "2-6-1-3-2-4-5-4", "8-4-6-9");
         BDAprender.getNivelDAO().insert(nivel);
         nivel = new Nivel(6, "Nivel 6", "input-output-copyto 1-sum 1-sum 1-jump A-A", "Por cada Input, envialo triplicado", "5-7-5-0-2", "15-21-15-0-6");
         BDAprender.getNivelDAO().insert(nivel);
