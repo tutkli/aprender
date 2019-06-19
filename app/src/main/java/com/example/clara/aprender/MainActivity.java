@@ -235,7 +235,6 @@ public class MainActivity extends AppCompatActivity {
         BDAprender.getNivelDAO().insert(nivel);
         nivel = new Nivel(9, "9. Triplicando", "input-output-copyto 1-sum 1-sum 1-jump A-A", "Por cada Input, envialo triplicado", "5-7-5-0-2", "15-21-15-0-6");
         BDAprender.getNivelDAO().insert(nivel);
-
     }
 
     public void setFlags() {
