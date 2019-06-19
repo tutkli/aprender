@@ -55,7 +55,7 @@ public class Juego extends AppCompatActivity{
     ImageButton IBAtras, IBPlay, IBAdelante, IBAyuda, IBSonido;
     TextView Input_1,Input_2,Input_3,Actual,Output_1,Output_2,Output_3, Holder_1, Holder_2, Holder_3, Holder_4;
     // Coordenadas.
-    float IX=30, IO1Y=160, IO2Y=210, IO3Y=260, AX=150, AY=50 ,OX=250, HIX=120, HDX=170, HAY=180, HDY=230;
+    float IX=100, IO1Y=300, IO2Y=450, IO3Y=600, AX=400, AY=100 ,OX=700, HIX=350, HDX=500, HAY=350, HDY=500;
     Animaciones A;
     // Listas que definen las instrucciones, los elementos de entrada y los elementos de salida
     List<String> Entrada, Salida, Instrucciones, Resultado;
@@ -155,6 +155,11 @@ public class Juego extends AppCompatActivity{
             if(InstruccionesString!=null){
                 CElemento=0;
                 // TODO Métodos de contains para saber las posiciones de los A B C y D
+                A = new Animaciones(color_caja_letra, color_caja_numero, color_fondo_juego, color_color_error);
+                A.Desaparecer_Objeto(Holder_1);
+                A.Desaparecer_Objeto(Holder_2);
+                A.Desaparecer_Objeto(Holder_3);
+                A.Desaparecer_Objeto(Holder_4);
 
                 Instrucciones=  Arrays.asList(InstruccionesString.split("-"));
                 Salida.clear();
@@ -168,6 +173,8 @@ public class Juego extends AppCompatActivity{
                 for(final String instruccion : Instrucciones){
                     Log.i("for", "Recorre la lista con isntrucción: "+instruccion);
                     //Para que se inicie la siguiente animacion después de que se termine la otra, en realidad funciona a base de retrasos
+
+                    // TODO, ejecutar las instrucciones según dice el contador
                     if(instruccion.startsWith(" ")){
                         DetectorElementos(instruccion.substring(1));
                     }else{
@@ -203,7 +210,6 @@ public class Juego extends AppCompatActivity{
             EstadoMusica = false;
             musica.pause();
             IBSonido.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_lock_silent_mode));
-            Input_1.setBackgroundColor(color_color_error);
         }else{
             int length = musica.getCurrentPosition();
             musica.seekTo(length);
@@ -343,16 +349,16 @@ public class Juego extends AppCompatActivity{
                     switch (Instruccion){
                         //TODO Asignar a una variable el valor de la posicion.
                         case "A":
-                            Input();
+                            Log.i("Instruccion","Pasando por A");
                             break;
                         case "B":
-                            Input();
+                            Log.i("Instruccion","Pasando por B");
                             break;
                         case "C":
-                            Input();
+                            Log.i("Instruccion","Pasando por C");
                             break;
                         case "D":
-                            Input();
+                            Log.i("Instruccion","Pasando por D");
                             break;
                     }
                 }
@@ -604,7 +610,7 @@ public class Juego extends AppCompatActivity{
 
     }
     public void Sum(String holder){
-        // TODO animacion para que vuelva el valor.
+        // TODO animacion para que vuelva el valor. O Cambiar para que el holder se mueva a la posicion actual-
         Handler handler = new Handler();
         Log.i("Sum1", "Tiempo: "+x);
         switch(holder){
@@ -844,8 +850,10 @@ public class Juego extends AppCompatActivity{
 
     // Método para colocar de nuevo todos los elementos
     public void Colocar(){
+        Log.i("Posiciones de input 1", IX+" "+IO1Y+"");
         Input_1.setX(IX);
         Input_1.setY(IO1Y);
+        Log.i("Posiciones de input 1", IX+" "+IO2Y+"");
         Input_2.setX(IX);
         Input_2.setY(IO2Y);
         Input_3.setX(IX);

@@ -1,174 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Juego.Juego">
+    android:orientation="horizontal"
+    tools:context=".Juego.Juego"
+    android:baselineAligned="false">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_weight="1"
+            android:background="@color/fondo_juego">
+
+            <TextView
+                android:id="@+id/Input_1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Input_2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Input_3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Actual"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Output_1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Output_2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Output_3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Holder_1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Holder_2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Holder_3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Holder_4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="320dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fondo_juego"
+            android:orientation="horizontal">
 
-            <RelativeLayout
-                android:id="@+id/Constraint_Layout"
-                android:layout_width="match_parent"
+            <ImageButton
+                android:id="@+id/IBSonido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="IBSonido"
+                app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
+
+            <ImageButton
+                android:id="@+id/IBAyuda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="IBAyuda"
+                android:src="@android:drawable/ic_menu_help" />
+
+            <ImageButton
+                android:id="@+id/IBAtras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="IBAtras"
+                app:srcCompat="@android:drawable/ic_media_previous" />
+
+            <ImageButton
+                android:id="@+id/IBPlay"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/fondo_juego">
+                android:onClick="IBPlay"
+                app:srcCompat="@android:drawable/ic_media_play" />
 
-                <TextView
-                    android:id="@+id/Input_1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Input_2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Input_3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Actual"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Output_1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Output_2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Output_3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Holder_1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Holder_2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Holder_3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Holder_4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center|center_horizontal|center_vertical"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageButton
+                android:id="@+id/IBAdelante"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:background="@color/fondo_juego"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/IBSonido"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="IBSonido"
-                    app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
-
-                <ImageButton
-                    android:id="@+id/IBAyuda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="IBAyuda"
-                    android:src="@android:drawable/ic_menu_help" />
-
-                <ImageButton
-                    android:id="@+id/IBAtras"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="IBAtras"
-                    app:srcCompat="@android:drawable/ic_media_previous" />
-
-                <ImageButton
-                    android:id="@+id/IBPlay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:onClick="IBPlay"
-                    app:srcCompat="@android:drawable/ic_media_play" />
-
-                <ImageButton
-                    android:id="@+id/IBAdelante"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="IBAdelante"
-                    app:srcCompat="@android:drawable/ic_media_next" />
-            </LinearLayout>
-
+                android:layout_weight="1"
+                android:onClick="IBAdelante"
+                app:srcCompat="@android:drawable/ic_media_next" />
         </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="330dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/fondo_juego"></FrameLayout>
     </LinearLayout>
-</RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="330dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/fondo_juego"></FrameLayout>
+</LinearLayout>

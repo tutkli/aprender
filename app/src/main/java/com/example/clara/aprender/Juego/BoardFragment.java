@@ -67,6 +67,8 @@ public class BoardFragment extends Fragment {
         mBoardView.setSnapToColumnWhenDragging(true);
         mBoardView.setSnapDragItemToTouch(true);
         mBoardView.setCustomDragItem(new MyDragItem(getActivity(), R.layout.column_item));
+        //Para el ancho de las columnas
+        mBoardView.setColumnWidth(500);
         // Poner comentado para que no se pueda mover las columnas
 
         //mBoardView.setCustomColumnDragItem(new MyColumnDragItem(getActivity(), R.layout.column_drag_layout));
