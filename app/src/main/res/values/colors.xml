@@ -10,8 +10,9 @@
     <color name="app_color">#8EAE3C</color>
 
 
-    <color name="caja_numero">#2AB746</color>
-    <color name="caja_letra">#CE94B2</color>
-    <color name="fondo_juego">#F5F3BB</color>
+    <color name="caja_numero">#E3B505</color>
+    <color name="caja_letra">#EAF2E3</color>
+    <color name="fondo_juego">#064789</color>
     <color name="color_error">#DF2935</color>
+
 </resources>

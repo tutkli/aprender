@@ -67,6 +67,8 @@ public class BoardFragment extends Fragment {
         mBoardView.setSnapToColumnWhenDragging(true);
         mBoardView.setSnapDragItemToTouch(true);
         mBoardView.setCustomDragItem(new MyDragItem(getActivity(), R.layout.column_item));
+        //Para el ancho de las columnas
+        mBoardView.setColumnWidth(500);
         // Poner comentado para que no se pueda mover las columnas
 
         //mBoardView.setCustomColumnDragItem(new MyColumnDragItem(getActivity(), R.layout.column_drag_layout));
@@ -138,25 +140,28 @@ public class BoardFragment extends Fragment {
         });
         return view;
     }
+
     //Para pasar los valores.
     public void GetValuesColumnaInstrucciones(){
         List Instrucciones=  mBoardView.getAdapter(1).getItemList();
         Object[] ArrayInstrucciones = Instrucciones.toArray();
         CadenaInstrucciones="";
         for(int conInst = 0; conInst < ArrayInstrucciones.length; conInst++){
-            String Instruccion =ArrayInstrucciones[conInst].toString().substring(7, ArrayInstrucciones[conInst].toString().length()-1);
+            String Instruccion =ArrayInstrucciones[conInst].toString().substring(7,
+                    ArrayInstrucciones[conInst].toString().length()-1);
             CadenaInstrucciones = CadenaInstrucciones+"-"+Instruccion;
         }
         ((Juego)getActivity()).getValores(CadenaInstrucciones);
     }
+
     //Numero de Columnas
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //Pueden haber 2 problemas, num 1, la app necesita identificadores únicos, num2 el custon listview
         addelementos();
         addlistaJuego();
     }
+
     private void addelementos() {
         String Elementos = Juego.nivel_actual.getInstrucciones();
         String[] arrElementos = Elementos.split("-");

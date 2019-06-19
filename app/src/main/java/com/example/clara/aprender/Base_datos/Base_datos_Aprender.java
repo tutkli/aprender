@@ -14,10 +14,3 @@ public abstract class Base_datos_Aprender extends RoomDatabase {
     public abstract NivelDAO getNivelDAO();
     public abstract SolucionDAO getSolucionDAO();
 }
-
-/*
-Para instanciar la base de datos
-AppDatabase BDAprender = Room.databaseBuilder(getApplicationContext(), Base_datos_Aprender.class, "base_datos_aprender").allowMainThreadQueries().build()
-//Permite a Room hacer operaciones en el hilo principal----------------------------------------------------^
-//Añadir para que los hilos se ejecuten en background
-*/

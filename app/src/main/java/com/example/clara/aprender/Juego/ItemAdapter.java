@@ -55,6 +55,58 @@ class ItemAdapter extends DragItemAdapter<Pair<Long, String>, ItemAdapter.ViewHo
         super.onBindViewHolder(holder, position);
         String text = mItemList.get(position).second;
         holder.mText.setText(text);
+        if(text.equals("input") || text.equals("output") || text.equals("bump+") || text.equals("bump-")){
+            switch(text) {
+                case "input":
+                    holder.IV.setImageResource(R.drawable.input);
+                    break;
+                case "output":
+                    holder.IV.setImageResource(R.drawable.output);
+                    break;
+                case "bump+":
+                    holder.IV.setImageResource(R.drawable.bumpmas);
+                    break;
+                case "bump-":
+                    holder.IV.setImageResource(R.drawable.bumpmenos);
+                    break;
+            }
+        }else{
+                if(text.contains(" ")){
+                    String[] InstruccionesArray = text.split(" ");
+                    switch (InstruccionesArray[0]) {
+                        case "copyto":
+                            holder.IV.setImageResource(R.drawable.copyto);
+                            break;
+                        case "copyfrom":
+                            holder.IV.setImageResource(R.drawable.copyfrom);
+                            break;
+                        case "sum":
+                            holder.IV.setImageResource(R.drawable.sum);
+                            break;
+                        case "sub":
+                            holder.IV.setImageResource(R.drawable.sub);
+                            break;
+                        case "jump":
+                            holder.IV.setImageResource(R.drawable.jump);
+                            break;
+                }
+            }else{
+                switch(text) {
+                    case "A":
+                        holder.IV.setImageResource(R.drawable.jump);
+                        break;
+                    case "B":
+                        holder.IV.setImageResource(R.drawable.jump);
+                        break;
+                    case "C":
+                        holder.IV.setImageResource(R.drawable.jump);
+                        break;
+                    case "D":
+                        holder.IV.setImageResource(R.drawable.jump);
+                        break;
+                }
+            }
+        }
         holder.itemView.setTag(mItemList.get(position));
     }
     // Siempre utiliza IDs únicas.

@@ -9,14 +9,10 @@ import androidx.room.Update;
 import com.example.clara.aprender.Modelos.Nivel;
 import java.util.List;
 
-//Varargs
 @Dao
 public interface NivelDAO {
 
-    // Que era ... ? recordar y añadir al archivo word
-
-    // OnConflictStrategy consiste en no insertar si ocurre algo
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Nivel... Niveles);
 
     @Update
