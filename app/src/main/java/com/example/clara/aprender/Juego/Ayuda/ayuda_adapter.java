@@ -22,12 +22,29 @@ public class ayuda_adapter extends RecyclerView.Adapter<ayuda_adapter.ViewHolder
     private Nivel nivel ;
     private int[] imagenes;
     private String[] Descripciones;
-    private String[] Titulos;
+    private String[] Titulos = {" ",
+            "General",
+            "Input",
+            "Output",
+            "Bump+",
+            "Bump-",
+            "CopyTo",
+            "CopyFrom",
+            "Sum",
+            "Sub",
+            "Jump"
+    };
+
 
     public ayuda_adapter(Context mContext, Nivel nivel) {
         this.mContext = mContext;
         this.nivel = nivel;
-        String[] tit = {nivel.getTitulo(),
+
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Titulos = new String[]{nivel.getTitulo(),
                 "General",
                 "Input",
                 "Output",
@@ -39,8 +56,7 @@ public class ayuda_adapter extends RecyclerView.Adapter<ayuda_adapter.ViewHolder
                 "Sub",
                 "Jump"
         };
-        Titulos = tit;
-        String[] de = {nivel.getProblema(),
+        Descripciones = new String[]{nivel.getProblema(),
                 "Ordena las instrucciones de la izquierda para crear una serie de instrucciones a la derecha.",
                 "Item one details",
                 "Item one details",
@@ -53,9 +69,7 @@ public class ayuda_adapter extends RecyclerView.Adapter<ayuda_adapter.ViewHolder
                 "Item one details",
                 "Item one details"
         };
-        Descripciones = de;
-
-        int[] im = { R.drawable.lvl,
+        imagenes = new int[]{ R.drawable.lvl,
                 R.drawable.lvl,
                 R.drawable.lvl,
                 R.drawable.lvl,
@@ -77,14 +91,6 @@ public class ayuda_adapter extends RecyclerView.Adapter<ayuda_adapter.ViewHolder
 //            R.drawable.sub,
 //            R.drawable.jump,
         };
-        imagenes = im;
-    }
-
-
-
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view ;
         LayoutInflater mInflater = LayoutInflater.from(mContext);
         view = mInflater.inflate(R.layout.nivel_item,parent,false);
@@ -94,15 +100,14 @@ public class ayuda_adapter extends RecyclerView.Adapter<ayuda_adapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
 
-
-        viewHolder.Imagen.setImageResource(imagenes[i]);
         viewHolder.Titulo.setText(Titulos[i]);
+        viewHolder.Imagen.setImageResource(imagenes[i]);
         viewHolder.texto.setText(Descripciones[i]);
     }
 
     @Override
     public int getItemCount() {
-        return Titulos.length;
+        return 11;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

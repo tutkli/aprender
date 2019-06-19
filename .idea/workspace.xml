@@ -12,10 +12,7 @@
     <list default="true" id="bff15991-d12c-498b-ae36-b31a09430be8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda_adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda_adapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nivel_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nivel_item.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/" />
@@ -80,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7145">
-              <caret line="799" column="28" selection-start-line="799" selection-start-column="28" selection-end-line="799" selection-end-column="28" />
+            <state relative-caret-position="821">
+              <caret line="302" column="30" selection-start-line="302" selection-start-column="30" selection-end-line="302" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8507#8508#0" expanded="true" />
@@ -116,15 +113,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda_adapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1169">
-              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="-21">
+              <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2793#2794#0" expanded="true" />
-                <element signature="e#2829#2830#0" expanded="true" />
+                <element signature="e#3083#3084#0" expanded="true" />
+                <element signature="e#3120#3121#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,11 +154,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="92" column="5" selection-start-line="81" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
+            <state relative-caret-position="292">
+              <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -232,19 +229,19 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/ayuda_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_ayuda.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nivel_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/elemento.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda_adapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
+    <option name="x" value="372" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1624" />
+    <option name="height" value="945" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -501,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560910053064</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Comprobar que ocurre con la imagen de ayuda">
+      <created>1560917038165</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1560917038165</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -514,7 +518,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -556,7 +560,8 @@
     <MESSAGE value="Añadida la funcion de siguiente nivel" />
     <MESSAGE value="Cambios para el display" />
     <MESSAGE value="Añadiendo lo de ayuda" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadiendo lo de ayuda" />
+    <MESSAGE value="Comprobar que ocurre con la imagen de ayuda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comprobar que ocurre con la imagen de ayuda" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Solucion.java">
@@ -772,13 +777,6 @@
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="92" column="5" selection-start-line="81" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Modelos/Nivel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -793,10 +791,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="207" column="83" selection-start-line="207" selection-start-column="83" selection-end-line="207" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda_adapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
+            <element signature="e#3120#3121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Juego.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7145">
-          <caret line="799" column="28" selection-start-line="799" selection-start-column="28" selection-end-line="799" selection-end-column="28" />
+        <state relative-caret-position="821">
+          <caret line="302" column="30" selection-start-line="302" selection-start-column="30" selection-end-line="302" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8507#8508#0" expanded="true" />
@@ -812,29 +836,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Adapters/RecyclerViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="207" column="83" selection-start-line="207" selection-start-column="83" selection-end-line="207" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/clara/aprender/Juego/Ayuda/ayuda_adapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1169">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2793#2794#0" expanded="true" />
-            <element signature="e#2829#2830#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="292">
+          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
         </state>
       </provider>
     </entry>

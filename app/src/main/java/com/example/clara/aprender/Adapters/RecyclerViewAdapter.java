@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,16 +46,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         // Cambiar de vuelta a esto -> holder.lvl_img.setImageResource(mData.get(holder.getAdapterPosition()).getImagen()); <- o no utilizar una base de datos y utilizar archivos del movil de la carpeta drawable.
 
-        holder.Titulo.setText("1");
 
-        //prueba de que hace click, borrar luego
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext, "CLICK EN "+mData.get(position).getTitulo(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        String posicion = Integer.toString(mData.get(position).getIdNivel());
+        holder.Titulo.setText(posicion);
 
         //SE INICIALIZAN LOS ITEMS DE CADA NIVEL Y SE ENVIA LA INFORMACION AL INTENT DE NIVEL
         //CON UN LISTENER EN CADA CARDVIEW DEL MENU DE NIVELES
